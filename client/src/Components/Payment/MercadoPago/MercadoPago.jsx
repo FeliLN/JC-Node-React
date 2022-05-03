@@ -15,7 +15,6 @@ const Mercadopago = () => {
     axios.get('http://localhost:5000/checkout/preference')
       .then(response => {
         setPreference(response.data)
-        // console.log(response.data)
       })
   }, [])
 
@@ -33,32 +32,7 @@ const Mercadopago = () => {
     }
   }, [mercadopago, preference])
 
-  // APP ESTO VA
-  // const addToCart = (product) => {
-  //   let order = {
-  //     title: product.name,
-  //     unit_price: product.price,
-  //     quantity: 1,
-  //   }
-  //   axios.post('/order', order)
-  //       .then(response => {
-  //         console.log(response);
-  //       })
-  //       .catch(error => {
-  //         console.log(error);
-  //       });
-  // }
 
-  // const endPayment = () => {
-  //     axios.post('/pay')
-  //         .then(response => {
-  //           console.log(response);
-  //         })
-  //         .catch(error => {
-  //           console.log(error);
-  //         });
-  // }
-// APP
   return (
     <div> 
        <div className="cho-container" />
@@ -68,15 +42,3 @@ const Mercadopago = () => {
 
 export default Mercadopago
 
-
-
-
-  // React.useEffect(() => {
-  //   axios.post('https://api.mercadopago.com/checkout/preferences', {
-  //     preference: preference
-  //   })
-  //     .then(response => {
-  //       console.log(response.data)
-  //     }
-  //     )
-  // }, [preference, mercadopago])
