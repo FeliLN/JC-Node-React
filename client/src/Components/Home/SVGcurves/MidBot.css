@@ -1,0 +1,73 @@
+
+ .MidBot {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    line-height: 0;
+    transform: scaleX(-1) rotate(180deg);
+    z-index: 11;
+    
+}
+
+.MidBot svg {
+    position: relative;
+    display: block;
+    width: calc(172% + 1.3px);
+    height: 218px;
+    transform: rotateY(180deg);
+    
+}
+
+.MidBot .shape-fill {
+    fill: #fff;
+}
+
+@media (min-width: 1440px) { 
+    
+    .MidBot {
+        position: relative;
+        height: 86px;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 11;
+    }
+    
+    
+    
+    .MidBot .shape-fill {
+        
+        fill: #F7B05B;
+       
+    
+    }
+}
+@media (min-width: 1360px)  {
+    .MidBot {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        overflow: hidden;
+        transform: scaleX(-1) rotate(180deg);
+        z-index: 11;
+        
+    }
+    
+    .MidBot svg {
+        position: relative;
+        display: block;
+        width: calc(172% + 1.3px);
+        height: 218px;
+        transform: rotateY(180deg);
+      
+    }
+    
+    .MidBot .shape-fill {
+        fill: #fff;
+        
+    }
+}
