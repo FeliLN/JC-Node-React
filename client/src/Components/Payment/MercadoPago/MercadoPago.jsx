@@ -15,9 +15,10 @@ const Mercadopago = () => {
     axios.get('http://localhost:5000/checkout/preference')
       .then(response => {
         setPreference(response.data)
+
       })
   }, [])
-
+  console.log(preference)
   useEffect(() => {
     if (mercadopago) {
         mercadopago.checkout({

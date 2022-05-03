@@ -14,7 +14,7 @@ mercadopago.configure({
 let orders = [{
             title: "",
             unit_price: 0,
-            quantity: 0,
+            quantity: 1,
 }]
 
 // let example = [{
@@ -43,22 +43,31 @@ app.post('/order', (req, res) => {
     // orders.push(order)
     orders[0].title = orders[0].title + ', ' + order.title
     orders[0].unit_price = orders[0].unit_price + order.unit_price
-    orders[0].quantity = orders[0].quantity + order.quantity
-    addOrdertoPreferences(order);
+
+    console.log(orders);
     res.send("Order created");
 })
 app.post('/pay', (req, res) => {
+  addOrdertoPreferences(orders);
   endPayment();
   res.send(preference);
 })
 
 function addOrdertoPreferences(order) {
-  preference.items.push(order)
+  preference.items = [];
+  preference.items = order;
+  orders = [{
+    title: "",
+    unit_price: 0,
+    quantity: 1,
+  }]
+  // console.log(preference);
 }
 function endPayment() {
   mercadopago.preferences.create(preference).then(function(response) {
     preference = response.response;
   });
+
 }
 
 app.get('/checkout/preference', (req, res) => {
