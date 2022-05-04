@@ -61,13 +61,7 @@ const Cart = () => {
             <span>Total: {formatPeso(total)}</span>
             <button onClick={() => {
                 navigate('./Payment');
-                axios.post('http://localhost:5000/pay')
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    });
+               
             }}>Realizar Compra</button>
         </Total>
       </CartWindow>

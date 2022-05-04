@@ -17,12 +17,6 @@ let orders = [{
             quantity: 1,
 }]
 
-// let example = [{
-//   title: 'Producto',
-//   unit_price: 100,
-//   quantity: 1,
-// }]
-
 let preference = {
   items: [],
   back_urls: {
@@ -39,18 +33,18 @@ app.get('/orders', (req, res) => {
 
 app.post('/order', (req, res) => {
     const order = req.body;
-
-    // orders.push(order)
     orders[0].title = orders[0].title + ', ' + order.title
     orders[0].unit_price = orders[0].unit_price + order.unit_price
-
-    console.log(orders);
     res.send("Order created");
 })
 app.post('/pay', (req, res) => {
   addOrdertoPreferences(orders);
   endPayment();
   res.send(preference);
+})
+app.post('/feedback', (req, res) => {
+  deletePreference();
+  res.send("Feedback received");
 })
 
 function addOrdertoPreferences(order) {
@@ -61,13 +55,22 @@ function addOrdertoPreferences(order) {
     unit_price: 0,
     quantity: 1,
   }]
-  // console.log(preference);
 }
 function endPayment() {
   mercadopago.preferences.create(preference).then(function(response) {
     preference = response.response;
   });
-
+}
+function deletePreference() {
+  preference = {
+    items: [],
+    back_urls: {
+      success: "http://localhost:3000/",  
+      failure: "http://localhost:3000/feedback",
+      pending: "http://localhost:3000/feedback",
+    },
+    auto_return: "approved",
+  }
 }
 
 app.get('/checkout/preference', (req, res) => {

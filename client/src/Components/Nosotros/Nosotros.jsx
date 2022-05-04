@@ -13,17 +13,23 @@ const About = () => {
         })
     }, [])
 
-    const convertHTML = () => {
-        const convertP = nosotros
-    }
+    let convertedText = ''
 
+    if (nosotros) {
+        convertedText = nosotros.Descripcion
+            .replaceAll('<p>', '').replaceAll('</p>', '')
+            .replaceAll('<strong>', '').replaceAll('</strong>', '')
+            .replaceAll('&nbsp;', <br/>)
+            .replaceAll('&gt', <br/>)
+            .replaceAll('[object Object]', '')
+    }
 
     return (
 
         <AboutStyle>
             <Header />
            <h1>Acerca de Nosotros</h1>
-            <p>{nosotros.Descripcion}</p>
+            <p>{convertedText}</p>
             
         </AboutStyle>
     )

@@ -1,17 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { Badge } from 'react-bootstrap'
 import { CartState } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faTimes  } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
+import axios from 'axios'
 
 import styled from 'styled-components'
 import {device} from '../Breakpoints'
 
 
 const CartWidget = () => {
+
+    const navigate = useNavigate();
 
     const { items, deleteItem, formatPeso, total } = CartState() 
     let cartItems = localStorage.getItem('cart')
@@ -59,7 +62,22 @@ const CartWidget = () => {
                     ))  
                 : 'No hay productos en el carrito'}
                 <h1>{formatPeso(total)}</h1>
-                {items === 0 ? null : <StyledLink to='/Cart'>Go to Cart</StyledLink>}
+                {items === 0 ? null : 
+                <button onClick={() => {
+                    navigate('./Cart');
+                    axios.post('http://localhost:5000/pay')
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+                }
+                }>
+                    Finalizar Compra
+                </button>
+                // <StyledLink to='/Cart'>Go to Cart</StyledLink>
+                }
             </span>
             
         </Dropdown.Menu>

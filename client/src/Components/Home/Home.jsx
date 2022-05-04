@@ -17,6 +17,7 @@ import MidTop from "./SVGcurves/MidTop";
 import MidBot from "./SVGcurves/MidBot";
 import { CartState } from '../../Context';
 import ItemSelected from '../Shop/ItemSelected';
+import axios from 'axios';
 
 export const Home = () => {
     const [shop, setShop] = useState([]);
@@ -26,6 +27,16 @@ export const Home = () => {
     const [searchEnabled, setSearchEnabled] = useState(false);
 
     const {modal} = CartState();
+
+    React.useEffect(() => {
+        axios.post('/feedback').then(res => {
+            console.log(res.data);
+        }
+        ).catch(err => {
+            console.log(err);
+        })
+    }, [])
+
     return (
         <HomeStyle className='Home'>
             {modal && <ItemSelected />}
