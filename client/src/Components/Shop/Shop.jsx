@@ -5,13 +5,15 @@ import styled from 'styled-components';
 import  { device } from '../Breakpoints'
 import ProductWindow from './ProductWindow';
 import { getProducts } from '../../Service/publicApiService';
- 
+import { Pagination } from '@mui/material';
 
 const Shop = ({shop}) => {
     
     const [products, setProducts] = React.useState([]);
     const [search, setSearch] = React.useState('');
     const [ searchItems, setSearchItems ] = React.useState([]);
+    const [page, setPage] = React.useState(1);
+    const [pages, setPages] = React.useState(0);
 
     const [yearModal, setYearModal] = React.useState(false);
     const [genreModal, setGenreModal] = React.useState(false);
@@ -21,6 +23,10 @@ const Shop = ({shop}) => {
             setProducts(data);
         })
     }, [shop]);
+
+    const handleChange = (event) => {
+        setPage(event.target.innerText)
+      };
 
     return (
         <ShopVoid>
@@ -42,9 +48,12 @@ const Shop = ({shop}) => {
                     setSearch={setSearch}
                     searchItems={searchItems}
                     setSearchItems={setSearchItems}
+                    page={page}
+                    setPages={setPages}
                     />
-                   
-                
+                    <PageSection>
+                    <Pagination  variant='outlined' count={pages} page={page} onChange={handleChange}/>
+                    </PageSection>
             </ShopStyle>
             <PayMethod /> 
         </ShopVoid> 
@@ -96,3 +105,14 @@ const ShopVoid = styled.div`
     flex-direction: column;
     display: flex;
 `
+const PageSection = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000000;
+    `

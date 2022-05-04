@@ -7,7 +7,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 
 
-const ProductWindow = ({products, search, searchItems}) => {
+const ProductWindow = ({products, search, searchItems,page, setPages}) => {
 
     const { addToCart, formatPeso, setModal, setModalItem, loading, setLoading } = CartState()
 
@@ -38,6 +38,22 @@ const ProductWindow = ({products, search, searchItems}) => {
         }
     }
 
+    const pagesCount = Math.ceil(products.length / 12)
+    setPages(pagesCount)
+    
+    let totalPages = []
+
+    for(let i = 1; i <= pagesCount; i++) {
+        let pageContainer = []
+        for(let j = (i - 1) * 12; j < i * 12; j++) {
+            if(products[j]) {
+                pageContainer.push(products[j])
+            }
+        }
+        totalPages.push(pageContainer)
+    }
+    console.log(totalPages)
+    console.log(totalPages[page - 1])
     return (
         <ProductWindowStyle>
             {loading ?
@@ -51,25 +67,25 @@ const ProductWindow = ({products, search, searchItems}) => {
                     <Button onClick={() => addToCart(product)}>AÑADIR AL CARRITO</Button> 
                 </Card> 
             )) : <div><h1>Sin Resultados</h1></div>)}
-
-            {!search && products.map(producto => (          
-                <Card key={producto.id} >
-                    <Img src={producto.Imagen} alt={producto.nombre}/>
-                    <Title>{producto.Artista}</Title>
-                    <Album>{producto.Album}</Album>
-                    <Price>{formatPeso(producto.Precio)}</Price>
-                    <Button onClick={() => confirmAdd(producto)}>AÑADIR AL CARRITO</Button>
-                    <Button onClick={() => { 
-                    setModal(true);
-                    setModalItem(producto)
+            </>
+            : <div>Cargando articulos...</div>
+            }
+            {!search && totalPages[page-1] && totalPages[page-1].map(product => (
+                <Card key={product.id} >
+                    {console.log(product)}
+                    <Img src={product.Imagen} alt={product.nombre}/>
+                    <Title>{product.Artigo}</Title>
+                    <Album>{product.Album}</Album>
+                    <Price>{formatPeso(product.Precio)}</Price>
+                    <Button onClick={() => confirmAdd(product)}>AÑADIR AL CARRITO</Button>
+                    <Button onClick={() => {
+                        setModal(true);
+                        setModalItem(product)
                     }}>
                         <FontAwesomeIcon icon={faList} />
                     </Button>
                 </Card>
             ))}
-            </>
-            : <div>Cargando articulos...</div>
-            }
         </ProductWindowStyle>
     )
 }
@@ -82,6 +98,7 @@ const ProductWindowStyle = styled.div`
     grid-template-columns: auto auto auto auto auto auto;
     background-color: #f5f5f5;
     border-radius: 10px; 
+    padding: 30px;
     animation: productslide .4s 0s both;
     @keyframes productslide {
         from {
@@ -95,11 +112,15 @@ const ProductWindowStyle = styled.div`
     }
     div{
         margin-top: 20px;
-
     }
 `
 const Card = styled.li`
     display: flex;
+    height: 380px;
+    width: 250px;
+    margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5;
@@ -113,21 +134,7 @@ const Card = styled.li`
     &:hover {
         transform: scale(1.05);
     }
-    @media  (min-width: ${device.laptopL}){
-        width: 250px;
-        height: 350px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-    
-    @media  (min-width: ${device.desktopR}){
-        width: 250px;
-        height: 250px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
+
 
     @keyframes fadein {
         from {
@@ -186,5 +193,3 @@ const Button = styled.button`
         text-shadow: 0px 0px 5px #000;
     }
 `
-
-

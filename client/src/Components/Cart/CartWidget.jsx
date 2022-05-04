@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { Badge } from 'react-bootstrap'
 import { CartState } from '../../Context'
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 
 import styled from 'styled-components'
-import {device} from '../Breakpoints'
+// import {device} from '../Breakpoints'
 
 
 const CartWidget = () => {
@@ -39,29 +39,33 @@ const CartWidget = () => {
     }
 
   return (
+     
     <Dropdown onClick={() => setCartList(cartItems ? JSON.parse(cartItems) : [])}>
         <Dropdown.Toggle variant="success" id="dropdown-basic" >
             <FontAwesomeIcon icon={faShoppingCart} />
             <Badge>{items}</Badge>
         </Dropdown.Toggle>
-
-        <Dropdown.Menu style={{ minWidth: 370 }}>
+        <Dropdown.Menu style={{ minWidth: 500}}>
             
-            <span style={{ padding: 10 }}>
+            <Menu>
                 {cartList.length > 0 ? 
                     cartList.map (item => (
                         <div key={item.id}>
-                            <Button onClick={() =>  confirmDelete(item.ID)}>
-                                <FontAwesomeIcon icon={faTimes} />
-                            </Button>
-                            <img src={item.Imagen} alt={item.name} style={{ width: 50, height: 50 }} />
+                            <span className='close'>
+                                <Button onClick={() =>  confirmDelete(item.ID)}>
+                                    <FontAwesomeIcon icon={faTimes} />
+                                </Button>
+                            </span>
+                            <span className='img-span'>
+                                <img src={item.Imagen} alt={item.name} style={{ width: 50, height: 50 }} />
+                            </span>
                             <span>{item.Album}</span>
                             <span>{item.Artista}</span>
-                            <span>{" "}{formatPeso(item.Precio)}</span>
+                            <span className='precio'>{" "}{formatPeso(item.Precio)}</span>
                         </div>
                     ))  
-                : 'No hay productos en el carrito'}
-                <h1>{formatPeso(total)}</h1>
+                : <h1>No hay productos en el carrito</h1>}
+                <h1>Total: {formatPeso(total)}</h1>
                 {items === 0 ? null : 
                 <button onClick={() => {
                     navigate('./Cart');
@@ -74,47 +78,84 @@ const CartWidget = () => {
                     });
                 }
                 }>
-                    Finalizar Compra
+                    Ir al Carrito
                 </button>
-                // <StyledLink to='/Cart'>Go to Cart</StyledLink>
                 }
-            </span>
+            </Menu>
             
         </Dropdown.Menu>
     </Dropdown>
-  )
+    )
 }
 
 export default CartWidget
 
-const Button = styled.button`
+
+const Menu = styled.span`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
     background-color: #0a0a0a;
-    border-radius: 60px;
-    border: 0px solid #fff;
-    margin: 4px 4px 4px 0 ;   
-    width: 40px;
-    height: 40px;
-    color: #fff;
-    .SearchIcon:hover {
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-`
-const StyledLink = styled(Link)`
-    text-decoration: none;
     color: #0a0a0a;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    border-radius: 10px;
-    cursor: pointer;
-    &:hover {
-        color: #000;
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 10px 0;
     }
-    @media ${device.laptopL} { 
-        margin-left: 20px;
-       }
+    h1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        margin-top: 10px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #0a0a0a;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    span{
+        width: 100%;
+    }
+    .close{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .img-span{
+        width: 40px;
+        margin-right: 30px;
+    }
+    .precio{
+        width: 100px;
+        margin-left: 10px;
+    }
+    `
+const Button = styled.button`
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #0a0a0a;
+border-radius: 60px;
+border: 0px solid #fff;
+margin: 4px 4px 4px 0 ;   
+width: 30px;
+height: 30px;
+color: #fff;
+.SearchIcon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
 `
