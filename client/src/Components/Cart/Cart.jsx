@@ -28,7 +28,7 @@ const Cart = () => {
 
 
       <CartWindow>
-        <Title>Objetos seleecionados</Title>
+        <Title>Objetos seleccionados</Title>
         <CartItems>  
         <table>
           <THead>
@@ -61,7 +61,6 @@ const Cart = () => {
             <span>Total: {formatPeso(total)}</span>
             <button onClick={() => {
                 navigate('./Payment');
-               
             }}>Realizar Compra</button>
         </Total>
       </CartWindow>

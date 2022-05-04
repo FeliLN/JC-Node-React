@@ -7,6 +7,8 @@ import Vinyl from './Model3D/Vinyl.js'
 import Vinyl2 from './Model3D/Vinyl2.js'
 import Jukebox from './Model3D/Jukebox.js'
 import Cassette from './Model3D/Cassette.js'
+import RockVinyl1 from './Model3D/501vinyl.js'
+import RockVinyl2 from './Model3D/Rolling_stones_vinyl.js'
 
 //FortAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,7 +30,7 @@ const Footer = (props) => {
     React.useEffect(function appRunTimer() {
         const timer = setInterval(() => {
             setCounter(counter + 1)
-            if (counter === 3) {
+            if (counter === 5) {
                 setCounter(0)
             }
         }, 5000)
@@ -46,6 +48,10 @@ const Footer = (props) => {
                 return <Vinyl  />
             case 3:
                 return <Jukebox />
+            case 4:
+                return <RockVinyl1  scale={-1} rotation={[0, Math.PI, Math.PI]}/>
+            case 5:
+                return <RockVinyl2  scale={1} rotation={[Math.PI, 0, Math.PI]}/>
 
             default:
                 return <Vinyl />
