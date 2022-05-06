@@ -17,7 +17,7 @@ import Messages from './Components/BackOffice/EditContact/Messages';
 import EditNovedadesForm from './Components/BackOffice/EditNovedades/EditNovedadesForm';
 import CreateNovedades from './Components/BackOffice/EditNovedades/CreateNovedades';
 import Payment from './Components/Payment/Payment';
-// import MercadoPago from './Components/Payment/MercadoPago/MercadoPago';
+import Ventas from './Components/BackOffice/Ventas/Ventas';
 import CD from './Components/BackOffice/EditShop/CD'
 import DVD from './Components/BackOffice/EditShop/DVD';
 import Vinilos from './Components/BackOffice/EditShop/Vinilos';
@@ -47,8 +47,8 @@ function App() {
           <Route path="/backoffice/Contacto/Mensajes" element={<Messages/>} />
           <Route path="/backoffice/Novedades/Editar" element={<EditNovedadesForm />} />
           <Route path="/backoffice/Novedades/Crear" element={<CreateNovedades />} />
+          <Route path="/backoffice/Ventas" element={<Ventas />} />
           <Route path="Cart/Payment" element={<Payment />} />
-          {/* <Route path="mercadopago" element={<MercadoPago/>} /> */}
         </Routes>
         <ToastContainer />
     </AppStyle>

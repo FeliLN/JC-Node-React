@@ -3,6 +3,7 @@ import ImagePreview from './ImagePreview'
 import { Formik, Form, Field } from 'formik'
 import { uploadImage, getImages, createProduct } from '../../../Service/publicApiService'
 import Swal from 'sweetalert2'
+import styled from 'styled-components'
 
 const CreateForm = ({ product }) => {
 
@@ -74,9 +75,9 @@ const CreateForm = ({ product }) => {
         >
 
         {({ values, handleChange, setFieldValue, isSubmitting }) => (
-            <Form>
+            <FormStyle>
             {values.file ? <ImagePreview file={values.file} /> : <section>No hay imagen </section> } 
-                
+                <div className='First-group'>
                 <label>ID </label>
                 <Field type="number" name="ID" value={values.ID} onChange={handleChange}/>
                 
@@ -85,16 +86,19 @@ const CreateForm = ({ product }) => {
 
                 <label>artista </label>
                 <Field type="text" name="Artista" value={values.Artista} onChange={handleChange}/>
-
+                </div>
+                <div className='Second-group'>
                 <label>año </label>
                 <Field type="number" name="Año" value={values.Año} onChange={handleChange}/>
 
                 <label>Precio </label>
                 <Field type="number" name="Precio" value={values.Precio} onChange={handleChange}/>
 
+               
                 <label>Stock </label>
                 <Field type="checkbox" name="Stock" checked={values.Stock} onPress={() => setFieldValue('check', !values.Stock)}/>
-
+                </div>
+                <div className='Second-group'>
                 <label>Imagen </label>
                 <input type="file" onChange={(event) => setFieldValue('file', event.target.files[0])}/>
 
@@ -103,18 +107,90 @@ const CreateForm = ({ product }) => {
 
                 <label>Descripcion </label>
                 <textarea type="textarea" name="Descripcion" value={values.Descripcion} onChange={handleChange}/>
-
+                </div>
+                <div className='Second-group'>
                 <label>Tags </label>
                 <Field type="text" name="Tags" value={values.Tags} onChange={handleChange}/>
-                
+                </div>
                 <button type="submit" disabled={isSubmitting}>
                     Submit
                 </button>
                         
-            </Form>
+            </FormStyle>
             )}
         </Formik>
     )
 }
 
 export default CreateForm
+
+const FormStyle = styled(Form)`
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    /* background-color: #fff; */
+    /* box-shadow: 0px 0px 10px #ccc;
+    .First-group, .Second-group, .Third-group, .Fourth-group{ {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    input, textarea, select {
+        width: 200px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        background-color: #fff;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    button {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    label {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+    }
+    textarea {
+        height: 100px;
+    }
+    section {
+        width: 100%;
+        height: 100px;
+
+        &:focus {
+            outline: none;
+        }
+    } */ */
+`
