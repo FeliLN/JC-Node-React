@@ -309,3 +309,74 @@ export const updateNosotros = async (id, newData) => {
             })
     }
 }
+
+export const getVentas = async () => {
+    try {
+        const data = await getDocs(collection(db, 'Compras'));
+        return data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    }
+    catch (error) {
+        Swal.fire({
+            title: 'Error',
+            text: 'No se pudo obtener las ventas',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+            timer: 2000
+        })
+    }
+}
+
+export const createVenta = async (newData) => {
+    try {
+        addDoc(collection(db, 'Compras'), newData);
+    } catch (error) {
+        Swal.fire({
+            icon: 'error',
+            timer: 3000,
+            title: 'Algo salió mal :S',
+            text: 'La compra no se ha podido realizar',
+            })
+    }
+}
+
+export const deleteVenta = async (id) => {
+    try {
+        await deleteDoc(doc(db, 'Compras', id));
+    } catch (error) {
+        Swal.fire({
+            icon: 'error',
+            timer: 3000,
+            title: 'Algo salió mal :S',
+            text: 'La compra no se ha podido eliminar',
+            })
+    }
+}
+
+export const getNotifiaciones = async () => {
+    try {
+        const data = await getDocs(collection(db, 'Notificaciones'));
+        return data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    }
+    catch (error) {
+        Swal.fire({
+            title: 'Error',
+            text: 'No se pudo obtener las notificaciones',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+            timer: 2000
+        })
+    }
+}
+
+export const updateNotificacion = async (id, newData) => {
+    try {
+        await updateDoc(doc(db, 'Notificaciones', id), newData);
+    }
+    catch (error) {
+        Swal.fire({
+            icon: 'error',
+            timer: 3000,
+            title: 'Algo salió mal :S',
+            })
+    }
+}

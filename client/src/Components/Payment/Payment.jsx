@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '../Header/Header'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useNavigate } from 'react-router-dom'
 import { CartState } from '../../Context';
 import MercadoPagoModal from './MercadoPago/MercadoPagoModal'
+import { createVenta, getNotifiaciones, updateNotificacion } from '../../Service/publicApiService'
 
 import styled from 'styled-components'
 
@@ -26,7 +26,14 @@ const validate = values => {
 const Payment = () => {
 
     const { total, cart, formatPeso } = CartState()
-    const navigate = useNavigate();
+    const [notificacion, setNotificacion] = React.useState([])
+
+    React.useEffect(() => {
+        getNotifiaciones().then(data => {
+            setNotificacion(data[0])
+        }
+        )
+    }, [])
 
     const [values, setValues] = React.useState({
         name: '',   // sin numeros ni caracteres especiales, minimo 4 caracteres
@@ -36,9 +43,6 @@ const Payment = () => {
         ciudad: '',
         provincia: '',
         codigoPostal: '', // que contenga 4 digitos
-        nroTarjeta: '', // que contenga 16 digitos
-        vencimiento: '',    // que contenga 4 digitos y una "/"
-        codSeguridad: '',   // que contenga 3 digitos
     });
     const [validationSuccess, setValidationSuccess] = React.useState(false)
 
@@ -50,6 +54,12 @@ const Payment = () => {
           setTimeout(() => {
             setSubmitting(false);
             setValidationSuccess(true)
+            createVenta({cart, values})
+            setNotificacion({
+                ...notificacion,
+                Compras: notificacion.Compras++
+            })
+            updateNotificacion(notificacion.id, notificacion)
           }, 400);
           
         }}

@@ -11,7 +11,7 @@ const Context = ({ children }) => {
     const [modal, setModal] = useState(false)
     const [modalItem, setModalItem] = useState({})
     const [loading, setLoading] = useState(false)
-    
+
 // Funciones
     const addToCart = (item) => {
         setCart([...cart, item])
@@ -34,6 +34,7 @@ const Context = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     })
+
     const deleteItem = (ID) => {
         const newCart = cart.filter(item => item.ID !== ID)
         const newTotal = total - cart.find(item => item.ID === ID).Precio

@@ -6,7 +6,7 @@ import  { useState, useEffect } from 'react';
 
 
 const About = () => {
-    const [nosotros, setNosotros] = useState({})
+    const [nosotros, setNosotros] = useState(null)
     useEffect(() => {
         getNosotros().then(data => {
             setNosotros(data[0])
@@ -29,7 +29,7 @@ const About = () => {
         <AboutStyle>
             <Header />
            <h1>Acerca de Nosotros</h1>
-            <p>{convertedText}</p>
+            <p>{nosotros && convertedText}</p>
             
         </AboutStyle>
     )

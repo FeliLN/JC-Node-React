@@ -4,11 +4,12 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { getContact, publicMessage } from '../../Service/publicApiService'
+import { getContact, publicMessage, getNotifiaciones, updateNotificacion } from '../../Service/publicApiService'
 
 const Contact = () => {
 
     const [contact, setContact] = React.useState({})
+    const [notificacion, setNotificacion] = React.useState({})
     const [newMessage, setNewMessage] = React.useState({
         Nombre: '',
         Mail: '',
@@ -21,6 +22,24 @@ const Contact = () => {
             setContact(data[0])
         })
     }, [])
+
+    React.useEffect(() => {
+        getNotifiaciones().then(data => {
+            setNotificacion(data[0])
+        }
+        )
+    }, [])
+    
+
+    const addNotificacion = () => {
+        publicMessage(newMessage)
+        setNotificacion({
+            ...notificacion,
+            Mensajes: notificacion.Mensajes++
+        })
+        updateNotificacion(notificacion.id, notificacion)
+    }
+
     return (
         <div>
            <Header/>
@@ -61,7 +80,7 @@ const Contact = () => {
                 <textarea placeholder="Mensaje"
                     onChange={(e) => setNewMessage({...newMessage, Mensaje: e.target.value})} 
                 ></textarea>
-                <Button onClick={() => publicMessage(newMessage)}>Enviar</Button>
+                <Button onClick={() => { addNotificacion()}}>Enviar</Button>
             </Message>
         </div>
     )
@@ -69,7 +88,7 @@ const Contact = () => {
 
 export default Contact;
 
-
+ 
 const Title = styled.h1`
     font-size: 2.5rem;
     font-weight: bold;
