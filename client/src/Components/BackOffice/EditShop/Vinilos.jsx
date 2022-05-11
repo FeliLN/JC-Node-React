@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header'
 import { getProducts } from '../../../Service/publicApiService'
 import CreateForm from "./CreateForm"
-import Table from "./Table"
+import TableMui from "./TableMui"
 
 const Vinilos = () => {
     const [vinilos, setVinilos] = React.useState([])
@@ -24,7 +24,7 @@ const Vinilos = () => {
         <button onClick={() => setShowCreate(!showCreate)} >{showCreate ? 'Cerrar Formulario' : 'Crear Vinilo'} </button>
           {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
-        <Table items={vinilos} setItems={setVinilos} product={product}/>
+        <TableMui items={vinilos} setItems={setVinilos} product={product}/>
 
     </div>
   )

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header'
 import { getProducts } from '../../../Service/publicApiService'
 import CreateForm from "./CreateForm"
-import Table from "./Table"
+import TableMui from "./TableMui"
 
 const Libros = () => {
     const [libros, setLibros] = React.useState([])
@@ -24,7 +24,7 @@ const Libros = () => {
           {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
 
-        <Table items={libros} setItems={setLibros} product={product} />
+        <TableMui items={libros} setItems={setLibros} product={product} />
 
     </div>
   )

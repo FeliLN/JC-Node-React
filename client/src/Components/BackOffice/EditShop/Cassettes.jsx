@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header'
 import { getProducts } from '../../../Service/publicApiService'
 import CreateForm from "./CreateForm"
-import Table from "./Table"
+import TableMui from "./TableMui"
 
 
 const Cassettes = () => {
@@ -27,7 +27,7 @@ const Cassettes = () => {
           {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
 
-        <Table items={cassettes} setItems={setCassettes} product={product} />
+        <TableMui items={cassettes} setItems={setCassettes} product={product} />
 
     </div>
   )

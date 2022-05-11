@@ -54,6 +54,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
     }
     console.log(totalPages)
     console.log(totalPages[page - 1])
+    
     return (
         <ProductWindowStyle>
             {loading ?
@@ -65,11 +66,19 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                     <Album>{product.Album}</Album>
                     <Price>{formatPeso(product.Precio)}</Price>
                     <Button onClick={() => addToCart(product)}>AÑADIR AL CARRITO</Button> 
+                    <Button onClick={() => {
+                        setModal(true);
+                        setModalItem(product)
+                    }}>
+                        <FontAwesomeIcon  icon={faList} />
+                    </Button>
                 </Card> 
             )) : <div><h1>Sin Resultados</h1></div>)}
             </>
             : <div>Cargando articulos...</div>
             }
+            {loading &&
+            <>
             {!search && totalPages[page-1] && totalPages[page-1].map(product => (
                 <Card key={product.id} >
                     {console.log(product)}
@@ -86,6 +95,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                     </Button>
                 </Card>
             ))}
+            </>}
         </ProductWindowStyle>
     )
 }

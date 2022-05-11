@@ -108,8 +108,8 @@ const Table = ({items, product, setItems}) => {
                   <button onClick={() => {
                     setItemEdit(item)
                     setEdit(true)
-                  }}>Editar</button>
-                  <button onClick={() => confirmDelete(item.id)}>Eliminar</button>
+                  }}>EDITAR</button>
+                  <button onClick={() => confirmDelete(item.id)}>ELIMINAR</button>
                 </td>
               </tr>
             ))}
@@ -130,8 +130,8 @@ const Table = ({items, product, setItems}) => {
                     <button onClick={() => {
                       setItemEdit({...item, id: item.id})
                       setEdit(true)
-                    }}>Editar</button>
-                    <button onClick={() => confirmDelete(item.id)}>BORRAR</button>
+                    }}>EDITAR</button>
+                    <button onClick={() => confirmDelete(item.id)}>ELIMINAR</button>
                 </td>
               </tr>
             ))}

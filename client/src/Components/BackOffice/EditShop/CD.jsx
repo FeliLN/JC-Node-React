@@ -5,7 +5,6 @@ import { getProducts } from '../../../Service/publicApiService'
 import CreateForm from "./CreateForm"
 import TableMui from "./TableMui"
 
-
 const CD = () => {
     const [cds, setCds] = React.useState([])
     const product = 'CD'
@@ -24,7 +23,6 @@ const CD = () => {
            <button onClick={() => setShowCreate(!showCreate)} >{showCreate ? 'Cerrar Formulario' : 'Crear CD'} </button>
           {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
-        {/* <Table items={cds} setItems={setCds} product={product} /> */}
         <TableMui items={cds} setItems={setCds} product={product}  />
     </div>
   )

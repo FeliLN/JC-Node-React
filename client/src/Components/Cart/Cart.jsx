@@ -6,7 +6,6 @@ import { device } from '../Breakpoints'
 import { CartState } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import axios from 'axios'
 
 const Cart = () => {
 
@@ -124,7 +123,6 @@ const CartWindow = styled.div`
     }
     @media ${device.desktopR} {
         transition: all 0.3s ease-in-out;
-    }
         flex-direction: column
     }   
 `

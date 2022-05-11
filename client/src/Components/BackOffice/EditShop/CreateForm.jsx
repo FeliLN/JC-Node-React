@@ -16,13 +16,13 @@ const CreateForm = ({ product }) => {
         Genero: '',
         Descripcion: '',
         Precio: '',
-        Imagen: [],
-        Imagen2: [],
-        Imagen3: [],
-        Imagen4: [],
         Tags: '',
         FacebookURL: '',
         InstagramURL: '',
+        Imagen1: '',
+        Imagen2: '',
+        Imagen3: '',
+        Imagen4: '',
     })
     const [submit, setSubmit] = React.useState(false)	
     const [loaded, setLoaded] = React.useState(false)
@@ -54,24 +54,56 @@ const CreateForm = ({ product }) => {
             validate={validate}
             onSubmit={ async (values, { setSubmitting }) => {
                 setSubmitting(false);
-                uploadImage(values.file, product)
+                uploadImage(values.Imagen1, product)
+                if(values.Imagen2 !== ''){
+                uploadImage(values.Imagen2, product)
+                }
+                if(values.Imagen3 !== ''){
+                    console.log('entro')
+                uploadImage(values.Imagen3, product)
+                }
+                if(values.Imagen4 !== ''){
+                uploadImage(values.Imagen4, product)
+                }
                 Swal.fire({
-                    title: 'Subiendo Imagen...',
+                    title: 'Subiendo Imagenes...',
                 })
                 Swal.showLoading()
                 setTimeout( async () => {
-                    await getImages(values.file, product).then(res => {
-                        setNewItem({
-                            ...values, 
-                            Imagen: res, 
-                            file: null
-                        })
-                        Swal.fire({
-                            title: 'Subido!',
-                            text: 'La imagen se ha subido correctamente',
-                            type: 'success',
-                            timer: 500
-                            })
+                    let images = []
+                    await getImages(values.Imagen1, product).then(res => {
+                        images.push(res)
+                    })
+                    if(values.Imagen2 !== ''){
+                    await getImages(values.Imagen2, product).then(res => {
+                        images.push(res)
+                    })
+                    }
+                    if (values.Imagen3 !== '') {
+                    await getImages(values.Imagen3, product).then(res => {
+                        console.log(res)
+                        images.push(res)
+                    })
+                    }
+                    if (values.Imagen4 !== '') {
+                    await getImages(values.Imagen4, product).then(res => {
+                        images.push(res)
+                    })
+                    }
+                    console.log(images)
+                    setNewItem({
+                        ...values,
+                        Imagen1: images[0],
+                        Imagen2: images[1] ? images[1] : '',
+                        Imagen3: images[2] ? images[2] : '',
+                        Imagen4: images[3] ? images[3] : '',
+                    })
+
+                    Swal.fire({
+                        title: 'Subido!',
+                        text: 'La imagen se ha subido correctamente',
+                        type: 'success',
+                        timer: 500
                     })
                     setSubmit(true)
                 }, 3000)
@@ -144,37 +176,37 @@ const CreateForm = ({ product }) => {
                         <section className='Image-input'>
                             <section>
                                 <label>Imagen 1 </label>
-                                <input type="file" onChange={(event) => setFieldValue('file', event.target.files[0])}/>
+                                <input type="file" onChange={(event) => setFieldValue('Imagen1', event.target.files[0])}/>
                             </section>
                         <section className='image-section'>
-                            {values.file ? <ImagePreview file={values.file} /> : 'No hay imagen'  } 
+                            {values.Imagen1 ? <ImagePreview file={values.Imagen1} /> : 'No hay imagen'  } 
                             </section>
                         </section>
                         <section className='Image-input'>
                             <section>
                                 <label>Imagen 2 </label>
-                                <input type="file" onChange={(event) => setFieldValue('file', event.target.files[0])}/>
+                                <input type="file" onChange={(event) => setFieldValue('Imagen2', event.target.files[0])}/>
                             </section>
                         <section className='image-section'>
-                            {values.file ? <ImagePreview file={values.file} /> : 'No hay imagen'  } 
+                            {values.Imagen2 ? <ImagePreview file={values.Imagen2} /> : 'No hay imagen'  } 
                             </section>
                         </section>
                         <section className='Image-input'>
                             <section>
                                 <label>Imagen 3 </label>
-                                <input type="file" onChange={(event) => setFieldValue('file', event.target.files[0])}/>
+                                <input type="file" onChange={(event) => setFieldValue('Imagen3', event.target.files[0])}/>
                             </section>
                         <section className='image-section'>
-                            {values.file ? <ImagePreview file={values.file} /> : 'No hay imagen'  } 
+                            {values.Imagen3 ? <ImagePreview file={values.Imagen3} /> : 'No hay imagen'  } 
                             </section>
                         </section>
                         <section className='Image-input'>
                             <section>
                                 <label>Imagen 4 </label>
-                                <input type="file" onChange={(event) => setFieldValue('file', event.target.files[0])}/>
+                                <input type="file" onChange={(event) => setFieldValue('Imagen4', event.target.files[0])}/>
                             </section>
                         <section className='image-section'>
-                            {values.file ? <ImagePreview file={values.file} /> : 'No hay imagen'  } 
+                            {values.Imagen4 ? <ImagePreview file={values.Imagen4} /> : 'No hay imagen'  } 
                             </section>
                         </section>
                     </section>

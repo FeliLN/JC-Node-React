@@ -7,10 +7,9 @@ import ProductWindow from './ProductWindow';
 import { getProducts } from '../../Service/publicApiService';
 import { Pagination } from '@mui/material';
 
-const Shop = ({shop}) => {
+const Shop = ({shop, search, setSearch}) => {
     
     const [products, setProducts] = React.useState([]);
-    const [search, setSearch] = React.useState('');
     const [ searchItems, setSearchItems ] = React.useState([]);
     const [page, setPage] = React.useState(1);
     const [pages, setPages] = React.useState(0);
@@ -52,7 +51,13 @@ const Shop = ({shop}) => {
                     setPages={setPages}
                     />
                     <PageSection>
-                    <Pagination  variant='outlined' count={pages} page={page} onChange={handleChange}/>
+                    <Pagination  variant='outlined' 
+                        count={pages} 
+                        page={page} 
+                        onChange={handleChange}
+                        hidePrevButton 
+                        hideNextButton
+                        />
                     </PageSection>
             </ShopStyle>
             <PayMethod /> 

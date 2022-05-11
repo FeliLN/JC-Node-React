@@ -6,7 +6,7 @@ import  EditModal  from './EditModal'
 
 const DataTable = ({items, product, setItems}) => {
   const [itemTable, setItemTable] = React.useState(items)
-  console.log(items)
+  const [loading, setLoading] = React.useState(true)
   const [ itemEdit, setItemEdit ] = React.useState({
     ID: '',
     Album: '',
@@ -37,7 +37,7 @@ const DataTable = ({items, product, setItems}) => {
     },
     { field: 'Genero', headerName: 'Genero', width: 130  },
     { field: 'Stock', headerName: 'Stock', width: 50, align: 'center', renderCell: (row) => <>{row ? 'SI' : 'NO'}</> },
-    { field: 'Imagen', headerName: 'Imagen', width: 70, renderCell: (params) => <img src={params.value} alt='' style={{width:'50px', height: '50px'}} />, },
+    { field: 'Imagen1', headerName: 'Imagen', width: 70, renderCell: (params) => <img src={params.value} alt='' style={{width:'50px', height: '50px'}} />, },
     { field: 'Tags', headerName: 'Tags', width: 400  },
     { field: 'Descripcion', headerName: 'Descripcion', width: 400  },
     { field: 'Acciones', headerName: 'Acciones', width: 150, renderCell: (params) => <>{deleteButton(params)}{editButton(params)}</> },
@@ -67,6 +67,7 @@ const DataTable = ({items, product, setItems}) => {
   }
 
   const deleteButton =  (params) =>{
+    let id = params.row.id
     return(
       <button onClick={() => {
         Swal.fire({
@@ -85,26 +86,28 @@ const DataTable = ({items, product, setItems}) => {
             })
             Swal.showLoading()
             setTimeout(() => {
-              deleteProduct(params.id, params)
-              Swal.fire({
-                title: 'Eliminado correctamente',
-                icon: 'success',
-                timer: 500
-              })
+              deleteProduct(id, product)
               setItems(items.filter(item => item.id !== params.id))
             }, 500)
           }
         })
       } }>Eliminar</button>
   )}
-  const editButton = (item, params) =>{
+  const editButton = (params) =>{
     return(
       <button onClick={() => {
-        setItemEdit(item)
+        setItemEdit(params.row)
         setEdit(true)
       }}>Editar</button>
     )
   }
+
+  React.useEffect(() => {
+    setInterval(() => {
+      setLoading(false)
+    }, 2000)
+  }, [])
+
   return (
     <div style={{ height: 600, width: '100%' }}>
       <input type="search" placeholder="Buscar por Album"  onChange={(e) =>{ searchByAlbum(e)}}  />
@@ -120,14 +123,14 @@ const DataTable = ({items, product, setItems}) => {
         columns={columns}
         pageSize={6}
         rowsPerPageOptions={[6]}
-        checkboxSelection
+
       /> :
       <DataGrid
         rows={items}
         columns={columns}
         pageSize={6}
         rowsPerPageOptions={[6]}
-        checkboxSelection
+        loading = {loading}
       />}
       {edit && 
               <EditModal
@@ -136,7 +139,7 @@ const DataTable = ({items, product, setItems}) => {
                 setEdit={setEdit} 
                 product={product}
               />}
-    </div>
+      </div>
     
   );
 }
