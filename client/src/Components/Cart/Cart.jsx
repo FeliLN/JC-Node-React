@@ -105,8 +105,8 @@ const CartWindow = styled.div`
     box-shadow: 0px 0px 10px #000000;
     border: 1px solid #000000; 
     text-align: center;
-    animation: slidein 3s both;
-    @keyframes slidein {
+    animation: slide 1s both;
+    @keyframes slide {
         from {
             height: 0px;
             margin-top: 0px;
@@ -158,9 +158,9 @@ const Title = styled.div`
 
     width: 100%;
     height: 100%;
-    background-color: #f5f5f5;
     border-radius: 10px; 
-    animation: cassetteslide 1s 0.3s both;
+    background-color: #f5f5f5;
+    animation: cassetteslide 1s 1s both;
     z-index:-10; 
     table {	
         
@@ -175,10 +175,10 @@ const Title = styled.div`
 
     @keyframes cassetteslide {
         from {
-            height: 0px;
+            opacity: 0;
         }
         to {
-            height: 800px;
+            opacity: 1;
         }
     }
     @media ${device.laptopL} { 
@@ -213,6 +213,7 @@ const Total = styled.div`
     box-shadow: 0px 0px 10px #000000;
     width: 100%;
     z-index: 10;
+    animation: cassetteslide 1s 1s both;
     @media ${device.laptopL} {
       margin-top: 10px;
         height: 50px;
