@@ -275,41 +275,6 @@ export const deleteNovedades = async (id) => {
     }
 }
 
-export const getNosotros = async () => {
-    try {
-        const data = await getDocs(collection(db, 'Nosotros'));
-        return data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    } catch (error) {
-        Swal.fire({
-            title: 'Error',
-            text: 'No se pudo obtener la información',
-            icon: 'error',
-            confirmButtonText: 'Ok',
-            timer: 2000
-        })
-    }
-}
-
-export const updateNosotros = async (id, newData) => {
-    try {
-        Swal.fire({
-            title: 'Información actualizada',
-            text: 'La información se ha actualizado correctamente',
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
-            timer: 2000
-            })
-        await updateDoc(doc(db, 'Nosotros', id), newData);
-    } catch (error) {
-        Swal.fire({
-            icon: 'error',
-            timer: 3000,
-            title: 'Algo salió mal :S',
-            text: 'La edición no se ha podido realizar',
-            })
-    }
-}
-
 export const getVentas = async () => {
     try {
         const data = await getDocs(collection(db, 'Compras'));

@@ -5,6 +5,9 @@ import { CartState } from '../../Context';
 import ReactImageMagnify from 'react-image-magnify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes  } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import ImageCarousel from './ImageCarousel';
+
 
 const ItemSelected = () => {
 
@@ -27,11 +30,12 @@ const ItemSelected = () => {
             <Close onClick={() => setModal(false)}><FontAwesomeIcon icon={faTimes} /></Close>
             <ContainerLeft>
                 <ReactImageMagnify style={{ marginLeft: '20px'}} {...{
-                    
                     smallImage: {
                         alt: '',
                         isFluidWidth: true,
                         src: modalItem.Imagen,
+                        width: 10,
+                        height: 1
                     },
                     largeImage: {
                         src: modalItem.Imagen,
@@ -39,6 +43,7 @@ const ItemSelected = () => {
                         height: 1800
                     }
                 }} />
+                <ImageCarousel item={modalItem} />
             </ContainerLeft>
             <ContainerRight>
                 <Title>{modalItem.Artista}</Title>
@@ -48,6 +53,14 @@ const ItemSelected = () => {
                 <Description>{modalItem.Descripcion}</Description>
                 <Tags>{modalItem.Tags}</Tags>
                 <Button onClick={() => addToCart(modalItem)}>AÑADIR AL CARRITO</Button>
+                <section>
+                <a href={modalItem.FacebookURL} >
+                        <Facebook icon={faFacebookF} className='Facebook'/>
+                    </a>
+                    <a href={modalItem.InstagramURL} >    
+                        <Instagram icon={faInstagram} className='Instagram' />
+                    </a>
+                    </section>
             </ContainerRight>
         </Card>
     </Modal>
@@ -125,7 +138,7 @@ const ContainerLeft = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 500px;
     width: 100%;
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -190,7 +203,7 @@ const Tags = styled.p`
 
 
 const Button = styled.button`
-    background-image:linear-gradient(97deg, #b9801d 0%, rgba(179,135,40,1) 26%, rgba(191,149,63,1) 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
+    background-image:linear-gradient(97deg, #daa520 0%, #d6a322 26%, #d8a72c 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
     background-size: 100% auto;
     color: #000;
     border: 1px solid #000;
@@ -205,5 +218,57 @@ const Button = styled.button`
         background-size: 140% auto;
         color: #fff;
         text-shadow: 0px 0px 5px #000;
+    }
+`
+
+// //FA Icon
+const Facebook = styled(FontAwesomeIcon)`
+    color: #0a0a0a;
+    width: 50px !important;
+    height: 50px !important;
+    padding: 5px;
+    font-size: 2.3rem;
+    margin-top: 20px;
+    margin-right: 2rem;
+    border: 3px solid #0a0a0a;
+    border-radius: 50%;
+    background-color:transparent;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+    -webkit-transform: scaleX(1) !important;
+    transform: scaleX(1)  !important;
+    &:hover {
+        color: #fff;
+        transform: scale(1.1) !important;
+        padding: 7px;
+        cursor: pointer;
+        border: none;
+        background: #1e5799; 
+        background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 73%, #7db9e8 100%); 
+        background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 73%,#7db9e8 100%); 
+        background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 73%,#7db9e8 100%); 
+    }
+`
+const Instagram = styled(FontAwesomeIcon)`
+    color: #0a0a0a;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    background-color:transparent ;
+    border: 3px solid #0a0a0a;
+    padding: 3px;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    transition: all .2s ease-in-out;
+    -webkit-transform: scaleX(1) !important;
+     transform: scaleX(1) !important;
+    &:hover {
+         color: #fff; 
+         transform: scale(1.1) !important;
+        cursor: pointer;
+        background: #d6249f;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        border: none;
+        padding: 5px;
     }
 `

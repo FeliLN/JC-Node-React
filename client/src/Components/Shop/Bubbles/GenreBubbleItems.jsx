@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const GenreBubbleItems = ({products, setSearch, setSearchItems}) => {
 
-  let genres = ['Rock','Funk','Pop','Punk','Heavy Metal','Jazz','Electronica','Cumbia', 'Reggae', 'Ska'];
+  let genres = ['Rock','Funk','Pop','Punk','Heavy Metal','Jazz','Rap','Electronica','Cumbia', 'Reggae'];
   const [subGenresModal, setSubGenresModal] = React.useState(false);
   const [genre, setGenre] = React.useState('');
 
@@ -19,7 +19,7 @@ const GenreBubbleItems = ({products, setSearch, setSearchItems}) => {
   }
   const searchBySubgenre = (subgenre) => {
     setSearch(true)
-    setSearchItems(products.filter(product => product.Tags.includes(subgenre)))
+    setSearchItems(products.filter(product => product.Tags.includes(subgenre.toLowerCase())))
     if(subgenre === ''){
         setSearch(false)
         setSearchItems(products)
@@ -30,34 +30,37 @@ const GenreBubbleItems = ({products, setSearch, setSearchItems}) => {
     let subGenres = [];
     switch(genre) {
         case 'Rock':
-            subGenres = ['Rock','Classic Rock','Grunge','Hard Rock','Metal','Progressive Rock','Rock & Roll','Rockabilly','Rocksteady','Singer-Songwriter','Ska','Ska Punk','Speed Metal','Surf','Thrash Metal','Traditional Rock','Vocal','World'];
+            subGenres = ['Rock', 'Country Rock','Funk Rock', 'Folk Rock','Glam Rock', 'Garage Rock', 'Grunge','Hard Rock','Heavy Metal','Indie Folk','Industrial', 'New Wave','Jazz Rock','Rock Alternativo','Rock Indie','Rock Nacional','Rock Progresivo','Rock Psicodelico','Rock & Roll','Rockabilly','Rocksteady','Punk','Surf'];
             break;  
         case 'Funk':
-            subGenres = ['Funk','Blues','Classic Funk','Funk / Soul','Funk Metal','Funk Rock','Garage','Glam','Hard Funk','Hard Rock','Jazz Funk','Jazz Funk / Soul','Jazz Rock','Mellow','Ska','Soul','Soul Funk'];
+            subGenres = ['Funk','Funk Metal','Funk Rock','Hard Funk','Jazz Funk','R&B','Soul','Soul Funk', 'Disco', 'Neo Soul'];
             break;
         case 'Pop':
-            subGenres = ['Pop','Adult Contemporary','Alternative','Ambient','Ballad','Bass'];
+            subGenres = ['Britpop','Dance', 'Disco', 'Electropop', 'Pop', 'Pop Punk', 'Pop Rock','UK Garage', 'Urbano', 'Pop Latino', 'New Age', 'R&B', 'Synth Pop', 'New Age', 'New Wave'];
             break;
         case 'Punk':
-            subGenres = ['Punk','Alternative','Alternative Rock','Anime','Black Metal','Britpop','Crossover','Death Metal','Doom Metal','Drone','Electronic','Experimental','Heavy Metal','Industrial','Industrial Metal'];
+            subGenres = ['Punk','Experimental','Industrial','Noise', 'Hardcore', 'Post Punk', 'Garage', 'Grunge', 'New Wave', 'Trashcore', 'Grindcore'];
             break;
         case 'Heavy Metal':
-            subGenres = ['Heavy Metal','Black Metal','Death Metal','Doom Metal','Doomcore','Experimental','Folk'];
+            subGenres = ['Heavy Metal','Black Metal','Death Metal','Doom Metal','Doomcore','Hard Rock', 'Hardcore', 'Grindcore', 'Trash Metal', 'Power Metal', 'Speed Metal', 'Glam Metal', 'Nu Metal', 'Stoner'];
             break;
         case 'Jazz':
-            subGenres = ['Jazz','Acid Jazz','Avant-Garde','Big Band','Bop','Cajun','Calypso'];
+            subGenres = ['Jazz','Acid Jazz','Bossa Nova','Big Band','Bebop', 'Hot Jazz','Swing','Free Jazz','Jazz Fusion', 'Jazz Funk', 'Soul', 'Blues', 'Jazz Latino'];
+            break;
+        case 'Rap':
+            subGenres = ['Rap', 'Rap Metal', 'Hip Hop', 'Trap', 'Rap Latino']
             break;
         case 'Electronica':
-            subGenres = ['Electronica','Techno','Trance','Tribal','World'];
+            subGenres = ['Electronica','Techno','Trance', 'New Wave', 'New Age', 'Pop', 'House', 'Drum and Bass', 'Ambient', 'Synthpop'];
             break;
         case 'Cumbia':
-            subGenres = ['Cumbia','Techno','Trance','Tribal','World'];
+            subGenres = ['Cumbia','Cumbia villera','Cumbia Argentina', 'Cumbia Latinoamericana', 'Axe', 'Merengue', 'Bachata'];
             break;
         case 'Reggae':
-            subGenres = ['Reggae'];
+            subGenres = ['Reggae', 'Reggae Roots', 'Dub', 'Dancehall', 'Regueton', 'Ragga', 'Samba Reggae', 'Ska', 'Rocksteady' ];
             break;
         default:
-            subGenres = []
+            subGenres = [];
              break; 
 
     }

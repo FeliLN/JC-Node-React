@@ -4,8 +4,6 @@ import Johnny from '../Images/johnnycash.png'
 //Componentes
 import Footer from '../Footer/Footer';
 import Header from './Header/Header';
-
-//Componentes Shop
 import Shop from '../Shop/Shop';
 
 // styled components
@@ -22,7 +20,7 @@ import axios from 'axios';
 export const Home = () => {
     const [shop, setShop] = useState([]);
     const [shopEnabled, setShopEnabled] = useState(false);
-    
+    const [search, setSearch] = React.useState(null);
     const [searchItems, setSearchItems] = useState([]);
     const [searchEnabled, setSearchEnabled] = useState(false);
 
@@ -50,12 +48,14 @@ export const Home = () => {
                     searchItems={searchItems}
                     setSearchEnabled={setSearchEnabled}
                     searchEnabled={searchEnabled}
+                    setSearch={setSearch}
+                    search={search}
                 />
                 <JohnnyCash src={Johnny} alt='JohnnyCash' />
             </HeaderStyle>
             <MidTop/>
             <ShopStyle className='Shop'>
-                { shopEnabled && <Shop shop={shop} /> }
+                { shopEnabled && <Shop shop={shop} search={search} setSearch={setSearch}/> }
             </ShopStyle>
             <MidBot />
             <FooterStyle className='Footer'>

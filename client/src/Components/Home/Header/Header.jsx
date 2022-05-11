@@ -22,7 +22,7 @@ import  { device, size } from '../../Breakpoints'
 
 const Header = (props) => {
 
-    const {  setLoading } = CartState()
+    const { setLoading } = CartState()
     const [barsEnabled, setBarsEnabled] = useState(false);
 
     const cdRef = useRef(null);
@@ -32,6 +32,7 @@ const Header = (props) => {
     const cassettesRef = useRef(null);
 
     const clickIcon = (e, ref) => {
+        props.setSearch(null)
         props.setShop(e)
         props.setShopEnabled(true);
         if (props.shop === e){
@@ -99,7 +100,7 @@ const Header = (props) => {
                                 <StyledLink to='/Contact'>CONTACTO</StyledLink>
                             </Contact>
                             <Support className='Support'>
-                                <StyledLink to='/AcercaDeNosotros'>ACERCA DE</StyledLink>
+                                <StyledLink to='/AcercaDeNosotros'>QUIENES SOMOS</StyledLink>
                             </Support>
                         </SectionEnabled>
                     }
@@ -261,7 +262,7 @@ const LinkSection = styled.section`
 `
 const SectionEnabled = styled.section`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: auto;
     width: 100%;
@@ -298,7 +299,7 @@ const StyledLink = styled(Link)`
        }
 `
 const Contact = styled.section`
-    width : 120px;
+    width : 160px;
     margin-right: 100px;
     transition: all 0.3s ease-in-out;
     &:hover {
@@ -307,7 +308,7 @@ const Contact = styled.section`
     }
 `
 const Support = styled.section`
-    width : 120px;
+    width : 160px;
     transition: all 0.3s ease-in-out;
     &:hover {
         cursor: pointer;

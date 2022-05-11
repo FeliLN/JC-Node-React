@@ -35,7 +35,7 @@ const Payment = () => {
         )
     }, [])
 
-    const [values, setValues] = React.useState({
+    let values = {
         name: '',   // sin numeros ni caracteres especiales, minimo 4 caracteres
         email: '',
         telefono: '', // que contenga 10 digitos
@@ -43,7 +43,7 @@ const Payment = () => {
         ciudad: '',
         provincia: '',
         codigoPostal: '', // que contenga 4 digitos
-    });
+    }
     const [validationSuccess, setValidationSuccess] = React.useState(false)
 
     return (

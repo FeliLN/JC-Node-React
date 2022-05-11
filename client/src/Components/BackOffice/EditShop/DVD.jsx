@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header'
 import { getProducts } from '../../../Service/publicApiService'
 import CreateForm from "./CreateForm"
-import Table from "./Table"
+import TableMui from "./TableMui"
 
 
 const DVD = () => {
@@ -25,7 +25,7 @@ const DVD = () => {
         {showCreate &&  <CreateForm product={product}/>}
         </EditDVD>
 
-        <Table items={dvds} setItems={setDvds} product={product} />
+        <TableMui items={dvds} setItems={setDvds} product={product}  />
 
     </div>
   )
