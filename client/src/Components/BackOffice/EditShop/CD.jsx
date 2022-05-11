@@ -9,6 +9,7 @@ import TableMui from "./TableMui"
 const CD = () => {
     const [cds, setCds] = React.useState([])
     const product = 'CD'
+    const [showCreate, setShowCreate] = React.useState(false)
 
     React.useEffect(() => {
         getProducts(product).then(data => {
@@ -18,14 +19,13 @@ const CD = () => {
 
   return (
     <div>
-        <Header/>
-        <h1>CD</h1>
-        <EditCD>
-            <CreateForm product={product}/>
+        <Header title='CD'/>
+        <EditCD showCreate={showCreate}>
+           <button onClick={() => setShowCreate(!showCreate)} >{showCreate ? 'Cerrar Formulario' : 'Crear CD'} </button>
+          {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
         {/* <Table items={cds} setItems={setCds} product={product} /> */}
         <TableMui items={cds} setItems={setCds} product={product}  />
-
     </div>
   )
 }
@@ -35,8 +35,26 @@ export default CD
 const EditCD = styled.div`
     color: #fff;
     background-color: #000;
-    height: 300px;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    transition: 1s;
+    color: #FFFFFF;
+    text-align: center;
+
+    ${({ showCreate }) => showCreate && `
+        height: 800px;
+    `}
+
+    button {
+        width: 150px;
+        height: 50px;
+        color: #fff;
+        background-color: goldenrod;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 `

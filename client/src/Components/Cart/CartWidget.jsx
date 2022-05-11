@@ -9,8 +9,6 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 
 import styled from 'styled-components'
-// import {device} from '../Breakpoints'
-
 
 const CartWidget = () => {
 
@@ -37,20 +35,19 @@ const CartWidget = () => {
         })
 
     }
-
   return (
-     
     <Dropdown onClick={() => setCartList(cartItems ? JSON.parse(cartItems) : [])}>
-        <Dropdown.Toggle variant="success" id="dropdown-basic" >
-            <FontAwesomeIcon icon={faShoppingCart} />
-            <Badge>{items}</Badge>
-        </Dropdown.Toggle>
+        <DropDown>
+            <FontAwesomeIcon size='2x' style={{marginRight: '5px'}} icon={faShoppingCart} />
+            { items !== 0 && items}
+        </DropDown>
+
         <Dropdown.Menu style={{ minWidth: 500}}>
             
             <Menu>
                 {cartList.length > 0 ? 
                     cartList.map (item => (
-                        <div key={item.id}>
+                        <section key={item.id}>
                             <span className='close'>
                                 <Button onClick={() =>  confirmDelete(item.ID)}>
                                     <FontAwesomeIcon icon={faTimes} />
@@ -62,12 +59,12 @@ const CartWidget = () => {
                             <span>{item.Album}</span>
                             <span>{item.Artista}</span>
                             <span className='precio'>{" "}{formatPeso(item.Precio)}</span>
-                        </div>
+                        </section>
                     ))  
                 : <h1>No hay productos en el carrito</h1>}
                 <h1>Total: {formatPeso(total)}</h1>
                 {items === 0 ? null : 
-                <button onClick={() => {
+                <button className='cart-button' onClick={() => {
                     navigate('./Cart');
                     axios.post('http://localhost:5000/pay')
                     .then(response => {
@@ -77,12 +74,11 @@ const CartWidget = () => {
                         console.log(error);
                     });
                 }
-                }>
-                    Ir al Carrito
+                }> IR AL CARRITO
+                 <FontAwesomeIcon  icon={faShoppingCart} />  
                 </button>
                 }
             </Menu>
-            
         </Dropdown.Menu>
     </Dropdown>
     )
@@ -99,18 +95,21 @@ const Menu = styled.span`
     width: 100%;
     height: 100%;
     padding: 10px;
+    margin-top: -15px ;
+    margin-bottom: -10px ;
+    border-radius: 10px;
     background-color: #0a0a0a;
     color: #0a0a0a;
     font-size: 1rem;
     font-weight: bold;
-    div{
+    section{
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 100%;
         padding: 10px;
-        background-color: #fff;
+        background-color: #f5f5f5;
         border-radius: 10px;
         margin: 10px 0;
     }
@@ -124,7 +123,7 @@ const Menu = styled.span`
         font-size: 1.7rem;
         font-weight: bold;
         color: #0a0a0a;
-        background-color: #fff;
+        background-color: #f5f5f5;
         border-radius: 10px;
     }
     span{
@@ -142,20 +141,58 @@ const Menu = styled.span`
         width: 100px;
         margin-left: 10px;
     }
+    .cart-button{
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        background-image:linear-gradient(97deg, #daa520 0%, #d6a322 26%, rgba(251,245,183,1) 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
+        background-size: 100% auto;
+        color: #0a0a0a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .cart-button:hover{
+        transform: scale(1.02);
+        color: #fff;
+        background-size: 200% auto;
+
+    }
+
+
     `
 const Button = styled.button`
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #0a0a0a;
-border-radius: 60px;
-border: 0px solid #fff;
-margin: 4px 4px 4px 0 ;   
-width: 30px;
-height: 30px;
-color: #fff;
-.SearchIcon:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a;
+    border-radius: 60px;
+    border: 0px solid #fff;
+    margin: 4px 4px 4px 0 ;   
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    .SearchIcon:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+`
+
+const DropDown = styled(Dropdown.Toggle)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a;
+    border: 0px solid #fff;
+    margin: 4px 4px 4px 0 ;
+
+    color: #fff;
+
+    &:hover {
+        cursor: pointer;
+        background-color: goldenrod;
+        border: none;
+    }
 `

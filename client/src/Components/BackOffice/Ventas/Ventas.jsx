@@ -44,8 +44,7 @@ const Ventas = () => {
 
   return (
     <VentaWindow>
-        <Header/>
-        <h1>Ventas</h1>
+        <Header title='VENTAS'/>
         <>
             {ventas && ventas.map(venta => {
                 return (
@@ -56,7 +55,7 @@ const Ventas = () => {
                             <p>Email: {venta.values.email}</p>
                             <p>Telefono: {venta.values.telefono}</p>
                             <p>Dirección: {venta.values.direccion}, {venta.values.ciudad}, {venta.values.provincia}, Argentina - {venta.values.codigoPostal} </p>
-                            <button onClick={() => confirmDelete(venta.id)}>Eliminar venta</button>
+                            <button className='eliminar' onClick={() => confirmDelete(venta.id)}>Eliminar venta</button>
                         </div>
                         <div >
                             <h2>Productos</h2>
@@ -93,6 +92,7 @@ const VentaSlot = styled.div`
     border : 4px solid #000;
     border-radius: 10px;
     margin: 10px auto;
+    background-color: #f5f5f5;
 
     .Datos{
         display: flex;
@@ -129,6 +129,24 @@ const VentaSlot = styled.div`
         collapse: true;
         text-align: center;
     }
+    .eliminar{
+        width: 150px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+        background-color: #383838;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: red;
+            color: white;
+        }
+    }
 `
 
 const VentaWindow = styled.div`
@@ -137,4 +155,5 @@ const VentaWindow = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
+    background-color: #0a0a0a;
 `

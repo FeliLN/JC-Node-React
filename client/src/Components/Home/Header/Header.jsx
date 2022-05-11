@@ -227,9 +227,10 @@ const Bars = styled.section`
 const JohhnnyCash = styled.img`
     display: flex;
     justify-content: center;
+    margin-top: 80px;
     @media ${device.laptopL} {
-        width: 10vw;
-        height: 5vw;
+        width: 16vw;
+        height: 8vw;
     }
     @media ${device.desktopR} and (max-width: ${size.laptopL}) {
         width: 8vw;

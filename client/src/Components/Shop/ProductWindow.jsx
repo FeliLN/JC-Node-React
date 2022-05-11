@@ -82,7 +82,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                         setModal(true);
                         setModalItem(product)
                     }}>
-                        <FontAwesomeIcon icon={faList} />
+                        <FontAwesomeIcon  icon={faList} />
                     </Button>
                 </Card>
             ))}
@@ -174,7 +174,7 @@ const Img = styled.img`
     object-fit: cover;
 `
 const Button = styled.button`
-    background-image:linear-gradient(97deg, #b9801d 0%, rgba(179,135,40,1) 26%, rgba(191,149,63,1) 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
+    background-image:linear-gradient(97deg, #daa520 0%, #d6a322 26%, #d8a72c 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
     background-size: 100% auto;
     color: #000;
     border: 1px solid #000;

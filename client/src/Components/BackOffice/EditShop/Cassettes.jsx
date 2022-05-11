@@ -9,6 +9,7 @@ import Table from "./Table"
 const Cassettes = () => {
     const [cassettes, setCassettes] = React.useState([])
     const product ='Cassettes'
+    const [showCreate, setShowCreate] = React.useState(false)
 
     React.useEffect(() => {
         getProducts(product).then(data => {
@@ -19,10 +20,11 @@ const Cassettes = () => {
 
   return (
     <div>
-        <Header/>
-        <h1>CASSETTES</h1>
-        <EditCD>
-            <CreateForm product={product} />
+        <Header title='CASSETTES'/>
+
+        <EditCD showCreate={showCreate}>
+        <button onClick={() => setShowCreate(!showCreate)} >{showCreate ? 'Cerrar Formulario' : 'Crear Cassette'} </button>
+          {showCreate &&  <CreateForm product={product}/>}
         </EditCD>
 
         <Table items={cassettes} setItems={setCassettes} product={product} />
@@ -36,8 +38,26 @@ export default Cassettes
 const EditCD = styled.div`
     color: #fff;
     background-color: #000;
-    height: 300px;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    transition: 1s;
+    color: #FFFFFF;
+    text-align: center;
+
+    ${({ showCreate }) => showCreate && `
+        height: 800px;
+    `}
+
+    button {
+        width: 150px;
+        height: 50px;
+        color: #fff;
+        background-color: goldenrod;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 `

@@ -3,7 +3,7 @@ import "./SideBar.css";
 import styled from 'styled-components'
 import { useNavigate } from "react-router-dom"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingBag,  faPlus, faUserFriends, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBag,  faPlus, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import { getNotifiaciones, updateNotificacion } from "../../../Service/publicApiService";
 
 
@@ -56,11 +56,6 @@ export default function Sidebar() {
             <FontAwesomeIcon icon={faPhoneAlt}/>
               Contacto
             
-            </Buttons>
-            <Buttons onClick={() => navigate('/backoffice/Nosotros')}>
-            <FontAwesomeIcon icon={faUserFriends}/>
-              Nosotros
-              <FontAwesomeIcon icon="fa-solid fa-cassette-tape" />
             </Buttons>
 
           </ul>

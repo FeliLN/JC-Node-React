@@ -40,7 +40,7 @@ const Messages = () => {
 
   return (
     <MessageWindow>
-      <Header/>
+      <Header title='MENSAJES'/>
         <h1>Mensajes</h1>
         <>
             {messages.map(message => {
@@ -50,7 +50,7 @@ const Messages = () => {
                         <p>Email: {message.Mail}</p> 
                         <p>Telefono: {message.Telefono}</p>
                         <section className='Mensaje'>
-                            <h4>Mensaje: </h4><p>{message.Mensaje}</p>
+                            <h4>Mensaje: </h4><h5>{message.Mensaje}</h5>
                         </section>
                         <button onClick={() => confirmDelete(message.id)} className='eliminar'>Eliminar</button>
                     </div>
@@ -71,6 +71,7 @@ const MessageWindow = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
+    background-color: #0a0a0a;
 
     .Mensajes{
         display: flex;
@@ -78,6 +79,7 @@ const MessageWindow = styled.div`
         width: 95%;
         height: 350px;
         border : 4px solid #000;
+        background-color: #f5f5f5;
         border-radius: 10px;
         margin: 10px auto;
         padding: 10px 20px;
@@ -85,9 +87,23 @@ const MessageWindow = styled.div`
     .Mensaje{
         width: 100%;
         height: 250px;
-    }
+     }
     .eliminar{
         width: 100px;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #383838;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: red;
+            color: white;
+        }
     }
 `
 

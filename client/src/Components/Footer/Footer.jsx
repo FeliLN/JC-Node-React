@@ -107,7 +107,7 @@ const FooterStyle = styled.div`
     height: 66vh;
     z-index: 1;
     justify-content: space-evenly;
-    background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
     @media ${device.laptopL}  { 
         height: 65.7vh;
 

@@ -7,7 +7,7 @@ import JCdraw from '../Images/JCdraw.png'
 const DashBoard = () => {
   return (
     <div >
-        <Header/>
+        <Header title='INICIO'/>
         <main>
         <SideBarDashBoard/>
         <JCdrawstyled src={JCdraw} alt='JCdraw'/>
