@@ -22,7 +22,8 @@ import DVD from './Components/BackOffice/EditShop/DVD';
 import Vinilos from './Components/BackOffice/EditShop/Vinilos';
 import Cassettes from './Components/BackOffice/EditShop/Cassettes';
 import Libros from './Components/BackOffice/EditShop/Libros';
-
+import Login from './Components/Auth/Login';
+import Auth from './Components/Auth/Auth';
 
 function App() {
   return (
@@ -32,20 +33,23 @@ function App() {
           <Route path="Contact" element={<Contact />} />
           <Route path="AcercaDeNosotros" element={<Nosotros />} />
           <Route path="Cart" element={<Cart />} />
-          <Route path="Backoffice" element={<DashBoard />} />
-          <Route path="/backoffice/Shopping" element={<EditShop />} />
-          <Route path="/backoffice/Contacto" element={<EditContacto />} />
-          <Route path="/backoffice/Novedades" element={<EditNovedades />} />
-          <Route path="/backoffice/Shopping/CD" element={<CD />} />
-          <Route path="/backoffice/Shopping/DVD" element={<DVD />} />
-          <Route path="/backoffice/Shopping/Vinilos" element={<Vinilos />} />
-          <Route path="/backoffice/Shopping/Cassettes" element={<Cassettes />} />
-          <Route path="/backoffice/Shopping/Libros" element={<Libros />} />
-          <Route path="/backoffice/Contacto/Editar" element={<EditContactForm />} />
-          <Route path="/backoffice/Contacto/Mensajes" element={<Messages/>} />
-          <Route path="/backoffice/Novedades/Editar" element={<EditNovedadesForm />} />
-          <Route path="/backoffice/Novedades/Crear" element={<CreateNovedades />} />
-          <Route path="/backoffice/Ventas" element={<Ventas />} />
+          {/* Validar */}
+          <Route path="Login" element={<Login />} />
+          {Auth() && <Route path="Backoffice" element={<DashBoard />} />}
+          {Auth() && <Route path="/backoffice/Shopping" element={<EditShop />} />}
+          {Auth() && <Route path="/backoffice/Contacto" element={<EditContacto />} />}
+          {Auth() && <Route path="/backoffice/Novedades" element={<EditNovedades />} />}
+          {Auth() && <Route path="/backoffice/Shopping/CD" element={<CD />} />}
+          {Auth() && <Route path="/backoffice/Shopping/DVD" element={<DVD />} />}
+          {Auth() && <Route path="/backoffice/Shopping/Vinilos" element={<Vinilos />}/>}
+          {Auth() && <Route path="/backoffice/Shopping/Cassettes" element={<Cassettes />} />}
+          {Auth() && <Route path="/backoffice/Shopping/Libros" element={<Libros />} />}
+          {Auth() && <Route path="/backoffice/Contacto/Editar" element={<EditContactForm />} />}
+          {Auth() && <Route path="/backoffice/Contacto/Mensajes" element={<Messages/>} />}
+          {Auth() && <Route path="/backoffice/Novedades/Editar" element={<EditNovedadesForm />} />}
+          {Auth() && <Route path="/backoffice/Novedades/Crear" element={<CreateNovedades />} />}
+          {Auth() && <Route path="/backoffice/Ventas" element={<Ventas />} />}
+          {/* Negar acceso sin productos */}
           <Route path="Cart/Payment" element={<Payment />} />
         </Routes>
         <ToastContainer />
