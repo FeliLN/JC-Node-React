@@ -1,9 +1,0 @@
-
-.WavesBottom svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 252px;
-    transform: rotateY(180deg);
-}
-

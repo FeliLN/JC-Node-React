@@ -8,6 +8,7 @@ import Table from "./Table"
 const Vinilos = () => {
     const [vinilos, setVinilos] = React.useState([])
     const product = 'Vinilos'
+    const [showCreate, setShowCreate] = React.useState(false)
 
     React.useEffect(() => {
         getProducts(product).then(data => {
@@ -17,12 +18,12 @@ const Vinilos = () => {
 
   return (
     <div>
-        <Header/>
-        <h1>VINILOS</h1>
-        <EditCD>
-            <CreateForm product={product} />
-        </EditCD>
+        <Header title='VINILOS'/>
 
+        <EditCD showCreate={showCreate}>
+        <button onClick={() => setShowCreate(!showCreate)} >{showCreate ? 'Cerrar Formulario' : 'Crear Vinilo'} </button>
+          {showCreate &&  <CreateForm product={product}/>}
+        </EditCD>
         <Table items={vinilos} setItems={setVinilos} product={product}/>
 
     </div>
@@ -34,8 +35,26 @@ export default Vinilos
 const EditCD = styled.div`
     color: #fff;
     background-color: #000;
-    height: 300px;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    transition: 1s;
+    color: #FFFFFF;
+    text-align: center;
+
+    ${({ showCreate }) => showCreate && `
+        height: 800px;
+    `}
+
+    button {
+        width: 150px;
+        height: 50px;
+        color: #fff;
+        background-color: goldenrod;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 `

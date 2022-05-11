@@ -11,7 +11,6 @@ import DashBoard from './Components/BackOffice/DashBoard';
 import EditShop from './Components/BackOffice/EditShop';
 import EditContacto from './Components/BackOffice/EditContacto';
 import EditNovedades from './Components/BackOffice/EditNovedades';
-import EditNosotros from './Components/BackOffice/EditNosotros';
 import EditContactForm from './Components/BackOffice/EditContact/EditContactForm';
 import Messages from './Components/BackOffice/EditContact/Messages';
 import EditNovedadesForm from './Components/BackOffice/EditNovedades/EditNovedadesForm';
@@ -37,7 +36,6 @@ function App() {
           <Route path="/backoffice/Shopping" element={<EditShop />} />
           <Route path="/backoffice/Contacto" element={<EditContacto />} />
           <Route path="/backoffice/Novedades" element={<EditNovedades />} />
-          <Route path="/backoffice/Nosotros" element={<EditNosotros />} />
           <Route path="/backoffice/Shopping/CD" element={<CD />} />
           <Route path="/backoffice/Shopping/DVD" element={<DVD />} />
           <Route path="/backoffice/Shopping/Vinilos" element={<Vinilos />} />

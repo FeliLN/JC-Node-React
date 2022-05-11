@@ -9,7 +9,7 @@ const EditContacto = () => {
     const navigate = useNavigate()
   return (
     <div>
-        <Header/>
+        <Header title='CONTACTO'/>
         <EditContactoStyle>
             <Buttons onClick={() => navigate('/backoffice/Contacto/Editar')} >
                 <FontAwesomeIcon className='Contacto' icon={faUser} />
@@ -29,6 +29,8 @@ export default EditContacto
 
 const EditContactoStyle = styled.div`
     width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -43,6 +45,7 @@ const Buttons = styled.button`
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 5px;
     text-align: center;
     justify-content: center;

@@ -1,36 +1,14 @@
 import React from 'react'
 import Header from '../Header/Header'
-import { getNosotros } from '../../Service/publicApiService'
 import styled from 'styled-components'
-import  { useState, useEffect } from 'react';
-
 
 const About = () => {
-    const [nosotros, setNosotros] = useState(null)
-    useEffect(() => {
-        getNosotros().then(data => {
-            setNosotros(data[0])
-        })
-    }, [])
-
-    let convertedText = ''
-
-    if (nosotros) {
-        convertedText = nosotros.Descripcion
-            .replaceAll('<p>', '').replaceAll('</p>', '')
-            .replaceAll('<strong>', '').replaceAll('</strong>', '')
-            .replaceAll('&nbsp;', <br/>)
-            .replaceAll('&gt', <br/>)
-            .replaceAll('[object Object]', '')
-    }
 
     return (
 
         <AboutStyle>
             <Header />
            <h1>Acerca de Nosotros</h1>
-            <p>{nosotros && convertedText}</p>
-            
         </AboutStyle>
     )
 }

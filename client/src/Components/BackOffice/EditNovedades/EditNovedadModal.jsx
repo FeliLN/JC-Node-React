@@ -1,7 +1,8 @@
 import React from 'react'
-import { updateNovedades, uploadImage, getImages } from '../../../Service/publicApiService'
+import { updateNovedades, getImages } from '../../../Service/publicApiService'
 import Swal from 'sweetalert2'
 import {Formik, Form, Field } from 'formik'
+import styled from 'styled-components'
 
 const EditNovedadModal = ({setEdit, novedadEdit, setNovedadEdit}) => {
 
@@ -41,18 +42,11 @@ const EditNovedadModal = ({setEdit, novedadEdit, setNovedadEdit}) => {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.value) {
-                uploadImage(values.file, product)
-                console.log(id)
-                Swal.fire({
-                    title: 'Subiendo Imagen...',
-                })
-                Swal.showLoading()
+               
                 setTimeout( async () => {
                     await getImages(values.file, product).then(res => {
                         setNovedadEdit({
-                            ...novedadEdit,
-                            Imagen: res,
-                            file: null
+                            ...novedadEdit
                         })
                         Swal.fire({
                             title: 'Imagen subida correctamente',
@@ -74,7 +68,7 @@ const EditNovedadModal = ({setEdit, novedadEdit, setNovedadEdit}) => {
         }}
     >
         {({values, handleChange, setFieldValue, isSubmitting}) => (
-            <Form key={novedadEdit.id}>
+            <FormStyle key={novedadEdit.id}>
                 <div className="form-group">
                     <label>Titulo</label>
                     <Field type="text" name='Titulo' className="form-control" value={values.Titulo} 
@@ -84,18 +78,62 @@ const EditNovedadModal = ({setEdit, novedadEdit, setNovedadEdit}) => {
                     <Field type="text" name='Subtitulo' className="form-control" value={values.Subtitulo} 
                     onChange={handleChange}
                     />
-                    <label>Imagen</label>
-                    <input type="file" className="form-control"
-                    onChange={(e) => setFieldValue('file', e.target.files[0])}
-                    />
-                    {console.log(values.file)}
-                    <button type='submit' disabled={isSubmitting} >Actualizar</button>
-                    <button onClick={() => setEdit(false)}>Cancelar</button>
+                    <button className='btn' type='submit' disabled={isSubmitting} >Actualizar</button>
+                    <button className='btn' onClick={() => setEdit(false)}>Cancelar</button>
                 </div>
-            </Form> 
+            </FormStyle> 
         )}
     </Formik>
   )
 }
 
 export default EditNovedadModal
+
+
+const FormStyle = styled(Form)`
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #383838;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0;
+    color: white;   
+   
+
+    .form-group{
+        width: 1000px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    label{
+        color: white;
+        font-size: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .btn {
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #383838;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #3085d6;
+            color: white;
+            
+        }
+    }
+    `

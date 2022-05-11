@@ -1,18 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
-const Header = () => {
+const Header = ({title}) => {
   return (
     <HeaderStyle>
-      <FontAwesomeIconStyle icon={faArrowCircleLeft} onClick={() => window.history.back()} /> Volver
+      <section className='icon' >
+        <FontAwesomeIconStyle icon={faArrowCircleLeft} onClick={() => window.history.back()} />
+      </section>
       <TopbarWrapperStyle>
+        <div className='header-section'> 
           <LogoSyle>
             Johnny Cash
           </LogoSyle>
+          
+        </div>
+
       </TopbarWrapperStyle>  
+      <h1 className='title'>{title}</h1>
     </HeaderStyle>
   )
 }
@@ -20,6 +26,7 @@ const Header = () => {
 export default Header
 
 const HeaderStyle = styled.header`
+    flex-direction: row;
     background-color: #fff;
     height: 50px;
     width: 100%;
@@ -29,28 +36,42 @@ const HeaderStyle = styled.header`
     position: sticky;
     top: 0;
     align-items: center;
+    justify-content: space-between;
 
+    .header-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .title{
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #000;
+      width: 160px;
+    }
+    .icon{
+      width: 160px;
+    }
 `
 const FontAwesomeIconStyle = styled(FontAwesomeIcon)`
     color: #000;
     font-size: 40px;
     cursor: pointer;
-  
-
 `
 
 const TopbarWrapperStyle = styled.div`
-    height: 100%;
-    padding: 0 40px;
-    align-items: center;
-    justify-content: space-between;
+   
 `
 
 const LogoSyle = styled.span`
 font-size: 30px;
 font-weight: bold;
-color: darkblue;
-padding: 0 600px;
+color: #000000;
 cursor: pointer;
 &:hover {
     color: #000;

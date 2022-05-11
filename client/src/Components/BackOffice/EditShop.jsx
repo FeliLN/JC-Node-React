@@ -8,7 +8,7 @@ import JCdraw from '../Images/JCdraw.png'
 const EditShop = () => {
   return (
       <div>
-        <Header/>
+        <Header title='SHOPPING'/>
 
         <EditShopStyle>
           <Sidebar/>

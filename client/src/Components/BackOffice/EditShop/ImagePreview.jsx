@@ -14,7 +14,7 @@ const ImagePreview = ({ file }) => {
 	return (
 		<div>
 			{preview && (
-				<img src={preview} alt="preview" width="200px" height="200px" />
+				<img src={preview} alt="preview" width="200px" height="200px"  />
 			)}
 		</div>
 	)
@@ -22,15 +22,3 @@ const ImagePreview = ({ file }) => {
 
 export default ImagePreview
 
-
-
-// function getBase64(file) {
-//     var reader = new FileReader();
-//     reader.readAsDataURL(file);
-//     reader.onload = function () {
-//       console.log(reader.result);
-//     };
-//     reader.onerror = function (error) {
-//       console.log('Error: ', error);
-//     };
-//  }

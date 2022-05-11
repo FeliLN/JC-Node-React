@@ -49,8 +49,7 @@ const EditNovedadesForm = () => {
 
   return (
     <div>
-        <Header/>
-        <h1>Editar Novedades</h1>
+        <Header title='EDITAR NOVEDADES'/>
         <NewsWindow>
 
         {novedades && novedades.map(novedad => (
@@ -58,12 +57,13 @@ const EditNovedadesForm = () => {
                 <h2>{novedad.Titulo}</h2>
                 <p>{novedad.Subtitulo}</p>
                 <img src={novedad.Imagen} alt='' style={{width: '400px', height: '200px', objectFit: 'cover'}}/>
+                <section>
                 <button onClick={() => {
                     setNovedadEdit(novedad)
                     setEdit(true)
                 }}>Editar</button>
                 <button onClick={() => confirmDelete(novedad.id)}>Eliminar</button>
-
+                </section>
             </NewWindow>
         ))}
     </NewsWindow>
@@ -91,7 +91,8 @@ const NewsWindow = styled.div`
     width: 100%;
     height: 100%;
     padding: 0;
-    `
+    background-color: #0a0a0a;
+`
 
 const NewWindow = styled.div`
     display: flex;
@@ -105,13 +106,34 @@ const NewWindow = styled.div`
     padding: 10px;
     border-radius: 10px;
     margin: 10px auto;
-    `
+    background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod);
 
-    const EditSection = styled.div`
+    button{
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        background-color: #0a0a0a;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s;
+        
+        &:hover{
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+            transform: scale(1.1);
+            
+        }
+    }
+`
 
+const EditSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    `
+`
 
 
