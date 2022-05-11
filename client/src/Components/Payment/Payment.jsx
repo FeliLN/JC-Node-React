@@ -15,11 +15,36 @@ const validate = values => {
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'Direccion Invalida';
-          } if (!values.direccion) {
+          } 
+          if (!values.direccion) {
             errors.direccion = 'Campo obligatorio';
           }  else if (values.direccion.length < 2) {
-            errors.team = 'Direccion Invalida!';
+            errors.direccion = 'Direccion Invalida!';
           } 
+          if (!values.ciudad) {
+            errors.ciudad = 'Campo obligatorio';
+          }  else if (values.ciudad.length < 2) {
+            errors.ciudad = 'Ciudad Invalida!';
+          }
+          if (!values.telefono) {
+            errors.telefono = 'Campo obligatorio';
+          }  else if (values.telefono.length < 10) {
+            errors.telefono = 'Telefono Invalido!';
+          }
+          if (!values.name) {
+            errors.name = 'Campo obligatorio';
+          }  else if (values.name.length < 8) {
+            errors.name = 'Nombre Invalido!';
+          }
+          if (!values.codigoPostal) {
+            errors.codigoPostal = 'Campo obligatorio';
+          }  else if (values.codigoPostal.length > 4) {
+            errors.codigoPostal = 'Codigo Postal Invalido!';
+          }
+          if (values.provincia === '') {
+            errors.provincia = 'Campo obligatorio';
+          }
+
           return errors;
         }
 
@@ -38,11 +63,11 @@ const Payment = () => {
     let values = {
         name: '',   // sin numeros ni caracteres especiales, minimo 4 caracteres
         email: '',
-        telefono: '', // que contenga 10 digitos
+        telefono: '', 
         direccion: '', 
         ciudad: '',
         provincia: '',
-        codigoPostal: '', // que contenga 4 digitos
+        codigoPostal: '', 
     }
     const [validationSuccess, setValidationSuccess] = React.useState(false)
 
@@ -74,6 +99,7 @@ const Payment = () => {
                 <div className="form-group1">
                   <label>Nombre y Apellido *</label>
                   <Field type="text" name="name" />
+                  <ErrorMessage name="name" component="div" />
 
                   <label>Correo Electronico *</label>
                   <Field type="email" name="email" />
@@ -224,8 +250,8 @@ display: flex;
   box-shadow: 0px 0px 10px #000000;
   border: 1px solid #000000; 
   text-align: center;
-  animation: slidein 3s both;
-  @keyframes slidein {
+  animation: slide 1s both;
+  @keyframes slide {
       from {
           height: 0px;
           margin-top: 0px;
@@ -263,5 +289,14 @@ display: flex;
     background-color: #f5f5f5;
     padding: 10px;
     border-radius: 10px;
+    animation: cassetteslide 1s 1s  both;
+    @keyframes cassetteslide {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 
     `
