@@ -83,3 +83,10 @@
     fill: #000;
 }
 }
+
+@media (min-width: 1360px) and (min-height: 768px) {
+    .MidTop{
+        top: 160px;
+    }
+
+}

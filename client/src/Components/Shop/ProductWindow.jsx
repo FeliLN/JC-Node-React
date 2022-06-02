@@ -120,16 +120,12 @@ const ProductWindowStyle = styled.div`
     }
     @media (min-width: ${device.laptopL}) { 
     }
-    div{
-        margin-top: 20px;
-    }
+
 `
 const Card = styled.li`
     display: flex;
     height: 380px;
     width: 250px;
-    margin-top: 20px;
-        margin-bottom: 20px;
         padding: 10px;
     flex-direction: column;
     align-items: center;
@@ -154,17 +150,27 @@ const Card = styled.li`
             opacity: 1;
         }
     }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        width: 180px;
+        height: 300px;
+        margin: 0 15px 0 15px;
+    }
 `
 const Title = styled.h1`
     font-size: 1.2em;
     font-weight: bold;
     color: #000;
     margin-bottom: 10px;
+
+
 `
 const Album = styled.h2`
     font-size: 1em;
     color: #000;
     margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
 `
 const Price = styled.h2`
     font-size: 1em;
@@ -182,6 +188,10 @@ const Img = styled.img`
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
+    @media (min-width: 1360px) and (min-height: 768px) {
+        width: 130px;
+        height: 130px;
+    }
 `
 const Button = styled.button`
     background-image:linear-gradient(97deg, #daa520 0%, #d6a322 26%, #d8a72c 58%, rgba(251,245,183,1) 87%, rgba(252,246,186,1) 100%); 
@@ -201,5 +211,9 @@ const Button = styled.button`
         background-size: 140% auto;
         color: #fff;
         text-shadow: 0px 0px 5px #000;
+    }
+    @media (min-width: 1360px) and (min-height: 768px) {
+       padding: 6px;
+       margin-top: 6px;
     }
 `

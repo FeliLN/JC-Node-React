@@ -172,32 +172,27 @@ const HeaderStyle = styled.div`
     display: flex;
     justify-content: space-between;
     height: 20vh;
-    align-items: center; 
+
     color:#ffd2b4;
     background-color: #0a0a0a;
     @media ${device.laptopL} { 
         height: 26vh;
     }
     @media ${device.desktopR} and (max-width: ${size.laptopL}) { 
-        width: 100%;
         height: 20vh; 
+    }
+    @media (min-width: 1360px) and (min-height: 767px) {
+        height: 21vh;
     }
 `
 const ContainerTop = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    padding: 0 20px;
     height: 12vh;
-    padding-left: 10px;
-    animation: fadeMe 2s;
 
-    @media ${device.desktopR} {
-        padding-left: 10px;  
-    }
-    @media ${device.laptopL} {
-        padding-left: 10px;
-    }
+
 `
 const Bars = styled.section`
     display: flex;
@@ -218,12 +213,7 @@ const Bars = styled.section`
     `}
     &:hover {
         color: #fff;
-    }
-
-    @media ${device.desktopR} {
-        margin-left: -20px;
-    }
-
+    } 
 `
 const JohhnnyCash = styled.img`
     display: flex;
@@ -237,6 +227,12 @@ const JohhnnyCash = styled.img`
         width: 8vw;
         height: 4vw;
         margin-top: 10px;
+    }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        width: 14vw;
+        height: 6vw;
+        margin-top: 90px;
+        margin-left: 70px;
     }
 `
 const LinkSection = styled.section`
@@ -257,7 +253,10 @@ const LinkSection = styled.section`
         display: flex;
         align-items: flex-start;
         transition: all 0.3s ease-in-out;
-        margin-right: 15px;
+
+    }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        left: 100px;
     }
 `
 const SectionEnabled = styled.section`
@@ -276,12 +275,15 @@ const SectionEnabled = styled.section`
     border: 2px solid #000;
     @keyframes slideout {
         from {
+            opacity: 0;
             transform: translateX(-100px);
         }
         to {
+            opacity: 1;
             transform: translateX(0px);
         }
     }
+
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -294,21 +296,21 @@ const StyledLink = styled(Link)`
     &:hover {
         color: #000;
     }
-    @media ${device.laptopL} { 
-        margin-left: 20px;
-       }
+
 `
 const Contact = styled.section`
     width : 160px;
-    margin-right: 100px;
+    padding-left: 10px;
     transition: all 0.3s ease-in-out;
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
     }
+    
 `
 const Support = styled.section`
     width : 160px;
+    padding-left: 20px;
     transition: all 0.3s ease-in-out;
     &:hover {
         cursor: pointer;
@@ -317,18 +319,14 @@ const Support = styled.section`
 `
 
 const ContainerBottom = styled.div`
-    margin-right: 150px;
     display: flex;
     align-items: center;
-    width: 70vw;
+    justify-content: start;
+    padding-left: 20px;
     height: 12vh;
     padding-top: 20px; 
     box-sizing: content-box;
     @media ${device.desktopR} {
-        margin-right: 150px;
-        display: flex;
-        align-items: center;
-        width: 85vw;
         height: 5vh;
         padding-top: 20px; 
         box-sizing: content-box;      
@@ -348,18 +346,18 @@ const IconSection = styled.section`
     margin-right: 20px;
     z-index: 5;
     cursor: pointer;
-    @media ${device.laptopL} { 
-        margin-top: 40px;
-    }
     @media ${device.desktopR} { 
         height: 85px;
         margin-top: 15px;
-         
     }
     &:hover {
         img{
             transform: scale(1.0);
         }
+    }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        width: 95px;
+        height: 95px;
     }
    
 `

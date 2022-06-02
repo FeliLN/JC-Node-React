@@ -104,16 +104,12 @@ const FooterStyle = styled.div`
     display: flex;
     background-color: #fff;
     flex-direction: row;
-    height: 66vh;
     z-index: 1;
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
-    @media ${device.laptopL}  { 
-        height: 65.7vh;
-
-    }
-    @media ${device.desktopR} and (max-width: 1430px) {
-        height: 65.7vh;
+    
+    @media (min-width: 1360px) and (min-height: 768px) {
+        height: 67.8vh;
     }
 `
 //Container Left
