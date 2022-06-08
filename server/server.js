@@ -20,7 +20,7 @@ let orders = [{
 let preference = {
   items: [],
   back_urls: {
-    success: "http://localhost:3000/feedback",
+    success: "http://localhost:3000/paydone",
     failure: "http://localhost:3000/feedback",
     pending: "http://localhost:3000/feedback",
   },
@@ -65,7 +65,7 @@ function deletePreference() {
   preference = {
     items: [],
     back_urls: {
-      success: "http://localhost:3000/",  
+      success: "http://localhost:3000/paydone",  
       failure: "http://localhost:3000/feedback",
       pending: "http://localhost:3000/feedback",
     },

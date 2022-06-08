@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import { device } from '../Breakpoints';
+import { deviceW } from '../Breakpoints';
 import { CartState } from '../../Context';
 import ReactImageMagnify from 'react-image-magnify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -117,7 +117,7 @@ const Card = styled.li`
     animation: fadein 1s 1s both;
     transition: 0.3s;
     z-index: 1000;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         width: 90%;
         height: 90%;
         margin-top: 20px;

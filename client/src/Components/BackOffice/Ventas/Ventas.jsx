@@ -51,10 +51,10 @@ const Ventas = () => {
                     <VentaSlot key={venta.id}>
                         <div className='Datos'>
                             <h2>Datos del cliente</h2>
-                            <p>Nombre: {venta.values.name}</p>
-                            <p>Email: {venta.values.email}</p>
-                            <p>Telefono: {venta.values.telefono}</p>
-                            <p>Dirección: {venta.values.direccion}, {venta.values.ciudad}, {venta.values.provincia}, Argentina - {venta.values.codigoPostal} </p>
+                            <p>Nombre: {venta.values?.name}</p>
+                            <p>Email: {venta.values?.email}</p>
+                            <p>Telefono: {venta.values?.telefono}</p>
+                            <p>Dirección: {venta.values?.direccion}, {venta.values?.ciudad}, {venta.values?.provincia}, Argentina - {venta.values?.codigoPostal} </p>
                             <button className='eliminar' onClick={() => confirmDelete(venta.id)}>Eliminar venta</button>
                         </div>
                         <div >

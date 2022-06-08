@@ -11,12 +11,15 @@ const Context = ({ children }) => {
     const [modal, setModal] = useState(false)
     const [modalItem, setModalItem] = useState({})
     const [loading, setLoading] = useState(false)
+    const [payError, setPayError] = useState(false)
+    const [userData, setUserData] = useState({})
 
 // Funciones
     const addToCart = (item) => {
         setCart([...cart, item])
         setItems(items + 1)
         setTotal(total + item.Precio)
+        setPayError(true)
         let order = {
             title: item.Album + ' - ' + item.Artista,
             unit_price: item.Precio,
@@ -66,7 +69,12 @@ const Context = ({ children }) => {
         modalItem,
         setModalItem,
         loading,
-        setLoading
+        setLoading,
+        payError,
+        setPayError,
+        userData,
+        setUserData,
+
     }} >{children}</Cart.Provider>
   )
 }

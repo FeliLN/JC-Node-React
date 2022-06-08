@@ -2,7 +2,7 @@ import React, {useEffect}  from 'react';
 import PayMethod from './PayMethod';
 import ShopFilters from './ShopFilters';
 import styled from 'styled-components';
-import  { device } from '../Breakpoints'
+import  { deviceW } from '../Breakpoints'
 import ProductWindow from './ProductWindow';
 import { getProducts } from '../../Service/publicApiService';
 import { Pagination } from '@mui/material';
@@ -17,11 +17,11 @@ const Shop = ({shop, search, setSearch}) => {
     const [yearModal, setYearModal] = React.useState(false);
     const [genreModal, setGenreModal] = React.useState(false);
   
-    useEffect(() => {
-        getProducts(shop).then(data => {
-            setProducts(data);
-        })
-    }, [shop]);
+    // useEffect(() => {
+    //     getProducts(shop).then(data => {
+    //         setProducts(data);
+    //     })
+    // }, [shop]);
 
     const handleChange = (event) => {
         setPage(event.target.innerText)
@@ -96,10 +96,10 @@ const ShopStyle = styled.div`
     @media (max-width: 768px) {
         flex-direction: column;
     }
-    @media (min-width: ${device.laptopL}) { 
+    @media (min-width: ${deviceW.laptopL}) { 
      height: 100%;
     }
-    @media (min-width: ${device.desktopR}) {
+    @media (min-width: ${deviceW.desktopR}) {
         height: 100%;
         margin-top: 10%;
         transition: all 0.3s ease-in-out;

@@ -4,7 +4,7 @@ import YearBubbleItems from './Bubbles/YearBubbleItems'
 import GenreBubbleItems from './Bubbles/GenreBubbleItems'
 
 //styled components
-import { device } from '../Breakpoints'
+import { deviceW } from '../Breakpoints'
 import styled from 'styled-components'
 
 const ShopFilters = ({
@@ -87,11 +87,11 @@ const ShopFiltersStyle = styled.div`
     box-shadow: 0px 0px 10px #000000;
     width: 100%;
     z-index: 10;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         margin-bottom: 10px;
         height: 50px;
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         margin-bottom: 10px;
         height: 50px;
     
@@ -126,14 +126,14 @@ const Year = styled.div`
     box-shadow: 0px 0px 5px #000000;
     transition: 0.3s;
     cursor:pointer;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         width: 100px;
     }
     &:hover {
         background-color: #000;
         color: #fff;
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         width: 100px;
     }
 
@@ -152,14 +152,14 @@ const Genre = styled.div`
     border-radius: 10px;
     box-shadow: 0px 0px 5px #000000;
     transition: 0.3s;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         width: 100px;
     }
     &:hover {
         background-color: #000;
         color: #fff;
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         width: 100px;
     }
     &:hover {

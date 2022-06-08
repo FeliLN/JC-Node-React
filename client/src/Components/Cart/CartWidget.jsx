@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown'
-import { Badge } from 'react-bootstrap'
 import { CartState } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faTimes  } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import { deviceW, deviceH } from '../Breakpoints'
 
 import styled from 'styled-components'
 
@@ -14,20 +14,20 @@ const CartWidget = () => {
 
     const navigate = useNavigate();
 
-    const { items, deleteItem, formatPeso, total } = CartState() 
+    const { items, deleteItem, formatPeso, total, setPayError } = CartState() 
     let cartItems = localStorage.getItem('cart')
     const [cartList, setCartList] = React.useState(cartItems ? JSON.parse(cartItems) : [])
 
     React.useEffect(() => {
-
         setCartList(cartItems ? JSON.parse(cartItems) : [])
- 
-        
     }, [cartItems])
 
     const  confirmDelete = (ID) => {
         deleteItem(ID)
         setCartList(cartList.filter(item => item.ID !== ID))
+        if(cartList.length === 0) {
+            setPayError(false)
+        }
         Swal.fire({
             type: 'success',
             title: 'Producto eliminado',
@@ -38,7 +38,9 @@ const CartWidget = () => {
   return (
     <Dropdown onClick={() => setCartList(cartItems ? JSON.parse(cartItems) : [])}>
         <DropDown>
-            <FontAwesomeIcon size='2x' style={{marginRight: '5px'}} icon={faShoppingCart} />
+            <FAIcon 
+            style={{marginRight: '5px'}} 
+            icon={faShoppingCart} />
             { items !== 0 && items}
         </DropDown>
 
@@ -186,13 +188,22 @@ const DropDown = styled(Dropdown.Toggle)`
     align-items: center;
     background-color: #0a0a0a;
     border: 0px solid #fff;
-    margin: 4px 4px 4px 0 ;
-
+    margin: 4px 20px 4px 0 ;
     color: #fff;
-
     &:hover {
         cursor: pointer;
         background-color: goldenrod;
         border: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+
+    }
+`
+
+const FAIcon = styled(FontAwesomeIcon)`
+
+
+     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        font-size: 1.5rem;
     }
 `

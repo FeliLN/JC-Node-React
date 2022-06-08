@@ -8,7 +8,7 @@ import Shop from '../Shop/Shop';
 
 // styled components
 import styled from 'styled-components';
-import { device } from '../Breakpoints';
+import { deviceW } from '../Breakpoints';
 
 //Mids
 import MidTop from "./SVGcurves/MidTop";
@@ -70,17 +70,17 @@ export default Home;
 const HomeStyle = styled.div`
    flex-direction: column;
    height: 100vh;
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         background-color: #fff;
     }
 `
 const HeaderStyle = styled.div`
     height: 23vh;
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         background-color: #fff;
         height: 23vh;
     }
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         background-color: #000000;
         height: 23vh;
     }  
@@ -93,7 +93,7 @@ const JohnnyCash = styled.img`
     left: 70%;
     z-index: 10;
 
-    @media (min-width: ${device.desktopR}) {
+    @media (min-width: ${deviceW.desktopR}) {
         width: 7vw;
         height: 6.3vw;
         top: 10%;
@@ -104,7 +104,7 @@ const JohnnyCash = styled.img`
 const FooterStyle = styled.div`
     flex-direction: row ;
     transition: all 1s ease-in-out;
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         flex-direction: row;   
     }
 `
