@@ -107,12 +107,9 @@ const FooterStyle = styled.div`
     z-index: 1;
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
-    @media ${deviceW.laptopL}  { 
-        height: 65.7vh;
-
-    }
-    @media ${deviceW.desktopL} and (max-width: 1430px) {
-        height: 65.7vh;
+    
+    @media (min-width: 1360px) and (min-height: 768px) {
+        height: 67.8vh;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;

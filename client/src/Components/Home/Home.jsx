@@ -70,20 +70,13 @@ export default Home;
 const HomeStyle = styled.div`
    flex-direction: column;
    height: 100vh;
-    @media ${deviceW.desktopR} {
-        background-color: #fff;
-    }
+
 `
 const HeaderStyle = styled.div`
-    height: 23vh;
-    @media ${deviceW.desktopR} {
-        background-color: #fff;
-        height: 23vh;
+
+    @media (min-width: 1360px) and (min-height: 768px) {
+        height: 23.14vh;
     }
-    @media ${deviceW.laptopL} {
-        background-color: #000000;
-        height: 23vh;
-    }  
 `
 const JohnnyCash = styled.img`
     width: 9vw;
@@ -99,6 +92,10 @@ const JohnnyCash = styled.img`
         top: 10%;
         left: 73%;
         z-index: 10;  
+    }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        top: 8%;
+        left: 73%;
     }
 `
 const FooterStyle = styled.div`

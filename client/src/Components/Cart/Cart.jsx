@@ -91,7 +91,7 @@ const CartStyle = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    
+    margin-left: 100px;
     flex-direction: column;
     background-color: #ffffff;
     color: #0a0a0a;

@@ -162,6 +162,11 @@ const Menu = styled.span`
         background-size: 200% auto;
 
     }
+    @media (min-width: 1360px) and (min-height: 768px) {
+        h1{
+            font-size: 1.5rem;
+        }
+    }
 
 
     `
