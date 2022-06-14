@@ -17,8 +17,8 @@ import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-s
 // Styled Components
 import styled from 'styled-components'
 
-//device
-import  { device } from '../Breakpoints'
+//deviceW
+import  { deviceW, deviceH } from '../Breakpoints'
 
 //URLs
 const FacebookUrl = 'https://www.facebook.com/JohnnyCash.Vinilos'
@@ -111,6 +111,9 @@ const FooterStyle = styled.div`
     @media (min-width: 1360px) and (min-height: 768px) {
         height: 67.8vh;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        height: 67.9vh;
+    }
 `
 //Container Left
 const ContainerLeft = styled.div`
@@ -136,9 +139,7 @@ const Title = styled.h1`
     text-align: center;
     font-size: 2.5vw;
     font-weight: bold;
-    @media ${device.laptopL} {
 
-    }
 `
 const Subtitle = styled.h2`
     text-align: center;
@@ -156,9 +157,7 @@ const Logo = styled.div`
     height: 55vh !important;
     width: 45vw;
     z-index: 2;
-    @media ${device.laptopL} {
 
-    }
 `
 const Social = styled.div`
     flex-direction: row;

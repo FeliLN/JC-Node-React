@@ -25,10 +25,7 @@
 
 .MidTop .shape-fill {
     fill: #000;
-    
 
-
-    
 } 
 
 
@@ -46,19 +43,16 @@
         z-index: 4;
     }
 
-
-
     .MidTop .shape-fill {
     
         fill: #0a0a0a;
     }
 }
 
-@media   only screen and (min-width: 1360px) and (max-device-width: 1430px) {
+@media   only screen and (min-width: 1366px) and (min-height: 768px)     {
    .MidTop {
     position: absolute;
-    top: 124px;
-    height:78px;
+    top: 153px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -73,10 +67,9 @@
     position: relative;
     display: block;
     width: calc(172% + 1.3px);
-    height: 218px;
+    height: 250px;
     transform: rotateY(180deg);
     z-index: 10;
-    
 }
 
 .MidTop .shape-fill {
@@ -84,9 +77,15 @@
 }
 }
 
-@media (min-width: 1360px) and (min-height: 768px) {
+/* @media (min-width: 1360px) and (min-height: 768px) {
     .MidTop{
         top: 160px;
     }
 
+} */
+
+@media (min-height: 640px) and (min-width: 360px) {
+    .MidBot {
+        width: 100%;
+    }
 }

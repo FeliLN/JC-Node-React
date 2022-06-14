@@ -342,6 +342,7 @@ export const updateNotificacion = async (id, newData) => {
             icon: 'error',
             timer: 3000,
             title: 'Algo salió mal :S',
+            text: 'La notificación no se ha podido actualizar',
             })
     }
 }

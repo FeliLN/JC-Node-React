@@ -8,7 +8,7 @@ import Shop from '../Shop/Shop';
 
 // styled components
 import styled from 'styled-components';
-import { device } from '../Breakpoints';
+import { deviceW, deviceH } from '../Breakpoints';
 
 //Mids
 import MidTop from "./SVGcurves/MidTop";
@@ -74,6 +74,7 @@ const HomeStyle = styled.div`
 `
 const HeaderStyle = styled.div`
 
+
     @media (min-width: 1360px) and (min-height: 768px) {
         height: 23.14vh;
     }
@@ -85,29 +86,20 @@ const JohnnyCash = styled.img`
     top: 10%;
     left: 70%;
     z-index: 10;
-
-    @media (min-width: ${device.desktopR}) {
-        width: 7vw;
-        height: 6.3vw;
-        top: 10%;
-        left: 73%;
-        z-index: 10;  
-    }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         top: 8%;
         left: 73%;
-    }
+    } */
 `
 const FooterStyle = styled.div`
     flex-direction: row ;
     transition: all 1s ease-in-out;
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         flex-direction: row;   
     }
 `
 const ShopStyle = styled.div`
-    /* margin: auto; */
-    z-index:120;
+
 `
 
 

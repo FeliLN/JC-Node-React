@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { device } from '../Breakpoints';
+import { deviceW } from '../Breakpoints';
 import { CartState } from '../../Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons'
@@ -52,12 +52,10 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
         }
         totalPages.push(pageContainer)
     }
-    console.log(totalPages)
-    console.log(totalPages[page - 1])
     
     return (
         <ProductWindowStyle>
-            {loading ?
+            {/* {loading ?
             <>
             {search && (searchItems.length > 0 ? searchItems.map(product => (
                 <Card key={product.id}>
@@ -65,7 +63,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                     <Title>{product.Artista}</Title>
                     <Album>{product.Album}</Album>
                     <Price>{formatPeso(product.Precio)}</Price>
-                    <Button onClick={() => addToCart(product)}>AÑADIR AL CARRITO</Button> 
+                    <Button onClick={() => confirmAdd(product)}>AÑADIR AL CARRITO</Button> 
                     <Button onClick={() => {
                         setModal(true);
                         setModalItem(product)
@@ -81,7 +79,6 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
             <>
             {!search && totalPages[page-1] && totalPages[page-1].map(product => (
                 <Card key={product.id} >
-                    {console.log(product)}
                     <Img src={product.Imagen} alt={product.nombre}/>
                     <Title>{product.Artigo}</Title>
                     <Album>{product.Album}</Album>
@@ -95,7 +92,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                     </Button>
                 </Card>
             ))}
-            </>}
+            </>} */}
         </ProductWindowStyle>
     )
 }
@@ -118,7 +115,7 @@ const ProductWindowStyle = styled.div`
             height: 1000px;
         }
     }
-    @media (min-width: ${device.laptopL}) { 
+    @media (min-width: ${deviceW.laptopL}) { 
     }
 
 `

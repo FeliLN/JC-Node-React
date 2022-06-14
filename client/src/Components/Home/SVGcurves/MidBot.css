@@ -1,5 +1,4 @@
-
- .MidBot {
+.MidBot {
     position: relative;
     bottom: 0;
     left: 0;
@@ -9,7 +8,6 @@
     line-height: 0;
     transform: scaleX(-1) rotate(180deg);
     z-index: 11;
-    
 }
 
 .MidBot svg {
@@ -30,19 +28,12 @@
     .MidBot {
         position: relative;
         height: 86px;
+        width: 100%;
         overflow: hidden;
         line-height: 0;
         z-index: 11;
     }
     
-    
-    
-    .MidBot .shape-fill {
-        
-        fill: #F7B05B;
-       
-    
-    }
 }
 @media (min-width: 1360px)  {
     .MidBot {
@@ -69,5 +60,14 @@
     .MidBot .shape-fill {
         fill: #fff;
         
+    }
+}
+
+@media (min-height: 640px) and (min-width: 360px) {
+    .MidBot {
+        width: 360px;
+    }
+    .Midbot svg {
+        width: 100%;
     }
 }

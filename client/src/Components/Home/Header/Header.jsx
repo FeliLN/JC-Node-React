@@ -18,7 +18,7 @@ import JohnnyCash from '../../Images/johnny-cash.png'
 
 //styled components
 import styled from 'styled-components'
-import  { device, size } from '../../Breakpoints'
+import  { deviceW, deviceH } from '../../Breakpoints'
 
 const Header = (props) => {
 
@@ -172,17 +172,18 @@ const HeaderStyle = styled.div`
     display: flex;
     justify-content: space-between;
     height: 20vh;
-
+    width: 100vw;
     color:#ffd2b4;
     background-color: #0a0a0a;
-    @media ${device.laptopL} { 
+    @media ${deviceW.laptopL} { 
         height: 26vh;
     }
-    @media ${device.desktopR} and (max-width: ${size.laptopL}) { 
-        height: 20vh; 
-    }
-    @media (min-width: 1360px) and (min-height: 767px) {
+    /* @media (min-width: 1360px) and (min-height: 767px) {
         height: 21vh;
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 200px; 
+        width: 500px;
     }
 `
 const ContainerTop = styled.div`
@@ -191,8 +192,6 @@ const ContainerTop = styled.div`
     align-items: center;
     padding: 0 20px;
     height: 12vh;
-
-
 `
 const Bars = styled.section`
     display: flex;
@@ -213,27 +212,46 @@ const Bars = styled.section`
     `}
     &:hover {
         color: #fff;
-    } 
+    }
+
+    @media ${deviceW.desktopR} {
+        margin-left: -20px;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+       width: 20px;
+        height: 20px;
+        margin-left: 20px; 
+    }
+
 `
 const JohhnnyCash = styled.img`
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         width: 16vw;
         height: 8vw;
     }
-    @media ${device.desktopR} and (max-width: ${size.laptopL}) {
+    @media ${deviceW.desktopL} {
         width: 8vw;
         height: 4vw;
         margin-top: 10px;
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 12vw;
+        margin-left: 20px;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100px; 
+    }
+
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         width: 14vw;
         height: 6vw;
         margin-top: 90px;
         margin-left: 70px;
-    }
+    } */
 `
 const LinkSection = styled.section`
     width: 500px;
@@ -244,10 +262,10 @@ const LinkSection = styled.section`
     text-shadow: 2px 2px 2px #e9e9e9;
     position: absolute;
     left: 150px;
-    @media ${device.laptopL} { 
+    @media ${deviceW.laptopL} { 
         margin-top: 3px;
     }
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         width: 470px;
         height: 50px;
         display: flex;
@@ -255,8 +273,12 @@ const LinkSection = styled.section`
         transition: all 0.3s ease-in-out;
 
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         left: 100px;
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 200px;
+        width: 100px; 
     }
 `
 const SectionEnabled = styled.section`
@@ -296,7 +318,6 @@ const StyledLink = styled(Link)`
     &:hover {
         color: #000;
     }
-
 `
 const Contact = styled.section`
     width : 160px;
@@ -326,11 +347,16 @@ const ContainerBottom = styled.div`
     height: 12vh;
     padding-top: 20px; 
     box-sizing: content-box;
-    @media ${device.desktopR} {
         height: 5vh;
         padding-top: 20px; 
-        box-sizing: content-box;      
+        box-sizing: content-box;     
+        
+        @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 50%;
+        padding-left: 0px;
     }
+
+
 `
 const IconSection = styled.section`
     display: flex;
@@ -346,20 +372,23 @@ const IconSection = styled.section`
     margin-right: 20px;
     z-index: 5;
     cursor: pointer;
-    @media ${device.desktopR} { 
-        height: 85px;
-        margin-top: 15px;
-    }
     &:hover {
         img{
             transform: scale(1.0);
         }
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 80px;
+        height: 80px;
+    }
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         width: 95px;
         height: 95px;
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 50px; 
+        width: 50px;
     }
-   
 `
 const Icon = styled.section`
     display: flex;
@@ -368,14 +397,14 @@ const Icon = styled.section`
     border-radius: 30px;
     width: 100px;
     height:100px;
-    @media ${device.laptopL} { 
+    @media ${deviceW.laptopL} { 
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100px;
         height:100px;
     }
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         height: 80px;
         margin-top: 5px;
     }
@@ -398,7 +427,7 @@ const Cassette = styled.img`
     height: 55px !important;;  
     transition: all 0.3s ease-in-out;
 
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         transform: scale(0.8);
         &:hover {
             transform: scale(1.0);
@@ -414,7 +443,7 @@ const Vinyl = styled.img`
     height: 70px ;
     transition: all 0.3s ease-in-out;
 
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         transform: scale(0.6);
         &:hover {
         transform: scale(.7);
@@ -430,7 +459,7 @@ const CD = styled.img`
     height: 60px !important;
     transition: all 0.3s ease-in-out;
 
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         transform: scale(0.7);
         }
         &:hover {
@@ -448,7 +477,7 @@ const DVDImg = styled.img`
     transition: all 0.3s ease-in-out;
 
 
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
 
         transform: scale(0.8);
         &:hover {
@@ -466,7 +495,7 @@ const Book = styled.img`
     height: 60px;
     transition: all 0.3s ease-in-out;
 
-    @media ${device.desktopR} { 
+    @media ${deviceW.desktopR} { 
         transform: scale(0.6);
         &:hover {
             color: #ffffff;

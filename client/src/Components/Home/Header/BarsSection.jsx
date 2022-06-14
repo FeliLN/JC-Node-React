@@ -6,8 +6,8 @@ import styled from 'styled-components'
 //react-router-dom
 import { Link } from 'react-router-dom'
 
-//Device
-import { device } from '../Breakpoints'
+//deviceW
+import { deviceW } from '../Breakpoints'
 
 const BarsSection = () => {
     return (
@@ -40,7 +40,7 @@ const LinkSection = styled.section`
     transition: all 0.3s ease-in-out;;
     flex-direction: row;
 
-    @media ${device.laptop} {
+    @media ${deviceW.laptop} {
         flex-direction: row;
       }
 `

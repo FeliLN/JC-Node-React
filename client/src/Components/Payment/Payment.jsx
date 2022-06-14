@@ -38,7 +38,7 @@ const validate = values => {
           }
           if (!values.codigoPostal) {
             errors.codigoPostal = 'Campo obligatorio';
-          }  else if (values.codigoPostal.length > 4) {
+          }  else if (values.codigoPostal.length < 4) {
             errors.codigoPostal = 'Codigo Postal Invalido!';
           }
           if (values.provincia === '') {
@@ -50,7 +50,7 @@ const validate = values => {
 
 const Payment = () => {
 
-    const { total, cart, formatPeso } = CartState()
+    const { total, formatPeso, setUserData } = CartState()
     const [notificacion, setNotificacion] = React.useState([])
 
     React.useEffect(() => {
@@ -60,7 +60,7 @@ const Payment = () => {
         )
     }, [])
 
-    let values = {
+    let userData = {
         name: '',   // sin numeros ni caracteres especiales, minimo 4 caracteres
         email: '',
         telefono: '', 
@@ -73,18 +73,19 @@ const Payment = () => {
 
     return (
         <Formik
-            initialValues={values}
+            initialValues={userData}
             validate={validate}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             setSubmitting(false);
             setValidationSuccess(true)
-            createVenta({cart, values})
-            setNotificacion({
-                ...notificacion,
-                Compras: notificacion.Compras++
-            })
-            updateNotificacion(notificacion.id, notificacion)
+            setUserData(values)
+            // createVenta({cart, values})
+            // setNotificacion({
+            //     ...notificacion,
+            //     Compras: notificacion.Compras++
+            // })
+            // updateNotificacion(notificacion.id, notificacion)
           }, 400);
           
         }}

@@ -24,8 +24,14 @@ import Cassettes from './Components/BackOffice/EditShop/Cassettes';
 import Libros from './Components/BackOffice/EditShop/Libros';
 import Login from './Components/Auth/Login';
 import Auth from './Components/Auth/Auth';
+import PayDenied from './Components/Payment/PayDenied';
+import { CartState } from './Context';
+import PayDone from './Components/Payment/PayDone';
 
 function App() {
+  
+  const { payError } = CartState()
+
   return (
     <AppStyle className="App">
         <Routes>
@@ -33,7 +39,7 @@ function App() {
           <Route path="Contact" element={<Contact />} />
           <Route path="AcercaDeNosotros" element={<Nosotros />} />
           <Route path="Cart" element={<Cart />} />
-          {/* Validar */}
+
           <Route path="Login" element={<Login />} />
           {Auth() && <Route path="Backoffice" element={<DashBoard />} />}
           {Auth() && <Route path="/backoffice/Shopping" element={<EditShop />} />}
@@ -50,7 +56,9 @@ function App() {
           {Auth() && <Route path="/backoffice/Novedades/Crear" element={<CreateNovedades />} />}
           {Auth() && <Route path="/backoffice/Ventas" element={<Ventas />} />}
           {/* Negar acceso sin productos */}
-          <Route path="Cart/Payment" element={<Payment />} />
+          {payError ? <Route path="Cart/Payment" element={<Payment />} /> : <Route path="Cart/Payment" element={<PayDenied />} />}
+          <Route path="paydone" element={<PayDone />} />
+
         </Routes>
         <ToastContainer />
     </AppStyle>
@@ -61,4 +69,5 @@ export default App;
 
 const AppStyle = styled.div`
   font-family: 'Oswald', sans-serif;
+
 `

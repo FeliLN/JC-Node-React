@@ -2,23 +2,39 @@ import React from 'react'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { device } from '../Breakpoints'
+import { deviceW } from '../Breakpoints'
 import { CartState } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
 
-    const { deleteItem, formatPeso, total } = CartState()
+    const { deleteItem, formatPeso, total, setPayError } = CartState()
     const cartItems = localStorage.getItem('cart')
     const [cartList, setCartList] = React.useState(cartItems ? JSON.parse(cartItems) : [])
 
-    console.log(cartItems)
     const navigate = useNavigate();
 
     const  confirmDelete = (ID) => {
         deleteItem(ID)
         setCartList(cartList.filter(item => item.ID !== ID))
+        if(cartList.length === 0) {
+            navigate('/')
+            setPayError(false)
+        }
+    }
+    const handleCheckout = () => {
+        if(cartList.length > 0){
+            navigate('./Payment')
+        } else {
+            Swal.fire({
+                title: 'No hay productos en el carrito',
+                text: 'Por favor agregue productos al carrito',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            })
+        }
     }
 
   return (
@@ -41,7 +57,6 @@ const Cart = () => {
         {cartList.length > 0 ? 
                     cartList.map (item => (
                         <tr key={item.id}>
-                            {console.log(item.id)}
                             <td><img src={item.Imagen} alt={item.name} style={{ width: 50, height: 50 }} /></td>
                             <td>{item.Album}</td>
                             <td>{item.Artista}</td>
@@ -58,9 +73,8 @@ const Cart = () => {
         </CartItems>
         <Total>
             <span>Total: {formatPeso(total)}</span>
-            <button onClick={() => {
-                navigate('./Payment');
-            }}>Realizar Compra</button>
+
+            <button onClick={ handleCheckout}>Realizar Compra</button>
         </Total>
       </CartWindow>
     
@@ -119,9 +133,9 @@ const CartWindow = styled.div`
     @media (max-width: 768px) {
         flex-direction: column;
     }
-    @media ${device.laptopL} { 
+    @media ${deviceW.laptopL} { 
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         transition: all 0.3s ease-in-out;
         flex-direction: column
     }   
@@ -141,12 +155,12 @@ const Title = styled.div`
     width: 100%;
     padding: 10px;
     z-index: 10;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
         
         margin-bottom: 10px;
         height: 50px;
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         margin-bottom: 10px;
         height: 50px;
     
@@ -181,7 +195,7 @@ const Title = styled.div`
             opacity: 1;
         }
     }
-    @media ${device.laptopL} { 
+    @media ${deviceW.laptopL} { 
         width: 100%;
     }
 `
@@ -214,11 +228,11 @@ const Total = styled.div`
     width: 100%;
     z-index: 10;
     animation: cassetteslide 1s 1s both;
-    @media ${device.laptopL} {
+    @media ${deviceW.laptopL} {
       margin-top: 10px;
         height: 50px;
     }
-    @media ${device.desktopR} {
+    @media ${deviceW.desktopR} {
         height: 50px;
     }
     span{
