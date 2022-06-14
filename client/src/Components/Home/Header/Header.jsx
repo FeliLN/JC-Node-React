@@ -172,45 +172,26 @@ const HeaderStyle = styled.div`
     display: flex;
     justify-content: space-between;
     height: 20vh;
-
+    width: 100vw;
     color:#ffd2b4;
     background-color: #0a0a0a;
     @media ${deviceW.laptopL} { 
         height: 26vh;
     }
-<<<<<<< HEAD
-    @media ${deviceW.desktopR}  { 
-        width: 100%;
-=======
-    @media ${device.desktopR} and (max-width: ${size.laptopL}) { 
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
-        height: 20vh; 
-    }
-    @media (min-width: 1360px) and (min-height: 767px) {
+    /* @media (min-width: 1360px) and (min-height: 767px) {
         height: 21vh;
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 200px; 
+        width: 500px;
     }
 `
 const ContainerTop = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
-    width: 100%;
-=======
     padding: 0 20px;
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
     height: 12vh;
-
-<<<<<<< HEAD
-    @media ${deviceW.desktopR} {
-        padding-left: 10px;  
-    }
-    @media ${deviceW.laptopL} {
-        padding-left: 10px;
-    }
-=======
-
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
 `
 const Bars = styled.section`
     display: flex;
@@ -231,7 +212,6 @@ const Bars = styled.section`
     `}
     &:hover {
         color: #fff;
-<<<<<<< HEAD
     }
 
     @media ${deviceW.desktopR} {
@@ -243,9 +223,6 @@ const Bars = styled.section`
         margin-left: 20px; 
     }
 
-=======
-    } 
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
 `
 const JohhnnyCash = styled.img`
     display: flex;
@@ -260,21 +237,21 @@ const JohhnnyCash = styled.img`
         height: 4vw;
         margin-top: 10px;
     }
-<<<<<<< HEAD
 
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 12vw;
         margin-left: 20px;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100px; 
+    }
 
-=======
-    @media (min-width: 1360px) and (min-height: 768px) {
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         width: 14vw;
         height: 6vw;
         margin-top: 90px;
         margin-left: 70px;
-    }
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
+    } */
 `
 const LinkSection = styled.section`
     width: 500px;
@@ -296,8 +273,12 @@ const LinkSection = styled.section`
         transition: all 0.3s ease-in-out;
 
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         left: 100px;
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 200px;
+        width: 100px; 
     }
 `
 const SectionEnabled = styled.section`
@@ -337,13 +318,6 @@ const StyledLink = styled(Link)`
     &:hover {
         color: #000;
     }
-<<<<<<< HEAD
-    @media ${deviceW.laptopL} { 
-        margin-left: 20px;
-       }
-=======
-
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
 `
 const Contact = styled.section`
     width : 160px;
@@ -373,19 +347,16 @@ const ContainerBottom = styled.div`
     height: 12vh;
     padding-top: 20px; 
     box-sizing: content-box;
-<<<<<<< HEAD
-    @media ${deviceW.desktopR} {
-        margin-right: 150px;
-        display: flex;
-        align-items: center;
-        width: 85vw;
-=======
-    @media ${device.desktopR} {
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
         height: 5vh;
         padding-top: 20px; 
-        box-sizing: content-box;      
+        box-sizing: content-box;     
+        
+        @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 50%;
+        padding-left: 0px;
     }
+
+
 `
 const IconSection = styled.section`
     display: flex;
@@ -401,33 +372,23 @@ const IconSection = styled.section`
     margin-right: 20px;
     z-index: 5;
     cursor: pointer;
-<<<<<<< HEAD
-    @media ${deviceW.laptopL} { 
-        margin-top: 40px;
-    }
-    @media ${deviceW.desktopR} { 
-=======
-    @media ${device.desktopR} { 
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
-        height: 85px;
-        margin-top: 15px;
-    }
     &:hover {
         img{
             transform: scale(1.0);
         }
     }
-<<<<<<< HEAD
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 80px;
         height: 80px;
-=======
-    @media (min-width: 1360px) and (min-height: 768px) {
+    }
+    /* @media (min-width: 1360px) and (min-height: 768px) {
         width: 95px;
         height: 95px;
->>>>>>> fb3cc21863029899468ad9b60bd0c082c039f70d
+    } */
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 50px; 
+        width: 50px;
     }
-   
 `
 const Icon = styled.section`
     display: flex;

@@ -69,4 +69,5 @@ export default App;
 
 const AppStyle = styled.div`
   font-family: 'Oswald', sans-serif;
+
 `

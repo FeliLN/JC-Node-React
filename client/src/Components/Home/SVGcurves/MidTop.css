@@ -77,9 +77,15 @@
 }
 }
 
-@media (min-width: 1360px) and (min-height: 768px) {
+/* @media (min-width: 1360px) and (min-height: 768px) {
     .MidTop{
         top: 160px;
     }
 
+} */
+
+@media (min-height: 640px) and (min-width: 360px) {
+    .MidBot {
+        width: 100%;
+    }
 }
