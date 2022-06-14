@@ -170,21 +170,20 @@ const HeaderStyle = styled.div`
     box-sizing: content-box;
     flex-direction: column;
     display: flex;
-    justify-content: space-between;
     height: 20vh;
     width: 100vw;
     color:#ffd2b4;
     background-color: #0a0a0a;
-    @media ${deviceW.laptopL} { 
-        height: 26vh;
-    }
-    /* @media (min-width: 1360px) and (min-height: 767px) {
-        height: 21vh;
-    } */
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        height: 200px; 
-        width: 500px;
+        width: 360px;
+        height: 22vh;
     }
+     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        height: 20vh;
+         width: 1366px;
+    }   
+
+
 `
 const ContainerTop = styled.div`
     display: flex;
@@ -192,6 +191,9 @@ const ContainerTop = styled.div`
     align-items: center;
     padding: 0 20px;
     height: 12vh;
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+      width: 100%;   
+    } 
 `
 const Bars = styled.section`
     display: flex;
@@ -213,9 +215,8 @@ const Bars = styled.section`
     &:hover {
         color: #fff;
     }
-
-    @media ${deviceW.desktopR} {
-        margin-left: -20px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(1.5) rotate(0deg);
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
        width: 20px;
@@ -228,30 +229,17 @@ const JohhnnyCash = styled.img`
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    @media ${deviceW.laptopL} {
-        width: 16vw;
-        height: 8vw;
-    }
-    @media ${deviceW.desktopL} {
-        width: 8vw;
-        height: 4vw;
-        margin-top: 10px;
-    }
 
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100px; 
+        margin-left: 50px;
+        margin-top: 0px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 12vw;
         margin-left: 20px;
     }
-    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        width: 100px; 
-    }
 
-    /* @media (min-width: 1360px) and (min-height: 768px) {
-        width: 14vw;
-        height: 6vw;
-        margin-top: 90px;
-        margin-left: 70px;
-    } */
 `
 const LinkSection = styled.section`
     width: 500px;
@@ -262,24 +250,17 @@ const LinkSection = styled.section`
     text-shadow: 2px 2px 2px #e9e9e9;
     position: absolute;
     left: 150px;
-    @media ${deviceW.laptopL} { 
-        margin-top: 3px;
-    }
-    @media ${deviceW.desktopR} { 
-        width: 470px;
-        height: 50px;
-        display: flex;
-        align-items: flex-start;
-        transition: all 0.3s ease-in-out;
-
-    }
-    /* @media (min-width: 1360px) and (min-height: 768px) {
-        left: 100px;
-    } */
+    
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        height: 200px;
-        width: 100px; 
+        width: 290px; 
+        left: 60px;
+        z-index: 1;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        width: 400px;
+        left: 120px;
+    }
+   
 `
 const SectionEnabled = styled.section`
     display: flex;
@@ -305,7 +286,6 @@ const SectionEnabled = styled.section`
             transform: translateX(0px);
         }
     }
-
 `
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -317,6 +297,9 @@ const StyledLink = styled(Link)`
     cursor: pointer;
     &:hover {
         color: #000;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 15px;
     }
 `
 const Contact = styled.section`
@@ -347,13 +330,19 @@ const ContainerBottom = styled.div`
     height: 12vh;
     padding-top: 20px; 
     box-sizing: content-box;
-        height: 5vh;
-        padding-top: 20px; 
-        box-sizing: content-box;     
+    height: 5vh;
+    padding-top: 20px; 
+    box-sizing: content-box;     
         
-        @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 50%;
         padding-left: 0px;
+        margin-left: 20px;
+
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        margin-left: 20px;
+        margin-top: 20px;
     }
 
 
@@ -372,23 +361,16 @@ const IconSection = styled.section`
     margin-right: 20px;
     z-index: 5;
     cursor: pointer;
-    &:hover {
-        img{
-            transform: scale(1.0);
-        }
+ 
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 40px; 
+        width: 40px;
     }
-    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 80px;
         height: 80px;
-    }
-    /* @media (min-width: 1360px) and (min-height: 768px) {
-        width: 95px;
-        height: 95px;
-    } */
-    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        height: 50px; 
-        width: 50px;
-    }
+    } 
+
 `
 const Icon = styled.section`
     display: flex;
@@ -397,17 +379,7 @@ const Icon = styled.section`
     border-radius: 30px;
     width: 100px;
     height:100px;
-    @media ${deviceW.laptopL} { 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height:100px;
-    }
-    @media ${deviceW.desktopR} { 
-        height: 80px;
-        margin-top: 5px;
-    }
+
 `   
 const IconText = styled.section`
     display: flex;
@@ -420,21 +392,34 @@ const IconText = styled.section`
     font-weight: bold;
     text-align: center;
     margin-top: 5px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+       display: flex;   
+      } 
 `
 const Cassette = styled.img`
     color: #0a0a0a ;
     width: 75px !important;
     height: 55px !important;;  
     transition: all 0.3s ease-in-out;
-
-    @media ${deviceW.desktopR} { 
-        transform: scale(0.8);
+    transform: scale(0.8);
+    &:hover {
+        transform: scale(1.0);
+    height: 55px !important;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(0.5);
         &:hover {
-            transform: scale(1.0);
-        height: 55px !important;
+            transform: scale(0.58);
         }
-    
-        
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        transform: scale(0.7);
+        &:hover {
+            transform: scale(0.78);
+        }
     }
 `
 const Vinyl = styled.img`
@@ -442,15 +427,23 @@ const Vinyl = styled.img`
     width: 70px !important;
     height: 70px ;
     transition: all 0.3s ease-in-out;
-
-    @media ${deviceW.desktopR} { 
+    transform: scale(0.6);
+    &:hover {
+        transform: scale(.7);
+    }
+    margin-top: -8px;
+    margin-bottom: -9px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(0.5);
+        &:hover {
+            transform: scale(0.55);
+        }
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         transform: scale(0.6);
         &:hover {
-        transform: scale(.7);
+            transform: scale(0.68);
         }
-        margin-top: -8px;
-        margin-bottom: -9px;
-        
     }
 `
 const CD = styled.img`
@@ -458,16 +451,24 @@ const CD = styled.img`
     width: 90px !important;
     height: 60px !important;
     transition: all 0.3s ease-in-out;
-
-    @media ${deviceW.desktopR} { 
-        transform: scale(0.7);
-        }
+    transform: scale(0.7);
+    &:hover {
+        color: #ffffff;
+        transform: scale(.8);
+        cursor: pointer;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(0.4);
         &:hover {
-            color: #ffffff;
-            transform: scale(.8);
-            cursor: pointer;
-            
+            transform: scale(0.44);
         }
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.68);
+        }
+    }
 `
 const DVDImg = styled.img`
     width: 80px;
@@ -476,34 +477,49 @@ const DVDImg = styled.img`
     height: 60px;
     transition: all 0.3s ease-in-out;
 
-
-    @media ${deviceW.desktopR} {
-
-        transform: scale(0.8);
+    transform: scale(0.8);
+    &:hover {
+        color: #ffffff;
+        transform: scale(1.0);
+        cursor: pointer;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(0.5);
         &:hover {
-            color: #ffffff;
-            transform: scale(1.0);
-            cursor: pointer;
-        
-   
+            transform: scale(0.58);
         }
     }
-    
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        transform: scale(0.65);
+        &:hover {
+            transform: scale(0.73);
+        }
+    }
 `
 const Book = styled.img`
     width: 80px;
     height: 60px;
     transition: all 0.3s ease-in-out;
 
-    @media ${deviceW.desktopR} { 
-        transform: scale(0.6);
+    transform: scale(0.6);
+    &:hover {
+        color: #ffffff;
+        transform: scale(.8);
+        cursor: pointer;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        transform: scale(0.4);
         &:hover {
-            color: #ffffff;
-            transform: scale(.8);
-            cursor: pointer;
+            transform: scale(0.5);
         }
     }
-
+    
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        transform: scale(0.5);
+        &:hover {
+            transform: scale(0.58);
+        }
+    }
 `
 
 

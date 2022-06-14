@@ -17,11 +17,11 @@ const Shop = ({shop, search, setSearch}) => {
     const [yearModal, setYearModal] = React.useState(false);
     const [genreModal, setGenreModal] = React.useState(false);
   
-    // useEffect(() => {
-    //     getProducts(shop).then(data => {
-    //         setProducts(data);
-    //     })
-    // }, [shop]);
+    useEffect(() => {
+        getProducts(shop).then(data => {
+            setProducts(data);
+        })
+    }, [shop]);
 
     const handleChange = (event) => {
         setPage(event.target.innerText)
@@ -93,17 +93,7 @@ const ShopStyle = styled.div`
             margin-top: 6%;
         }
     }
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
-    @media (min-width: ${deviceW.laptopL}) { 
-     height: 100%;
-    }
-    @media (min-width: ${deviceW.desktopR}) {
-        height: 100%;
-        margin-top: 10%;
-        transition: all 0.3s ease-in-out;
-    } 
+
 
 `
 const ShopVoid = styled.div`

@@ -70,14 +70,24 @@ export default Home;
 const HomeStyle = styled.div`
    flex-direction: column;
    height: 100vh;
-
+    width: 100vw;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 360px;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        width: 1366px;
+    }
+    
 `
 const HeaderStyle = styled.div`
 
-
-    @media (min-width: 1360px) and (min-height: 768px) {
+@media ${deviceW.mobileS} and ${deviceH.mobileS}{
+    width: 360px;
+}
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 23.14vh;
     }
+   
 `
 const JohnnyCash = styled.img`
     width: 9vw;
@@ -86,17 +96,18 @@ const JohnnyCash = styled.img`
     top: 10%;
     left: 70%;
     z-index: 10;
-    /* @media (min-width: 1360px) and (min-height: 768px) {
-        top: 8%;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        display: block;
+        top: 7.5%;
         left: 73%;
-    } */
+    } 
 `
 const FooterStyle = styled.div`
     flex-direction: row ;
     transition: all 1s ease-in-out;
-    @media ${deviceW.desktopR} {
-        flex-direction: row;   
-    }
 `
 const ShopStyle = styled.div`
 

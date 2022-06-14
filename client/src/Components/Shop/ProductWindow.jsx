@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { deviceW } from '../Breakpoints';
 import { CartState } from '../../Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
+
+import {deviceW, deviceH} from '../Breakpoints'
 
 
 const ProductWindow = ({products, search, searchItems,page, setPages}) => {
@@ -55,7 +56,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
     
     return (
         <ProductWindowStyle>
-            {/* {loading ?
+            {loading ?
             <>
             {search && (searchItems.length > 0 ? searchItems.map(product => (
                 <Card key={product.id}>
@@ -92,7 +93,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
                     </Button>
                 </Card>
             ))}
-            </>} */}
+            </>}
         </ProductWindowStyle>
     )
 }
@@ -115,7 +116,7 @@ const ProductWindowStyle = styled.div`
             height: 1000px;
         }
     }
-    @media (min-width: ${deviceW.laptopL}) { 
+    @media ${deviceW.laptopL} { 
     }
 
 `
@@ -147,7 +148,7 @@ const Card = styled.li`
             opacity: 1;
         }
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;
         height: 300px;
         margin: 0 15px 0 15px;
@@ -185,7 +186,7 @@ const Img = styled.img`
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
-    @media (min-width: 1360px) and (min-height: 768px) {
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 130px;
         height: 130px;
     }
@@ -209,7 +210,7 @@ const Button = styled.button`
         color: #fff;
         text-shadow: 0px 0px 5px #000;
     }
-    @media (min-width: 1360px) and (min-height: 768px) {
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
        padding: 6px;
        margin-top: 6px;
     }

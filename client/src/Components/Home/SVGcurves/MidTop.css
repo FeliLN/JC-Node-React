@@ -17,35 +17,25 @@
     width: calc(190% + 1.2px);
     height: 120px;
     transform: rotateY(180deg);
-    bottom: -1px;
     z-index: 0;
-    
-
 }
 
 .MidTop .shape-fill {
-    fill: #000;
+    fill: #0a0a0a;
 
 } 
-
-
-@media (min-width: 1440px) { 
-    
+@media (min-height: 640px) and (min-width: 360px) {
     .MidTop {
-        position: relative;
-        top: 42px;
-        left: 0;
-        transform: scaleY(2.3) rotateY(180deg);
-        height: 40px;
-        overflow: hidden;
-        line-height: 0;
-        margin-right: 0px;
-        z-index: 4;
+        position: absolute;
+        top: 120px;
+        height: 70px;
+        z-index: 0;
     }
-
-    .MidTop .shape-fill {
-    
-        fill: #0a0a0a;
+    .MidTop svg {
+        width: calc(172% + 1.3px);
+        height: 218px;
+        transform: rotateY(180deg);
+        z-index: 0;
     }
 }
 
@@ -73,19 +63,29 @@
 }
 
 .MidTop .shape-fill {
-    fill: #000;
+    fill: #0a0a0a;
 }
 }
 
-/* @media (min-width: 1360px) and (min-height: 768px) {
-    .MidTop{
-        top: 160px;
+
+
+
+@media (min-width: 1440px) { 
+    
+    .MidTop {
+        position: relative;
+        top: 42px;
+        left: 0;
+        transform: scaleY(2.3) rotateY(180deg);
+        height: 40px;
+        overflow: hidden;
+        line-height: 0;
+        margin-right: 0px;
+        z-index: 4;
     }
 
-} */
-
-@media (min-height: 640px) and (min-width: 360px) {
-    .MidBot {
-        width: 100%;
+    .MidTop .shape-fill {
+    
+        fill: #0a0a0a;
     }
 }

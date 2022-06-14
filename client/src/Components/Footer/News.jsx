@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { deviceW } from '../Breakpoints'
+import { deviceW, deviceH } from '../Breakpoints'
 import { Carousel } from 'react-bootstrap'
 import { getNovedades } from '../../Service/publicApiService'
 
@@ -43,6 +43,9 @@ const CarouselStyle = styled(Carousel)`
     h3, p{
         color: white;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+
+    } 
 `
 
 const Image = styled.img`
@@ -50,4 +53,7 @@ position: block;
     color: white;
     height: 400px;
     object-fit: cover;
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+       height: 340px;
+    } 
 `

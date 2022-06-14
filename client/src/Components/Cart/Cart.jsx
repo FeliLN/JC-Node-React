@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header/Header'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { deviceW } from '../Breakpoints'
+import { deviceW, deviceH } from '../Breakpoints'
 import { CartState } from '../../Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -91,7 +91,7 @@ const CartStyle = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    margin-left: 100px;
+
     flex-direction: column;
     background-color: #ffffff;
     color: #0a0a0a;
@@ -126,19 +126,15 @@ const CartWindow = styled.div`
             margin-top: 0px;
         }
         to {
-            height: 800px;
+            
+            min-height: 800px;
             margin-top: 2%;
         }
     }
     @media (max-width: 768px) {
         flex-direction: column;
     }
-    @media ${deviceW.laptopL} { 
-    }
-    @media ${deviceW.desktopR} {
-        transition: all 0.3s ease-in-out;
-        flex-direction: column
-    }   
+
 `
 
 const Title = styled.div`
@@ -155,16 +151,10 @@ const Title = styled.div`
     width: 100%;
     padding: 10px;
     z-index: 10;
-    @media ${deviceW.laptopL} {
-        
-        margin-bottom: 10px;
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 50px;
-    }
-    @media ${deviceW.desktopR} {
         margin-bottom: 10px;
-        height: 50px;
-    
-    }
+    } 
 
 
 `
@@ -195,9 +185,7 @@ const Title = styled.div`
             opacity: 1;
         }
     }
-    @media ${deviceW.laptopL} { 
-        width: 100%;
-    }
+
 `
 const THead = styled.thead`
     border-bottom: 1px solid #000000;
@@ -228,17 +216,15 @@ const Total = styled.div`
     width: 100%;
     z-index: 10;
     animation: cassetteslide 1s 1s both;
-    @media ${deviceW.laptopL} {
-      margin-top: 10px;
-        height: 50px;
-    }
-    @media ${deviceW.desktopR} {
-        height: 50px;
-    }
+
     span{
         font-size: 1.5rem;
         margin-left: 20px;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        
+        margin-top: 10px;
+    } 
     `
 const Button = styled(FontAwesomeIcon)`
     &:hover {

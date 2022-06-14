@@ -107,9 +107,8 @@ const FooterStyle = styled.div`
     z-index: 1;
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
-    
-    @media (min-width: 1360px) and (min-height: 768px) {
-        height: 67.8vh;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 73.5vh;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
@@ -131,6 +130,8 @@ const Slogan = styled.div`
     flex-direction: column;
     text-align: left;
     padding-top: 5%;
+
+
 `
 const Text = styled.div`
 
@@ -157,7 +158,12 @@ const Logo = styled.div`
     height: 55vh !important;
     width: 45vw;
     z-index: 2;
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        display: flex;
+    }
 `
 const Social = styled.div`
     flex-direction: row;

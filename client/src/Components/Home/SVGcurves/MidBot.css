@@ -20,9 +20,14 @@
 }
 
 .MidBot .shape-fill {
-    fill: #fff;
+    fill: rgba(255, 255, 255, 0);
 }
-
+@media  (min-width: 360px) and (max-width: 413px) {
+    .MidBot {
+        width: 360px;
+        height: 70px;
+    }
+}
 @media (min-width: 1440px) { 
     
     .MidBot {
@@ -58,16 +63,8 @@
     }
     
     .MidBot .shape-fill {
-        fill: #fff;
+        fill: rgba(255, 255, 255, 0);
         
     }
 }
 
-@media (min-height: 640px) and (min-width: 360px) {
-    .MidBot {
-        width: 360px;
-    }
-    .Midbot svg {
-        width: 100%;
-    }
-}
