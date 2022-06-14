@@ -4,7 +4,7 @@ import YearBubbleItems from './Bubbles/YearBubbleItems'
 import GenreBubbleItems from './Bubbles/GenreBubbleItems'
 
 //styled components
-import { deviceW } from '../Breakpoints'
+import { deviceW, deviceH } from '../Breakpoints'
 import styled from 'styled-components'
 
 const ShopFilters = ({
@@ -87,15 +87,7 @@ const ShopFiltersStyle = styled.div`
     box-shadow: 0px 0px 10px #000000;
     width: 100%;
     z-index: 10;
-    @media ${deviceW.laptopL} {
-        margin-bottom: 10px;
-        height: 50px;
-    }
-    @media ${deviceW.desktopR} {
-        margin-bottom: 10px;
-        height: 50px;
-    
-    }
+
     input{
         padding-left: 10px;
         border-radius: 10px;
@@ -107,6 +99,28 @@ const ShopFiltersStyle = styled.div`
     input::placeholder{
         color: #000000;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: grid;
+        grid-template-columns: auto auto;
+        flex-direction: column;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        input{
+            width: 95%;
+            height: 30px;
+            margin: 3px;
+        }
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        input{
+            width: auto;
+            height: 35px;
+        }
+    }
 `
 const Text = styled.div`
     display: flex;
@@ -114,6 +128,12 @@ const Text = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        display: flex;
+    }
 `
 const Year = styled.div`
     display: flex;
@@ -126,20 +146,18 @@ const Year = styled.div`
     box-shadow: 0px 0px 5px #000000;
     transition: 0.3s;
     cursor:pointer;
-    @media ${deviceW.laptopL} {
-        width: 100px;
-    }
-    &:hover {
-        background-color: #000;
-        color: #fff;
-    }
-    @media ${deviceW.desktopR} {
-        width: 100px;
-    }
 
     &:hover {
         background-color: #000;
         color: #fff;
+    }
+
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 120px;
+        display: flex;
     }
 `
 const Genre = styled.div`
@@ -152,19 +170,17 @@ const Genre = styled.div`
     border-radius: 10px;
     box-shadow: 0px 0px 5px #000000;
     transition: 0.3s;
-    @media ${deviceW.laptopL} {
-        width: 100px;
-    }
+
     &:hover {
         background-color: #000;
         color: #fff;
     }
-    @media ${deviceW.desktopR} {
-        width: 100px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+       display: none;
     }
-    &:hover {
-        background-color: #000;
-        color: #fff;
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 120px;
+        display: flex;
     }
 `
 const YearBubble = styled.div`   

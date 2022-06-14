@@ -108,11 +108,13 @@ const FooterStyle = styled.div`
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        height: 73.5vh;
+        flex-direction: column;
+        height: 67vh;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
     }
+    
 `
 //Container Left
 const ContainerLeft = styled.div`
@@ -121,7 +123,10 @@ const ContainerLeft = styled.div`
     justify-content: center;
     display: flex;
     flex-direction: column;
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 40vh;
+        width: 100vw;
+    }
 `
 const Slogan = styled.div`
     display: flex;
@@ -140,11 +145,16 @@ const Title = styled.h1`
     text-align: center;
     font-size: 2.5vw;
     font-weight: bold;
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 5vw;
+    }
 `
 const Subtitle = styled.h2`
     text-align: center;
     font-size: 1.5vw;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 4vw;
+    }
 `
 //Container Right
 const ContainerRight = styled.div`
@@ -152,7 +162,10 @@ const ContainerRight = styled.div`
     height: 60vh;
     width: 45vw;
     z-index: 20;
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100vw;
+        height: 10vh;
+    }
 `
 const Logo = styled.div`
     height: 55vh !important;
@@ -169,6 +182,10 @@ const Social = styled.div`
     flex-direction: row;
     display: flex;
     justify-content: right;
+
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        justify-content: center;
+    }
 `
 // //FA Icon
 const Facebook = styled(FontAwesomeIcon)`
@@ -195,6 +212,11 @@ const Facebook = styled(FontAwesomeIcon)`
         background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 73%,#7db9e8 100%); 
         background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 73%,#7db9e8 100%); 
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 1rem;
+    }
 `
 const Instagram = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -218,6 +240,11 @@ const Instagram = styled(FontAwesomeIcon)`
         border: none;
         padding: 5px;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 1rem;
+    }
 `
 const Whatsapp = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -239,6 +266,11 @@ const Whatsapp = styled(FontAwesomeIcon)`
         background: #25D366;
         border:none;
         padding: 5px;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 0rem;
     }
 `
 

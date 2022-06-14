@@ -127,6 +127,7 @@ const Menu = styled.span`
         color: #0a0a0a;
         background-color: #f5f5f5;
         border-radius: 10px;
+        
     }
     span{
         width: 100%;

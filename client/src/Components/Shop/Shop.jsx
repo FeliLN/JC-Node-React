@@ -2,7 +2,7 @@ import React, {useEffect}  from 'react';
 import PayMethod from './PayMethod';
 import ShopFilters from './ShopFilters';
 import styled from 'styled-components';
-import  { deviceW } from '../Breakpoints'
+import  { deviceW, deviceH } from '../Breakpoints'
 import ProductWindow from './ProductWindow';
 import { getProducts } from '../../Service/publicApiService';
 import { Pagination } from '@mui/material';
@@ -89,11 +89,38 @@ const ShopStyle = styled.div`
             margin-top: 0px;
         }
         to {
-            height: 1000px;
+            min-height: 1000px;
             margin-top: 6%;
+            
         }
     }
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        margin-top: 15%;
+        @keyframes slidein {
+            from {
+                height: 0px;
+                margin-top: 0px;
+            }
+            to {
+                min-height: 1000px;
+                margin-top: 15%;
+                
+            }
+        }
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        @keyframes slidein {
+            from {
+                height: 0px;
+                margin-top: 0px;
+            }
+            to {
+                min-height: 1000px;
+                margin-top: 6%;
+                
+            }
+        }
+    }
 
 `
 const ShopVoid = styled.div`

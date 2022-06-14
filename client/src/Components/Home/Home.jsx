@@ -111,6 +111,7 @@ const FooterStyle = styled.div`
 `
 const ShopStyle = styled.div`
 
+
 `
 
 

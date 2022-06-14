@@ -43,16 +43,20 @@ const CarouselStyle = styled(Carousel)`
     h3, p{
         color: white;
     }
+    
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
 
     } 
 `
 
 const Image = styled.img`
-position: block;
+    position: block;
     color: white;
     height: 400px;
     object-fit: cover;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 200px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
        height: 340px;
     } 

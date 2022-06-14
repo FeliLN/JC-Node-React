@@ -113,10 +113,14 @@ const ProductWindowStyle = styled.div`
             height: 0px;
         }
         to {
-            height: 1000px;
+            min-height: 1000px;
         }
     }
-    @media ${deviceW.laptopL} { 
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        grid-template-columns: auto auto;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        grid-template-columns: auto auto auto auto auto auto;
     }
 
 `
@@ -124,7 +128,7 @@ const Card = styled.li`
     display: flex;
     height: 380px;
     width: 250px;
-        padding: 10px;
+    padding: 10px;
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5;
@@ -148,6 +152,11 @@ const Card = styled.li`
             opacity: 1;
         }
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+       width: 140px;
+         height: 320px;
+       margin: 0 10px 10px 10px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;
         height: 300px;
@@ -159,7 +168,7 @@ const Title = styled.h1`
     font-weight: bold;
     color: #000;
     margin-bottom: 10px;
-
+    
 
 `
 const Album = styled.h2`
@@ -169,6 +178,7 @@ const Album = styled.h2`
     text-overflow: ellipsis;
     overflow: hidden;
     text-decoration: none;
+   
 `
 const Price = styled.h2`
     font-size: 1em;
@@ -186,6 +196,10 @@ const Img = styled.img`
     height: 150px;
     border-radius: 10px;
     object-fit: cover;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100px;
+        height: 100px;
+     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 130px;
         height: 130px;
@@ -210,6 +224,11 @@ const Button = styled.button`
         color: #fff;
         text-shadow: 0px 0px 5px #000;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: .8em;
+        padding: 5px;
+        margin-top: 5px;
+     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
        padding: 6px;
        margin-top: 6px;
