@@ -74,6 +74,9 @@ const HomeStyle = styled.div`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 360px;
     }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        width: 414px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 1366px;
     }
@@ -81,9 +84,9 @@ const HomeStyle = styled.div`
 `
 const HeaderStyle = styled.div`
 
-@media ${deviceW.mobileS} and ${deviceH.mobileS}{
-    width: 360px;
-}
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 360px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 23.14vh;
     }

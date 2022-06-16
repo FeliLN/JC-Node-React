@@ -109,6 +109,8 @@ const ShopFiltersStyle = styled.div`
             width: 95%;
             height: 30px;
             margin: 3px;
+            margin-bottom: 5px;
+            margin-top: 5px;
         }
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{

@@ -5,6 +5,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import JohnnyCash from '../Images/johnny-cash.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../Cart/CartWidget'
+import { deviceH, deviceW } from '../Breakpoints'
 
 const Header = () => {
   return (
@@ -60,6 +61,9 @@ const ContainerRight = styled.div`
     justify-content: flex-end;
     width: 50%;
     margin-right: 20px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+       margin-right: 0px;
+    }
     `
 
 const Arrow = styled(FontAwesomeIcon)`
@@ -67,13 +71,24 @@ const Arrow = styled(FontAwesomeIcon)`
     cursor: pointer;
     font-size: 2rem;
     margin-left: 10px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 1rem;
+    }
     `
 
 const Image = styled.img`
+    display: flex;
     width: 200px;
     height: 100px;
     margin-right: 10px;
     padding: 10px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        display: flex;
+    }
+
 `   
 
 const StyledLinks = styled(Link)`
@@ -84,5 +99,11 @@ const StyledLinks = styled(Link)`
     h3{
         color: #fff;
     }
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        margin: 10px 10px 0 0;
+        h3{
+            width: 50px;
+        font-size: .8rem;
+       }
+    }
     `

@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { CartState } from '../../Context';
 import MercadoPagoModal from './MercadoPago/MercadoPagoModal'
 import { createVenta, getNotifiaciones, updateNotificacion } from '../../Service/publicApiService'
+import { deviceW, deviceH } from '../Breakpoints'
 
 import styled from 'styled-components'
 
@@ -234,40 +235,60 @@ const FormStyle = styled(Form)`
             background-color: #e5e5e5;
         }
       }
-
-    `
-
-const PayWindow = styled.div`
-display: flex;
-  flex-direction: column;
-  z-index: 0;
-  align-items: center;
-  width: 70%;
-  height: 0px;
-  background-color: #000;
-  padding: 10px;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px #000000;
-  border: 1px solid #000000; 
-  text-align: center;
-  animation: slide 1s both;
-  @keyframes slide {
-      from {
-          height: 0px;
-          margin-top: 0px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+      .form-group{
+        flex-direction: column;
       }
-      to {
-          height: 800px;
-          margin-top: 2%;
+      .form-group1, .form-group2 {
+        margin: 0px;
       }
-  }
+      label {
+        font-size: 1.2rem;
+      }
+      .input, select {
+        font-size: 1.2rem;
+      }
+      .submit{
+        font-size: 1.2rem;
+        width: 100%;
+      }
+    } 
 
 `
 
-    const Title = styled.div`
- font-size: 2rem;
-  font-weight: bold;
+const PayWindow = styled.div`
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    align-items: center;
+    width: 70%;
+    min-height: 0px;
+    background-color: #0a0a0a;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0a0a0a;
+    border: 1px solid #0a0a0a; 
+    text-align: center;
+    animation: slide 1s both;
+    @keyframes slide {
+        from {
+            height: 0px;
+            margin-top: 0px;
+        }
+        to {
+            min-height: 800px;
+            margin-top: 2%;
+        }
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        width: 90%;
+    } 
+`
+
+const Title = styled.div`
+    font-size: 2rem;
+    font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -279,11 +300,14 @@ display: flex;
     width: 100%;
     padding: 10px;
     z-index: 10;
-
+    
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        font-size: 1.5rem;
+    }
 
 `
 
-    const Inputs = styled.div`
+const Inputs = styled.div`
     margin-top: 10px;
     width: 100%;
     height: 100%;

@@ -26,7 +26,12 @@
     .MidBot {
         width: 360px;
         height: 70px;
-        
+    }
+}
+@media  (min-width: 414px) and (max-width: 479px) {
+    .MidBot {
+        width: 414px;
+
     }
 }
 @media (min-width: 1440px) { 

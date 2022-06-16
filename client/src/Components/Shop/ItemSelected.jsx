@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import { deviceW } from '../Breakpoints';
+import { deviceW, deviceH } from '../Breakpoints';
 import { CartState } from '../../Context';
 import ReactImageMagnify from 'react-image-magnify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -89,6 +89,11 @@ const Modal = styled.div`
             opacity: 1;
         }
     }
+   @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 50%;
+        height: 50%;
+    }
+
 `
 
 const Close = styled.button`
@@ -116,14 +121,7 @@ const Card = styled.li`
     box-shadow: 0px 0px 10px #000000;
     animation: fadein 1s 1s both;
     transition: 0.3s;
-    z-index: 1000;
-    @media ${deviceW.laptopL} {
-        width: 90%;
-        height: 90%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
+    z-index: 100;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -131,7 +129,20 @@ const Card = styled.li`
         to {
             opacity: 1;
         }
+    } 
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        flex-direction: column;
     }
+
+    @media ${deviceW.laptopL} {
+        flex-direction: row;
+        width: 90%;
+        height: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+   
 `
 const ContainerLeft = styled.div`
     display: flex;
@@ -144,6 +155,10 @@ const ContainerLeft = styled.div`
     border-radius: 10px;
     .ImageMagnify{
         border-radius: 10px;
+    }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 100%;
+        width: 100%;
     }
     `
 const ContainerRight = styled.div`

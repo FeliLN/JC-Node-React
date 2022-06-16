@@ -7,7 +7,7 @@ const ImageCarousel = ({item}) => {
   return (
     <div>
         <Carousel>
-<Carousel.Item>
+            <Carousel.Item>
             <ReactImageMagnify style={{ marginLeft: '20px'}} {...{
                     smallImage: {
                         alt: '',

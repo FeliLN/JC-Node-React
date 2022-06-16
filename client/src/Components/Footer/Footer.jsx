@@ -111,6 +111,10 @@ const FooterStyle = styled.div`
         flex-direction: column;
         height: 67vh;
     }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        flex-direction: column;
+        height: 69vh;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
     }
@@ -124,6 +128,10 @@ const ContainerLeft = styled.div`
     display: flex;
     flex-direction: column;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 40vh;
+        width: 100vw;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
         height: 40vh;
         width: 100vw;
     }
@@ -163,6 +171,10 @@ const ContainerRight = styled.div`
     width: 45vw;
     z-index: 20;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100vw;
+        height: 10vh;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
         width: 100vw;
         height: 10vh;
     }

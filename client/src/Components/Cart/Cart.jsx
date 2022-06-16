@@ -91,7 +91,6 @@ const CartStyle = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-
     flex-direction: column;
     background-color: #ffffff;
     color: #0a0a0a;
@@ -112,12 +111,12 @@ const CartWindow = styled.div`
     align-items: center;
     width: 95%;
     height: 0px;
-    background-color: #000;
+    background-color: #0a0a0a;
     padding: 10px;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #000000;
-    border: 1px solid #000000; 
+    box-shadow: 0px 0px 10px #0a0a0a;
+    border: 1px solid #0a0a0a; 
     text-align: center;
     animation: slide 1s both;
     @keyframes slide {
@@ -127,7 +126,7 @@ const CartWindow = styled.div`
         }
         to {
             
-            min-height: 800px;
+            min-height: 500px;
             margin-top: 2%;
         }
     }
@@ -138,8 +137,8 @@ const CartWindow = styled.div`
 `
 
 const Title = styled.div`
- font-size: 2rem;
-  font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -147,19 +146,22 @@ const Title = styled.div`
     background-color: #f5f5f5;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #0a0a0a;
     width: 100%;
     padding: 10px;
     z-index: 10;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 50px;
         margin-bottom: 10px;
     } 
-
-
 `
-    const CartItems = styled.div`
 
+const CartItems = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 10px; 
@@ -167,15 +169,15 @@ const Title = styled.div`
     animation: cassetteslide 1s 1s both;
     z-index:-10; 
     table {	
-        
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
         border-spacing: 15px;
         border-collapse: separate;
-      
     }
-    tr { font-size: 1.2rem;}
+    tr { 
+        font-size: 1.2rem;
+    }
 
     @keyframes cassetteslide {
         from {
@@ -185,22 +187,47 @@ const Title = styled.div`
             opacity: 1;
         }
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        width: 330px;
+        table{
+            border-spacing: 5px;
+            width: 330px;
+        }
+        tr{
+            font-size: .9rem;
+        }
+    } 
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        width: 100%;
+        table{
+            border-spacing: 10px;
+            width: 100%;
+        }
+        tr{
+            font-size: 1rem;
+        }
+    }
 
 `
 const THead = styled.thead`
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #0a0a0a;
     font-size: 1.5rem;
-  
     color: #fff;
-    
     width: 100%;
     height: 50px;
     th {
       border-radius: 10px;  
-      background-color: #000000;
+      background-color: #0a0a0a;
     }
-    
-    `
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        height: 30px;
+        font-size: .7rem;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        height: 50px;
+        font-size: 1.5rem;
+    } 
+`
 
 
 const Total = styled.div`
@@ -212,7 +239,7 @@ const Total = styled.div`
     background-color: #f5f5f5;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #0a0a0a;
     width: 100%;
     z-index: 10;
     animation: cassetteslide 1s 1s both;
@@ -221,6 +248,10 @@ const Total = styled.div`
         font-size: 1.5rem;
         margin-left: 20px;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        
+        margin-top: 10px;
+    } 
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         
         margin-top: 10px;

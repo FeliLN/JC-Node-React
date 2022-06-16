@@ -178,6 +178,10 @@ const HeaderStyle = styled.div`
         width: 360px;
         height: 22vh;
     }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        width: 414px;
+        height: 22vh;
+    }
      @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 20vh;
          width: 1366px;
@@ -250,11 +254,9 @@ const LinkSection = styled.section`
     text-shadow: 2px 2px 2px #e9e9e9;
     position: absolute;
     left: 150px;
-    
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 290px; 
         left: 60px;
-        z-index: 1;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 400px;
@@ -276,14 +278,17 @@ const SectionEnabled = styled.section`
     animation: slideout 0.5s;
     background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     border: 2px solid #000;
+    z-index: 1;
     @keyframes slideout {
         from {
             opacity: 0;
             transform: translateX(-100px);
+            z-index: 0;
         }
         to {
             opacity: 1;
             transform: translateX(0px);
+            z-index: 1;
         }
     }
 `
@@ -338,7 +343,6 @@ const ContainerBottom = styled.div`
         width: 50%;
         padding-left: 0px;
         margin-left: 20px;
-
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         margin-left: 20px;
