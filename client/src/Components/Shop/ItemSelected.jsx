@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import { deviceW } from '../Breakpoints';
+import { deviceW, deviceH } from '../Breakpoints';
 import { CartState } from '../../Context';
 import ReactImageMagnify from 'react-image-magnify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -45,6 +45,9 @@ const ItemSelected = () => {
                 }} />
                 <ImageCarousel item={modalItem} />
             </ContainerLeft>
+            <ContainerTop>
+                <img src={modalItem.Imagen} alt='' className="imgitem"/>
+            </ContainerTop>
             <ContainerRight>
                 <Title>{modalItem.Artista}</Title>
                 <Album>{modalItem.Album}</Album>
@@ -79,6 +82,7 @@ const Modal = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     z-index: 100;
     animation: fadein 1s 1s both;
     @keyframes fadein {
@@ -89,6 +93,12 @@ const Modal = styled.div`
             opacity: 1;
         }
     }
+   @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        box-sizing: content-box;
+        width: 50%;
+        height: 50%;
+    }
+
 `
 
 const Close = styled.button`
@@ -116,14 +126,7 @@ const Card = styled.li`
     box-shadow: 0px 0px 10px #000000;
     animation: fadein 1s 1s both;
     transition: 0.3s;
-    z-index: 1000;
-    @media ${deviceW.laptopL} {
-        width: 90%;
-        height: 90%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
+    z-index: 100;
     @keyframes fadein {
         from {
             opacity: 0;
@@ -131,7 +134,40 @@ const Card = styled.li`
         to {
             opacity: 1;
         }
+    } 
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        flex-direction: column;
     }
+
+    @media ${deviceW.laptopL} {
+        flex-direction: row;
+        width: 90%;
+        height: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+   
+`
+const ContainerTop = styled.div`
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+    margin-left: 100px;
+    
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: flex;
+        width: 360px;
+        height: 320px;
+        .imgitem{
+            object-fit: cover;
+            width: 320px;
+            height: 320px;
+        }
+    }
+
 `
 const ContainerLeft = styled.div`
     display: flex;
@@ -145,6 +181,9 @@ const ContainerLeft = styled.div`
     .ImageMagnify{
         border-radius: 10px;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: none;
+    }
     `
 const ContainerRight = styled.div`
     flex-direction: column;
@@ -156,6 +195,11 @@ const ContainerRight = styled.div`
     border-radius: 10px;
     background-color: #d0d0d0;
     margin-left: 20px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 360px;
+        height: 100%;
+        
+    }
     `
 const Title = styled.h1`
     font-size: 3em;

@@ -22,13 +22,13 @@
 .MidBot .shape-fill {
     fill: rgba(255, 255, 255, 0);
 }
-@media  (min-width: 360px) and (max-width: 413px) {
+@media  (min-width: 360px)  {
     .MidBot {
-        width: 360px;
+        width: 100vw;
         height: 70px;
-        
     }
 }
+
 @media (min-width: 1440px) { 
     
     .MidBot {

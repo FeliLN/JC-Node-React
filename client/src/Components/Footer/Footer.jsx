@@ -107,10 +107,24 @@ const FooterStyle = styled.div`
     z-index: 1;
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
+    width: 100vw;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         flex-direction: column;
         height: 67vh;
     }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        flex-direction: column;
+        height: 69vh;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        flex-direction: column;
+        height: 70.2vh;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        flex-direction: row;
+        height: 66.9vh;
+    }
+    
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
     }
@@ -125,6 +139,15 @@ const ContainerLeft = styled.div`
     flex-direction: column;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         height: 40vh;
+        width: 100vw;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        height: 40vh;
+        width: 100vw;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        padding-left: 2vw;
+        height: 60vh;
         width: 100vw;
     }
 `
@@ -148,12 +171,18 @@ const Title = styled.h1`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         font-size: 5vw;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        font-size: 3.8vw;
+    }
 `
 const Subtitle = styled.h2`
     text-align: center;
     font-size: 1.5vw;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         font-size: 4vw;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        font-size: 3vw;
     }
 `
 //Container Right
@@ -166,6 +195,10 @@ const ContainerRight = styled.div`
         width: 100vw;
         height: 10vh;
     }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        width: 100vw;
+        height: 10vh;
+    }
 `
 const Logo = styled.div`
     height: 55vh !important;
@@ -173,6 +206,9 @@ const Logo = styled.div`
     z-index: 2;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         display: none;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        display: flex;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         display: flex;
@@ -185,6 +221,10 @@ const Social = styled.div`
 
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         justify-content: center;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        justify-content: flex-end;
+        margin-right: 2vw;
     }
 `
 // //FA Icon
@@ -217,6 +257,11 @@ const Facebook = styled(FontAwesomeIcon)`
         height: 40px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
+    }
 `
 const Instagram = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -245,6 +290,11 @@ const Instagram = styled(FontAwesomeIcon)`
         height: 40px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
+    }
 `
 const Whatsapp = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -271,6 +321,11 @@ const Whatsapp = styled(FontAwesomeIcon)`
         width: 40px !important;
         height: 40px !important;
         margin-right: 0rem;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
     }
 `
 

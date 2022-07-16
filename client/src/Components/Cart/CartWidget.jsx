@@ -163,6 +163,19 @@ const Menu = styled.span`
         background-size: 200% auto;
 
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 100vw;
+        span{
+            margin-left: 5px;
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 100%;
+        span{
+            margin-left: 5px;
+        }
+    }
+
     @media (min-width: 1360px) and (min-height: 768px) {
         h1{
             font-size: 1.5rem;
@@ -186,6 +199,11 @@ const Button = styled.button`
         transform: scale(1.2);
         cursor: pointer;
     }
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 20px;
+        height: 20px;
+    }
+
 `
 
 const DropDown = styled(Dropdown.Toggle)`
@@ -201,15 +219,22 @@ const DropDown = styled(Dropdown.Toggle)`
         background-color: goldenrod;
         border: none;
     }
+    
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        margin: 4px 0px 4px 0 ;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
-
+        margin: 4px 20px 4px 0 ;
     }
 `
 
 const FAIcon = styled(FontAwesomeIcon)`
 
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 1rem;
+    }
      @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         font-size: 1.5rem;
     }
+
 `

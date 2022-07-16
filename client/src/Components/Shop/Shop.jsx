@@ -70,12 +70,14 @@ export default Shop;
 const ShopStyle = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     z-index: 0;
     align-items: center;
-    width: 95%;
+    width: 95vw;
+    margin: auto;
     background-color: #000;
     padding: 10px;
-    margin: auto;
+    margin: 0 10px 0 0;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #000000;
     border: 1px solid #000000; 
@@ -104,6 +106,20 @@ const ShopStyle = styled.div`
             to {
                 min-height: 1000px;
                 margin-top: 15%;
+                
+            }
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        margin-top: 6%;
+        @keyframes slidein {
+            from {
+                height: 0px;
+                margin-top: 0px;
+            }
+            to {
+                min-height: 1000px;
+                margin-top: 6%;
                 
             }
         }

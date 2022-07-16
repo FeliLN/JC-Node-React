@@ -71,19 +71,13 @@ const HomeStyle = styled.div`
    flex-direction: column;
    height: 100vh;
     width: 100vw;
-    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        width: 360px;
-    }
-    @media ${deviceW.laptopS} and ${deviceH.laptopS} {
-        width: 1366px;
-    }
-    
+
 `
 const HeaderStyle = styled.div`
 
-@media ${deviceW.mobileS} and ${deviceH.mobileS}{
-    width: 360px;
-}
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 360px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 23.14vh;
     }
@@ -110,7 +104,10 @@ const FooterStyle = styled.div`
     transition: all 1s ease-in-out;
 `
 const ShopStyle = styled.div`
-
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 
 `
 

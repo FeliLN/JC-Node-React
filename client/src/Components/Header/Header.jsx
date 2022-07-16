@@ -5,6 +5,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import JohnnyCash from '../Images/johnny-cash.png'
 import { Link } from 'react-router-dom'
 import CartWidget from '../Cart/CartWidget'
+import { deviceH, deviceW } from '../Breakpoints'
 
 const Header = () => {
   return (
@@ -44,6 +45,13 @@ const HeaderStyle = styled.div`
     align-items: center;
     background-color: #0a0a0a;
     color: #fff;
+
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        height: 8vh;
+    }   
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        height: 9vh;
+    }
     `
 
 const ContainerLeft = styled.div`
@@ -60,6 +68,9 @@ const ContainerRight = styled.div`
     justify-content: flex-end;
     width: 50%;
     margin-right: 20px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+       margin-right: 0px;
+    }
     `
 
 const Arrow = styled(FontAwesomeIcon)`
@@ -67,13 +78,27 @@ const Arrow = styled(FontAwesomeIcon)`
     cursor: pointer;
     font-size: 2rem;
     margin-left: 10px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 1rem;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        font-size: 1.2rem;
+    }
     `
 
 const Image = styled.img`
+    display: flex;
     width: 200px;
     height: 100px;
     margin-right: 10px;
     padding: 10px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS} {
+        display: none;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        display: flex;
+    }
+
 `   
 
 const StyledLinks = styled(Link)`
@@ -84,5 +109,25 @@ const StyledLinks = styled(Link)`
     h3{
         color: #fff;
     }
-
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        margin: 10px 10px 0 0;
+        h3{
+            width: 50px;
+        font-size: .8rem;
+       }
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        margin: 10px 0px 0 0;
+        h3{
+            width: 65px;
+        font-size: 1rem;
+       }
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        margin: 10px 0px 0 0;
+        h3{
+            width: 70px;
+        font-size: 1.1rem;
+       }
+    }
     `

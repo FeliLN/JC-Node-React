@@ -175,8 +175,11 @@ const HeaderStyle = styled.div`
     color:#ffd2b4;
     background-color: #0a0a0a;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        width: 360px;
+        width: 100vw;
         height: 22vh;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        height: 24vh;
     }
      @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 20vh;
@@ -235,6 +238,16 @@ const JohhnnyCash = styled.img`
         margin-left: 50px;
         margin-top: 0px;
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 140px; 
+        margin-left: 50px;
+        margin-top: 0px;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 140px; 
+        margin-left: 50px;
+        margin-top: 0px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 12vw;
         margin-left: 20px;
@@ -250,11 +263,21 @@ const LinkSection = styled.section`
     text-shadow: 2px 2px 2px #e9e9e9;
     position: absolute;
     left: 150px;
-    
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 290px; 
         left: 60px;
-        z-index: 1;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        width: 340px; 
+        left: 60px;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 400px; 
+        left: 60px;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 350px; 
+        left: 60px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 400px;
@@ -276,14 +299,17 @@ const SectionEnabled = styled.section`
     animation: slideout 0.5s;
     background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     border: 2px solid #000;
+    z-index: 1;
     @keyframes slideout {
         from {
             opacity: 0;
             transform: translateX(-100px);
+            z-index: 0;
         }
         to {
             opacity: 1;
             transform: translateX(0px);
+            z-index: 1;
         }
     }
 `
@@ -338,7 +364,6 @@ const ContainerBottom = styled.div`
         width: 50%;
         padding-left: 0px;
         margin-left: 20px;
-
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         margin-left: 20px;
@@ -365,6 +390,18 @@ const IconSection = styled.section`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         height: 40px; 
         width: 40px;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        height: 50px; 
+        width: 50px;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        height: 60px; 
+        width: 60px;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        height: 75px; 
+        width: 75px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 80px;
@@ -395,6 +432,9 @@ const IconText = styled.section`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         display: none;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        display: flex;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
        display: flex;   
       } 
@@ -413,6 +453,18 @@ const Cassette = styled.img`
         transform: scale(0.5);
         &:hover {
             transform: scale(0.58);
+        }
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.68);
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        transform: scale(0.7);
+        &:hover {
+            transform: scale(0.78);
         }
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
@@ -439,6 +491,18 @@ const Vinyl = styled.img`
             transform: scale(0.55);
         }
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.65);
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        transform: scale(0.63);
+        &:hover {
+            transform: scale(0.7);
+        }
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         transform: scale(0.6);
         &:hover {
@@ -461,6 +525,18 @@ const CD = styled.img`
         transform: scale(0.4);
         &:hover {
             transform: scale(0.44);
+        }
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        transform: scale(0.5);
+        &:hover {
+            transform: scale(0.58);
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.68);
         }
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
@@ -489,6 +565,18 @@ const DVDImg = styled.img`
             transform: scale(0.58);
         }
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.68);
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        transform: scale(0.7);
+        &:hover {
+            transform: scale(0.78);
+        }
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         transform: scale(0.65);
         &:hover {
@@ -513,7 +601,18 @@ const Book = styled.img`
             transform: scale(0.5);
         }
     }
-    
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        transform: scale(0.5);
+        &:hover {
+            transform: scale(0.58);
+        }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        transform: scale(0.6);
+        &:hover {
+            transform: scale(0.68);
+        }
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         transform: scale(0.5);
         &:hover {

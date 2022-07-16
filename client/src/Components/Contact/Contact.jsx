@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { getContact, publicMessage, getNotifiaciones, updateNotificacion } from '../../Service/publicApiService'
+import { deviceW, deviceH } from '../Breakpoints'
 
 const Contact = () => {
 
@@ -94,6 +95,10 @@ const Title = styled.h1`
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        font-size: 1.5em;
+    }
 `
 
 const Info = styled.div`
@@ -108,6 +113,25 @@ const Info = styled.div`
     .FontAwesome{
         font-size: 2rem;
         color: #0a0a0a;
+    }
+
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        margin: 10px;
+        a{
+            margin: 5px 10px;
+        }
+        .FontAwesome{
+            font-size: 1.5em;
+        }
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        margin: 10px;
+        a{
+            margin: 5px 10px;
+        }
+        .FontAwesome{
+            font-size: 2em;
+        }
     }
 `
 const Message = styled.div`
@@ -135,6 +159,13 @@ const Message = styled.div`
         padding: 10px;
         margin-top: 10px;
         border: 1px solid #ccc;
+    }
+    
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 90%;
+        label{
+            margin-top: 5px;
+        }
     }
 `
 

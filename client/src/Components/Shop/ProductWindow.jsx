@@ -81,7 +81,7 @@ const ProductWindow = ({products, search, searchItems,page, setPages}) => {
             {!search && totalPages[page-1] && totalPages[page-1].map(product => (
                 <Card key={product.id} >
                     <Img src={product.Imagen} alt={product.nombre}/>
-                    <Title>{product.Artigo}</Title>
+                    <Title>{product.Artista}</Title>
                     <Album>{product.Album}</Album>
                     <Price>{formatPeso(product.Precio)}</Price>
                     <Button onClick={() => confirmAdd(product)}>AÑADIR AL CARRITO</Button>
@@ -119,6 +119,9 @@ const ProductWindowStyle = styled.div`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         grid-template-columns: auto auto;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        grid-template-columns: auto auto auto auto ;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         grid-template-columns: auto auto auto auto auto auto;
     }
@@ -153,9 +156,24 @@ const Card = styled.li`
         }
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-       width: 140px;
-         height: 320px;
-       margin: 0 10px 10px 10px;
+        width: 140px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        width: 160px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 200px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 200px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;
@@ -167,6 +185,7 @@ const Title = styled.h1`
     font-size: 1.2em;
     font-weight: bold;
     color: #000;
+    margin-top: 10px;
     margin-bottom: 10px;
     
 
