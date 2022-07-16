@@ -124,6 +124,15 @@ const Info = styled.div`
             font-size: 1.5em;
         }
     }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        margin: 10px;
+        a{
+            margin: 5px 10px;
+        }
+        .FontAwesome{
+            font-size: 2em;
+        }
+    }
 `
 const Message = styled.div`
     display: flex;

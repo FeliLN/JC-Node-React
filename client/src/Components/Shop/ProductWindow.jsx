@@ -119,6 +119,9 @@ const ProductWindowStyle = styled.div`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         grid-template-columns: auto auto;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        grid-template-columns: auto auto auto auto ;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         grid-template-columns: auto auto auto auto auto auto;
     }
@@ -153,14 +156,24 @@ const Card = styled.li`
         }
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-       width: 140px;
-         height: 320px;
-       margin: 0 10px 10px 10px;
+        width: 140px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
     }
     @media ${deviceW.mobileM} and ${deviceH.mobileM}{
-       width: 160px;
-         height: 320px;
-       margin: 0 10px 10px 10px;
+        width: 160px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        width: 200px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 200px;
+        height: 320px;
+        margin: 0 10px 10px 10px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;

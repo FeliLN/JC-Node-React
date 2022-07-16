@@ -45,6 +45,9 @@ const ItemSelected = () => {
                 }} />
                 <ImageCarousel item={modalItem} />
             </ContainerLeft>
+            <ContainerTop>
+                <img src={modalItem.Imagen} alt='' className="imgitem"/>
+            </ContainerTop>
             <ContainerRight>
                 <Title>{modalItem.Artista}</Title>
                 <Album>{modalItem.Album}</Album>
@@ -79,6 +82,7 @@ const Modal = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     z-index: 100;
     animation: fadein 1s 1s both;
     @keyframes fadein {
@@ -90,6 +94,7 @@ const Modal = styled.div`
         }
     }
    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        box-sizing: content-box;
         width: 50%;
         height: 50%;
     }
@@ -144,6 +149,26 @@ const Card = styled.li`
     
    
 `
+const ContainerTop = styled.div`
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+    margin-left: 100px;
+    
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        display: flex;
+        width: 360px;
+        height: 320px;
+        .imgitem{
+            object-fit: cover;
+            width: 320px;
+            height: 320px;
+        }
+    }
+
+`
 const ContainerLeft = styled.div`
     display: flex;
     flex-direction: column;
@@ -157,8 +182,7 @@ const ContainerLeft = styled.div`
         border-radius: 10px;
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        height: 100%;
-        width: 100%;
+        display: none;
     }
     `
 const ContainerRight = styled.div`
@@ -171,6 +195,11 @@ const ContainerRight = styled.div`
     border-radius: 10px;
     background-color: #d0d0d0;
     margin-left: 20px;
+    @media ${deviceW.mobileS} and ${deviceH.mobileS}{
+        width: 360px;
+        height: 100%;
+        
+    }
     `
 const Title = styled.h1`
     font-size: 3em;

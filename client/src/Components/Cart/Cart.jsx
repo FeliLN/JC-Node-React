@@ -89,7 +89,7 @@ export default Cart
 
 const CartStyle = styled.div`
     width: 100%;
-    height: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -110,7 +110,7 @@ const CartWindow = styled.div`
     z-index: 0;
     align-items: center;
     width: 95%;
-    height: 0px;
+    min-height: 0px;
     background-color: #0a0a0a;
     padding: 10px;
     margin: auto;
@@ -125,9 +125,8 @@ const CartWindow = styled.div`
             margin-top: 0px;
         }
         to {
-            
-            min-height: 500px;
-            margin-top: 2%;
+            height: auto;
+            margin-top: 10px;
         }
     }
     @media (max-width: 768px) {
@@ -163,7 +162,7 @@ const Title = styled.div`
 
 const CartItems = styled.div`
     width: 100%;
-    height: 100%;
+    min-height: 400px;
     border-radius: 10px; 
     background-color: #f5f5f5;
     animation: cassetteslide 1s 1s both;
@@ -188,13 +187,26 @@ const CartItems = styled.div`
         }
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS} {
-        width: 330px;
+        width: 100%;
         table{
             border-spacing: 5px;
-            width: 330px;
+            width: 100%;
         }
         tr{
             font-size: .9rem;
+        }
+    } 
+    @media ${deviceW.mobileM} and ${deviceH.mobileM} {
+        th{
+            font-size: .9rem;
+        }
+        tr{
+            font-size: 1rem;
+        }
+    } 
+    @media ${deviceW.mobileL} and ${deviceH.mobileL} {
+        tr{
+            font-size: 1.2rem;
         }
     } 
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {

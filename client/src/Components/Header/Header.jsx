@@ -45,6 +45,13 @@ const HeaderStyle = styled.div`
     align-items: center;
     background-color: #0a0a0a;
     color: #fff;
+
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        height: 8vh;
+    }   
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        height: 9vh;
+    }
     `
 
 const ContainerLeft = styled.div`
@@ -73,6 +80,9 @@ const Arrow = styled(FontAwesomeIcon)`
     margin-left: 10px;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         font-size: 1rem;
+    }
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
+        font-size: 1.2rem;
     }
     `
 
@@ -104,6 +114,20 @@ const StyledLinks = styled(Link)`
         h3{
             width: 50px;
         font-size: .8rem;
+       }
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        margin: 10px 0px 0 0;
+        h3{
+            width: 65px;
+        font-size: 1rem;
+       }
+    }
+    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+        margin: 10px 0px 0 0;
+        h3{
+            width: 70px;
+        font-size: 1.1rem;
        }
     }
     `

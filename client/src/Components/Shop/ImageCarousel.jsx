@@ -18,8 +18,8 @@ const ImageCarousel = ({item}) => {
                     },
                     largeImage: {
                         src: item.Imagen1,
-                        width: 1800,
-                        height: 1800
+                        width: 100,
+                        height: 100
                     }
                 }} />
             </Carousel.Item>
@@ -35,8 +35,8 @@ const ImageCarousel = ({item}) => {
                     },
                     largeImage: {
                         src: item.Imagen2,
-                        width: 1800,
-                        height: 1800
+                        width: 100,
+                        height: 100
                     }
                 }} />
             </Carousel.Item>}

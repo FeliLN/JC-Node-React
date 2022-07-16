@@ -164,11 +164,18 @@ const Menu = styled.span`
 
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
-        width: 360px;
+        width: 100vw;
         span{
             margin-left: 5px;
         }
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 100%;
+        span{
+            margin-left: 5px;
+        }
+    }
+
     @media (min-width: 1360px) and (min-height: 768px) {
         h1{
             font-size: 1.5rem;
