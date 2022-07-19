@@ -113,6 +113,16 @@ const ShopFiltersStyle = styled.div`
             margin-top: 5px;
         }
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        display: flex;
+        flex-direction: row;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        input{
+            width: auto;
+            height: 35px;
+        }
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         display: flex;
         flex-direction: row;
@@ -132,6 +142,9 @@ const Text = styled.div`
     position: relative;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         display: none;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        display: flex;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         display: flex;
@@ -157,6 +170,11 @@ const Year = styled.div`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         display: none;
     }
+    
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 120px;
+        display: flex;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 120px;
         display: flex;
@@ -179,6 +197,10 @@ const Genre = styled.div`
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
        display: none;
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 120px;
+        display: flex;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 120px;
@@ -219,6 +241,9 @@ const YearBubble = styled.div`
             opacity: 1;
         }
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 825px;
+    }
 `
 const GenreBubble = styled.div`    
     width: 1060px;   
@@ -252,5 +277,8 @@ const GenreBubble = styled.div`
         to {
             opacity: 1;
         }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        width: 825px;
     }
 `

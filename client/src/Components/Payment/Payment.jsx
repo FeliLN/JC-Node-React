@@ -253,6 +253,12 @@ const FormStyle = styled(Form)`
         width: 100%;
       }
     } 
+    @media ${deviceW.tabletL} and ${deviceH.tabletL} {
+      .form-group{
+        flex-direction: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
 `
 

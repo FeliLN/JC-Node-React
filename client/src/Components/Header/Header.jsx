@@ -52,6 +52,9 @@ const HeaderStyle = styled.div`
     @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         height: 9vh;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        height: 9vh;
+    }
     `
 
 const ContainerLeft = styled.div`
@@ -84,6 +87,9 @@ const Arrow = styled(FontAwesomeIcon)`
     @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         font-size: 1.2rem;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        font-size: 1.5rem;
+    }
     `
 
 const Image = styled.img`
@@ -113,21 +119,28 @@ const StyledLinks = styled(Link)`
         margin: 10px 10px 0 0;
         h3{
             width: 50px;
-        font-size: .8rem;
+            font-size: .8rem;
        }
     }
     @media ${deviceW.mobileM} and ${deviceH.mobileM}{
         margin: 10px 0px 0 0;
         h3{
             width: 65px;
-        font-size: 1rem;
+            font-size: 1rem;
        }
     }
-    @media ${deviceW.mobileM} and ${deviceH.mobileM}{
+    @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         margin: 10px 0px 0 0;
         h3{
             width: 70px;
-        font-size: 1.1rem;
+            font-size: 1.1rem;
+       }
+    }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        margin: 10px 0px 0 0;
+        h3{
+            width: 70px;
+            font-size: 1.1rem;
        }
     }
     `

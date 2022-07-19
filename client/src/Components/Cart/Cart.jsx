@@ -154,6 +154,9 @@ const Title = styled.div`
         font-size: 1.2rem;
         margin-bottom: 10px;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        font-size: 1.5rem;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 50px;
         margin-bottom: 10px;
@@ -207,6 +210,15 @@ const CartItems = styled.div`
     @media ${deviceW.mobileL} and ${deviceH.mobileL} {
         tr{
             font-size: 1.2rem;
+        }
+    } 
+    @media ${deviceW.tabletL} and ${deviceH.tabletL} {
+        th{
+            height: 40px;
+            font-size: 1.2rem;
+        }
+        tr{
+            font-size: 1.4rem;
         }
     } 
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {

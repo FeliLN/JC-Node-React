@@ -233,8 +233,15 @@ const FAIcon = styled(FontAwesomeIcon)`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         font-size: 1rem;
     }
+    @media ${deviceW.tabletS} and ${deviceH.tabletS}{
+        font-size: 1.3rem;
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        font-size: 1.5rem;
+    }
      @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         font-size: 1.5rem;
     }
+
 
 `

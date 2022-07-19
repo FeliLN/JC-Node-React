@@ -221,6 +221,9 @@ const Bars = styled.section`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         transform: scale(1.5) rotate(0deg);
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        transform: scale(2) rotate(0deg);
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
        width: 20px;
         height: 20px;
@@ -240,13 +243,12 @@ const JohhnnyCash = styled.img`
     }
     @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         width: 140px; 
-        margin-left: 50px;
-        margin-top: 0px;
     }
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
-        width: 140px; 
-        margin-left: 50px;
-        margin-top: 0px;
+        width: 140px;  
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 155px;  
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 12vw;
@@ -278,6 +280,10 @@ const LinkSection = styled.section`
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         width: 350px; 
         left: 60px;
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 420px; 
+        left: 80px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 400px;
@@ -402,6 +408,10 @@ const IconSection = styled.section`
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         height: 75px; 
         width: 75px;
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        height: 85px; 
+        width: 85px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 80px;
