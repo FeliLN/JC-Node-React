@@ -175,6 +175,11 @@ const Card = styled.li`
         height: 320px;
         margin: 0 10px 10px 10px;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 250px;
+        height: 350px;
+        margin: 0 10px 10px 10px;
+    }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;
         height: 300px;
@@ -218,6 +223,10 @@ const Img = styled.img`
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 100px;
         height: 100px;
+     }
+     @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 130px;
+        height: 130px;
      }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 130px;

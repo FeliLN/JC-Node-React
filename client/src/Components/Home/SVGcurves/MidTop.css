@@ -53,6 +53,11 @@
         top: 166px;
     }
 }
+@media (min-width: 1280px) and (min-height: 800px) {
+    .MidTop{
+        top: 174px;
+    }
+}
 
 @media   only screen and (min-width: 1366px) and (min-height: 768px)     {
    .MidTop {

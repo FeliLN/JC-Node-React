@@ -124,6 +124,10 @@ const FooterStyle = styled.div`
         flex-direction: row;
         height: 66.9vh;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        flex-direction: row;
+        height: 67.2vh;
+    }
     
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
@@ -174,6 +178,9 @@ const Title = styled.h1`
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         font-size: 3.8vw;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        font-size: 3.3vw;
+    }
 `
 const Subtitle = styled.h2`
     text-align: center;
@@ -183,6 +190,9 @@ const Subtitle = styled.h2`
     }
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         font-size: 3vw;
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        font-size: 2.8vw;
     }
 `
 //Container Right
@@ -262,6 +272,11 @@ const Facebook = styled(FontAwesomeIcon)`
         height: 50px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 45px !important;
+        height: 45px !important;
+        margin-right: 1rem;
+    }
 `
 const Instagram = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -295,6 +310,11 @@ const Instagram = styled(FontAwesomeIcon)`
         height: 50px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 45px !important;
+        height: 45px !important;
+        margin-right: 1rem;
+    }
 `
 const Whatsapp = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -325,6 +345,11 @@ const Whatsapp = styled(FontAwesomeIcon)`
     @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         width: 50px !important;
         height: 50px !important;
+        margin-right: 1rem;
+    }
+    @media ${deviceW.tabletL} and ${deviceH.tabletL}{
+        width: 45px !important;
+        height: 45px !important;
         margin-right: 1rem;
     }
 `
