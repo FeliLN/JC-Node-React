@@ -55,6 +55,9 @@ const HeaderStyle = styled.div`
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         height: 9vh;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        height: 11vh;
+    }
     `
 
 const ContainerLeft = styled.div`
@@ -89,6 +92,9 @@ const Arrow = styled(FontAwesomeIcon)`
     }
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         font-size: 1.5rem;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        font-size: 2rem;
     }
     `
 

@@ -95,7 +95,22 @@ const JohnnyCash = styled.img`
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         display: block;
-        top: 7.5%;
+        top: 8.2%;
+        left: 73%;
+    } 
+    @media ${deviceW.laptopL} and ${deviceH.laptopL} {
+        display: block;
+        top: 8%;
+        left: 73%;
+    } 
+    @media ${deviceW.desktopS} and ${deviceH.desktopS} {
+        display: block;
+        top: 9.3%;
+        left: 73%;
+    } 
+    @media ${deviceW.desktopL} and ${deviceH.desktopL} {
+        display: block;
+        top: 8.1%;
         left: 73%;
     } 
 `
@@ -104,10 +119,10 @@ const FooterStyle = styled.div`
     transition: all 1s ease-in-out;
 `
 const ShopStyle = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 `
 

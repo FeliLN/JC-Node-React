@@ -176,7 +176,8 @@ const Menu = styled.span`
         }
     }
 
-    @media (min-width: 1360px) and (min-height: 768px) {
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 101%;
         h1{
             font-size: 1.5rem;
         }

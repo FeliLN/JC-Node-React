@@ -131,7 +131,7 @@ const ShopStyle = styled.div`
                 margin-top: 0px;
             }
             to {
-                min-height: 1000px;
+                min-height: 800px;
                 margin-top: 6%;
                 
             }
