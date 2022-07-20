@@ -133,6 +133,15 @@ const Info = styled.div`
             font-size: 2em;
         }
     }
+    @media ${deviceW.laptopL} and ${deviceH.laptopL}{
+        margin: 10px;
+        a{
+            margin: 5px 10px;
+        }
+        .FontAwesome{
+            font-size: 2.5em;
+        }
+    }
 `
 const Message = styled.div`
     display: flex;
@@ -170,14 +179,14 @@ const Message = styled.div`
 `
 
 const Button = styled.button`
-background-color: #fff;
-height: 40px;
-width: 100px;
-display: flex;
-flex-direction: row;
-margin-top: 20px;
-padding: 5px;
-text-align: center;
-justify-content: center;
-border-radius: 10px;
+    background-color: #fff;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
 `

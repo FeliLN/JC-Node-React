@@ -132,6 +132,15 @@ const FooterStyle = styled.div`
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
     }
+    @media ${deviceW.laptopL} and ${deviceH.laptopL}{
+        height: 68.8vh;
+    }
+    @media ${deviceW.desktopS} and ${deviceH.desktopS}{
+        height: 69.1vh;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        height: 70.3vh;
+    }
     
 `
 //Container Left
@@ -181,6 +190,9 @@ const Title = styled.h1`
     @media ${deviceW.tabletL} and ${deviceH.tabletL}{
         font-size: 3.3vw;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        font-size: 3vw;
+    }
 `
 const Subtitle = styled.h2`
     text-align: center;
@@ -193,6 +205,9 @@ const Subtitle = styled.h2`
     }
     @media ${deviceW.tabletL} and ${deviceH.tabletL}{
         font-size: 2.8vw;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        font-size: 2.5vw;
     }
 `
 //Container Right
@@ -277,6 +292,16 @@ const Facebook = styled(FontAwesomeIcon)`
         height: 45px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        width: 60px !important;
+        height: 60px !important;
+        margin-right: 1rem;
+    }
 `
 const Instagram = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -315,6 +340,16 @@ const Instagram = styled(FontAwesomeIcon)`
         height: 45px !important;
         margin-right: 1rem;
     }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        width: 60px !important;
+        height: 60px !important;
+        margin-right: 1rem;
+    }
 `
 const Whatsapp = styled(FontAwesomeIcon)`
     color: #0a0a0a;
@@ -350,6 +385,16 @@ const Whatsapp = styled(FontAwesomeIcon)`
     @media ${deviceW.tabletL} and ${deviceH.tabletL}{
         width: 45px !important;
         height: 45px !important;
+        margin-right: 1rem;
+    }
+    @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 1rem;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        width: 60px !important;
+        height: 60px !important;
         margin-right: 1rem;
     }
 `

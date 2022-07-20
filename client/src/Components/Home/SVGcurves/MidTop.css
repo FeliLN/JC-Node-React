@@ -59,10 +59,11 @@
     }
 }
 
-@media   only screen and (min-width: 1366px) and (min-height: 768px)     {
+
+@media    (min-width: 1366px) and (min-height: 768px)     {
    .MidTop {
     position: absolute;
-    top: 153px;
+    top: 165px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -71,13 +72,14 @@
     z-index: 0; 
     transform: scaleX(-1); 
     margin-bottom: 15px;
+    
 }
 
 .MidTop svg {
     position: relative;
     display: block;
     width: calc(172% + 1.3px);
-    height: 250px;
+    height: 200px;
     transform: rotateY(180deg);
     z-index: 10;
 }
@@ -88,24 +90,19 @@
 }
 
 
-
-
-@media (min-width: 1440px) { 
-    
-    .MidTop {
-        position: relative;
-        top: 42px;
-        left: 0;
-        transform: scaleY(2.3) rotateY(180deg);
-        height: 40px;
-        overflow: hidden;
-        line-height: 0;
-        margin-right: 0px;
-        z-index: 4;
+@media (min-width: 1536px) and (min-height: 864px) {
+    .MidTop{
+        top: 185px;
     }
+}
 
-    .MidTop .shape-fill {
-    
-        fill: #0a0a0a;
+@media (min-width: 1440px) and (min-height: 900px) {
+    .MidTop{
+        top: 193px;
+    }
+}
+@media (min-width: 1920px) and (min-height: 1080px) {
+    .MidTop{
+        top: 240px;
     }
 }

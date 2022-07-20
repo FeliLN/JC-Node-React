@@ -17,7 +17,7 @@ export const deviceH = {
   mobileL: `(min-height: 896px)`,
   tabletS: `(min-height: 768px)`,
   tabletL: `(min-height: 800px)`,
-  laptopS: `(min-height: 768px)`,
+  laptopS: `(min-height: 768px)`, //768
   laptopL: `(min-height: 864px)`,
   desktopS: `(min-height: 900px)`,
   desktopL: `(min-height: 1080px)`,

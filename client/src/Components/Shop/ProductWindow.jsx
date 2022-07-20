@@ -113,7 +113,7 @@ const ProductWindowStyle = styled.div`
             height: 0px;
         }
         to {
-            min-height: 1000px;
+            min-height: 800px;
         }
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
@@ -182,7 +182,17 @@ const Card = styled.li`
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         width: 180px;
-        height: 300px;
+        height: 350px;
+        margin: 0 15px 0 15px;
+    }
+    @media ${deviceW.laptopL} and ${deviceH.laptopL} {
+        width: 210px;
+        height: 350px;
+        margin: 0 15px 0 15px;
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL} {
+        width: 260px;
+        height: 350px;
         margin: 0 15px 0 15px;
     }
 `

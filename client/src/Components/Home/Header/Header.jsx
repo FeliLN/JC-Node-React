@@ -182,8 +182,10 @@ const HeaderStyle = styled.div`
         height: 24vh;
     }
      @media ${deviceW.laptopS} and ${deviceH.laptopS} {
-        height: 20vh;
-         width: 1366px;
+        height: 22vh;
+    }   
+    @media ${deviceW.laptopL} and ${deviceH.laptopL} {
+        height: 23vh;
     }   
 
 
@@ -225,9 +227,13 @@ const Bars = styled.section`
         transform: scale(2) rotate(0deg);
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
-       width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
+        transform: scale(1.7) rotate(0deg);
         margin-left: 20px; 
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        transform: scale(2) rotate(0deg);
     }
 
 `
@@ -253,7 +259,9 @@ const JohhnnyCash = styled.img`
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         width: 12vw;
         margin-left: 20px;
+        margin-top: 80px;
     }
+
 
 `
 const LinkSection = styled.section`
@@ -289,7 +297,10 @@ const LinkSection = styled.section`
         width: 400px;
         left: 120px;
     }
-   
+    @media ${deviceW.desktopL} and ${deviceH.desktopL} {
+        width: 540px;
+        left: 150px;
+    }
 `
 const SectionEnabled = styled.section`
     display: flex;
@@ -417,6 +428,14 @@ const IconSection = styled.section`
         width: 80px;
         height: 80px;
     } 
+    @media ${deviceW.desktopS} and ${deviceH.desktopS} {
+        width: 90px;
+        height: 90px;
+    } 
+    @media ${deviceW.desktopL} and ${deviceH.desktopL} {
+        width: 100px;
+        height: 100px;
+    } 
 
 `
 const Icon = styled.section`
@@ -483,6 +502,12 @@ const Cassette = styled.img`
             transform: scale(0.78);
         }
     }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        transform: scale(0.9);
+        &:hover {
+            transform: scale(0.98);
+        }
+    }
 `
 const Vinyl = styled.img`
     color: #0a0a0a;
@@ -519,6 +544,12 @@ const Vinyl = styled.img`
             transform: scale(0.68);
         }
     }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        transform: scale(0.85);
+        &:hover {
+            transform: scale(0.93);
+        }
+    }
 `
 const CD = styled.img`
     color: #0a0a0a;
@@ -553,6 +584,12 @@ const CD = styled.img`
         transform: scale(0.6);
         &:hover {
             transform: scale(0.68);
+        }
+    }
+    @media ${deviceW.desktopL} and ${deviceH.desktopL}{
+        transform: scale(0.85);
+        &:hover {
+            transform: scale(0.93);
         }
     }
 `

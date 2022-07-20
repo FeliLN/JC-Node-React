@@ -125,7 +125,7 @@ const CartWindow = styled.div`
             margin-top: 0px;
         }
         to {
-            height: auto;
+            min-height: 400px;
             margin-top: 10px;
         }
     }
