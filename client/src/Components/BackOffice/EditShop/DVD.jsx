@@ -46,7 +46,7 @@ const EditDVD = styled.div`
     text-align: center;
 
     ${({ showCreate }) => showCreate && `
-        height: 800px;
+        height: 900px;
     `}
 
     button {

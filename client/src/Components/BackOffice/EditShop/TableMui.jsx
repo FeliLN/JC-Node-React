@@ -112,7 +112,7 @@ const DataTable = ({items, product, setItems}) => {
     <div style={{ height: 600, width: '100%' }}>
       <input type="search" placeholder="Buscar por Album"  onChange={(e) =>{ searchByAlbum(e)}}  />
       <input type="search" placeholder="Buscar por Artista"  onChange={(e) =>{ searchByArtist(e)}}  />
-      <select type="select" placeholder="Buscar por Genero"  onChange={(e) =>{ searchByStock(e)}}  >
+      <select type="select"  onChange={(e) =>{ searchByStock(e)}}  >
             <option value={'0'} >Todos</option>
             <option value={'1'}>Sí</option>
             <option value={'2'}>No</option>
@@ -123,7 +123,9 @@ const DataTable = ({items, product, setItems}) => {
         columns={columns}
         pageSize={6}
         rowsPerPageOptions={[6]}
-
+        sx={{	
+          overflow: 'auto',
+        }}
       /> :
       <DataGrid
         rows={items}

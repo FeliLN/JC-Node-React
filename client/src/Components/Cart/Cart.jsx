@@ -161,6 +161,10 @@ const Title = styled.div`
         height: 50px;
         margin-bottom: 10px;
     } 
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        height: 50px;
+        margin-bottom: 10px;
+    }
 `
 
 const CartItems = styled.div`
@@ -273,13 +277,14 @@ const Total = styled.div`
         margin-left: 20px;
     }
     @media ${deviceW.mobileS} and ${deviceH.mobileS} {
-        
         margin-top: 10px;
     } 
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
-        
         margin-top: 10px;
     } 
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        margin-top: 10px;
+    }
     `
 const Button = styled(FontAwesomeIcon)`
     &:hover {

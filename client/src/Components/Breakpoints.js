@@ -1,10 +1,15 @@
+export const vh = window.innerHeight;
+
+export const vhHeader = vh * 22.5 / 100;
+export const vhFooter = vh * 77.5 / 100;
+
 export const deviceW = {
   mobileS: `(min-width: 360px)`,
   mobileM: `(min-width: 414px)`,
   mobileL: `(min-width: 480px)`,
   tabletS: `(min-width: 1024px)`,
   tabletL: `(min-width: 1280px)`,
-  laptopS: `(min-width: 1366px)`,
+  laptopS: `(min-width: 1360px)`,
   laptopL: `(min-width: 1536px)`,
   desktopS: `(min-width: 1440px)`,
   desktopL: `(min-width: 1920px)`,

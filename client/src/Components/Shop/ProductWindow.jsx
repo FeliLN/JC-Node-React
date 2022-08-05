@@ -185,6 +185,11 @@ const Card = styled.li`
         height: 350px;
         margin: 0 15px 0 15px;
     }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        width: 180px;
+        height: 370px;
+        margin: 0 15px 15px 15px;
+    }
     @media ${deviceW.laptopL} and ${deviceH.laptopL} {
         width: 210px;
         height: 350px;
@@ -270,5 +275,9 @@ const Button = styled.button`
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
        padding: 6px;
        margin-top: 6px;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        padding: 4px;
+        margin-top: 4px;
     }
 `

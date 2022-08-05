@@ -181,6 +181,9 @@ const HeaderStyle = styled.div`
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         height: 24vh;
     }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        height: 23vh;
+    }
      @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         height: 22vh;
     }   
@@ -241,6 +244,7 @@ const JohhnnyCash = styled.img`
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    width: 100px;
 
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         width: 100px; 
@@ -252,6 +256,9 @@ const JohhnnyCash = styled.img`
     }
     @media ${deviceW.tabletS} and ${deviceH.tabletS}{
         width: 140px;  
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        width: 140px;
     }
     @media ${deviceW.tabletL} and ${deviceH.tabletL}{
         width: 155px;  
@@ -294,6 +301,10 @@ const LinkSection = styled.section`
         left: 80px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
+        width: 400px;
+        left: 120px;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
         width: 400px;
         left: 120px;
     }
@@ -428,6 +439,10 @@ const IconSection = styled.section`
         width: 80px;
         height: 80px;
     } 
+    @media ${deviceW.laptopS} and (min-height: 625px) {
+        width: 80px;
+        height: 80px;
+    }
     @media ${deviceW.desktopS} and ${deviceH.desktopS} {
         width: 90px;
         height: 90px;

@@ -137,6 +137,19 @@ const ShopStyle = styled.div`
             }
         }
     }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        @keyframes slidein {
+            from {
+                height: 0px;
+                margin-top: 0px;
+            }
+            to {
+                min-height: 800px;
+                margin-top: 6%;
+                
+            }
+        }
+    }
 
 `
 const ShopVoid = styled.div`

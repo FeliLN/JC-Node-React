@@ -8,7 +8,7 @@ import Shop from '../Shop/Shop';
 
 // styled components
 import styled from 'styled-components';
-import { deviceW, deviceH } from '../Breakpoints';
+import { deviceW, deviceH, vh } from '../Breakpoints';
 
 //Mids
 import MidTop from "./SVGcurves/MidTop";
@@ -16,6 +16,7 @@ import MidBot from "./SVGcurves/MidBot";
 import { CartState } from '../../Context';
 import ItemSelected from '../Shop/ItemSelected';
 import axios from 'axios';
+
 
 export const Home = () => {
     const [shop, setShop] = useState([]);
@@ -69,8 +70,8 @@ export default Home;
 
 const HomeStyle = styled.div`
    flex-direction: column;
-   height: 100vh;
-    width: 100vw;
+   height: ${vh}px;
+   width: 100vw;
 
 `
 const HeaderStyle = styled.div`
@@ -79,7 +80,10 @@ const HeaderStyle = styled.div`
         width: 360px;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
-        height: 23.14vh;
+        height: 23vh;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        height: 23vh;
     }
    
 `
@@ -92,6 +96,11 @@ const JohnnyCash = styled.img`
     z-index: 10;
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         display: none;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        display: block;
+        height: 9vw;
+        top: 4%;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS} {
         display: block;
@@ -115,6 +124,9 @@ const JohnnyCash = styled.img`
     } 
 `
 const FooterStyle = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items: end;
     flex-direction: row ;
     transition: all 1s ease-in-out;
 `

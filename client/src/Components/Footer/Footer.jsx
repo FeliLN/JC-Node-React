@@ -18,7 +18,7 @@ import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-s
 import styled from 'styled-components'
 
 //deviceW
-import  { deviceW, deviceH } from '../Breakpoints'
+import  { deviceW, deviceH, vh, vhFooter } from '../Breakpoints'
 
 //URLs
 const FacebookUrl = 'https://www.facebook.com/JohnnyCash.Vinilos'
@@ -108,6 +108,7 @@ const FooterStyle = styled.div`
     justify-content: space-evenly;
     background:linear-gradient(to right, goldenrod, #FCF6BA, goldenrod, #FBF5B7, goldenrod);
     width: 100vw;
+
     @media ${deviceW.mobileS} and ${deviceH.mobileS}{
         flex-direction: column;
         height: 67vh;
@@ -115,6 +116,12 @@ const FooterStyle = styled.div`
     @media ${deviceW.mobileM} and ${deviceH.mobileM}{
         flex-direction: column;
         height: 69vh;
+    }
+    @media (min-width: 360px) and (min-height:712px) {
+        height: 485px;
+    }
+    @media (min-width: 414px) and (min-height: 724px) {
+        height: 495px; 
     }
     @media ${deviceW.mobileL} and ${deviceH.mobileL}{
         flex-direction: column;
@@ -131,6 +138,9 @@ const FooterStyle = styled.div`
     
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
         height: 67.9vh;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        height: 65.8vh;
     }
     @media ${deviceW.laptopL} and ${deviceH.laptopL}{
         height: 68.8vh;

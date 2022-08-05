@@ -114,7 +114,6 @@ const CreateForm = ({ product }) => {
         {({ values, handleChange, setFieldValue, isSubmitting }) => (
             <FormStyle>
                 <section className='Form-section'>
-                
                     <section className='Input-group'>
                         <section>
                             <label>ID </label>
@@ -228,6 +227,7 @@ const FormStyle = styled(Form)`
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
     color: #000;  
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -245,10 +245,9 @@ const FormStyle = styled(Form)`
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        /* border: 4px solid #000000; */
         border-radius: 5px;
         margin: 5px;
-        height: 300px;
+        min-height: 300px;
     }
     .Image-group {
         display: flex;

@@ -133,6 +133,17 @@ const ShopFiltersStyle = styled.div`
             height: 35px;
         }
     }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        input{
+            width: auto;
+            height: 35px;
+            margin: 5px;
+        }
+    }
 `
 const Text = styled.div`
     display: flex;
@@ -179,6 +190,10 @@ const Year = styled.div`
         width: 120px;
         display: flex;
     }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
+        width: 120px;
+        display: flex;
+    }
 `
 const Genre = styled.div`
     display: flex;
@@ -203,6 +218,10 @@ const Genre = styled.div`
         display: flex;
     }
     @media ${deviceW.laptopS} and ${deviceH.laptopS}{
+        width: 120px;
+        display: flex;
+    }
+    @media ${deviceW.laptopS} and (min-height: 625px) and (max-height: 767px){
         width: 120px;
         display: flex;
     }

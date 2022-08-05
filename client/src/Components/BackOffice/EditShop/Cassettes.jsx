@@ -46,9 +46,9 @@ const EditCD = styled.div`
     transition: 1s;
     color: #FFFFFF;
     text-align: center;
-
+    
     ${({ showCreate }) => showCreate && `
-        height: 800px;
+        height: 900px;
     `}
 
     button {
